@@ -1,0 +1,22 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: .2s linear;
+}
+
+/* landing page */
+.home .box {
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 2rem 9%;
+}
+
+#btn_buy:hover {
+  color: white !important;
+}
+
+.category .img-fluid {
+  height: 200px;
+  width: 200px;
+}

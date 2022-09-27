@@ -20,3 +20,14 @@
   height: 200px;
   width: 200px;
 }
+.footer {
+  color: #fff;
+  padding-top: 220px;
+  background-size: cover;
+}
+.footer h6 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}

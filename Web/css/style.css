@@ -20,14 +20,35 @@
   height: 200px;
   width: 200px;
 }
+
+/* footer */
 .footer {
   color: #fff;
   padding-top: 220px;
-  background-size: cover;
+  background-size: cover
+  ;
 }
-.footer h6 {
-  color: #fff;
-  margin-bottom: 25px;
-  font-size: 18px;
-  font-weight: 600;
+.footer-social a {
+  padding-right: 25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
+
+.footer-social a:hover i {
+  color: #b68834;
+}
+
+.footer-social i {
+  color: #cccccc;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.section-gap {
+  padding: 120px 0;
+}
+
+/*  */

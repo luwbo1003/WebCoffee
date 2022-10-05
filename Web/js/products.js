@@ -1,64 +1,63 @@
 /* Card-shop */
-let cardIcon = document.querySelector('.shop-btn');
-let card = document.querySelector('.card-shop');
-let cardClose = document.querySelector('#card-close');
+var cardIcon = document.querySelector('.shop-btn');
+var card = document.getElementById('card-shop');
+var cardClose = document.getElementById('card-close');
 
-cardIcon.onclick = () =>{
-   card.classList.add('active');
+function openCart() {
+   card.style.right = 0;
 }
-cardClose.onclick = () =>{
-   card.classList.remove('active');
-} 
+
+function closeCart() {
+   card.style.right = "-360px";
+}
+
 
 /* Card-shop working */
-if(document.readyState == 'loading'){
+if (document.readyState == 'loading') {
    document.addEventListener("DOMContentLoaded", ready);
-} else{
+} else {
    ready();
 }
 
 /* Making Function */
-function ready(){
+function ready() {
    /* Remove items*/
    var removeCardButton = document.getElementsByClassName("remove-card");
    console.log(removeCardButton);
-   for (var i = 0; i < removeCardButton.length; i++)
-   {
+   for (var i = 0; i < removeCardButton.length; i++) {
       var button = removeCardButton[i];
       button.addEventListener('click', removeCard);
-   } 
+   }
    /* Quantity */
    var quantityInput = document.getElementsByClassName("card-quantity");
-   for (var i = 0; i < quantityInput.length; i++)
-   {
+   for (var i = 0; i < quantityInput.length; i++) {
       var input = quantityInput[i];
       input.addEventListener("change", quantityChange);
    }
    /* Add Card */
    var addCard = document.getElementsByClassName("shop-card");
-   for(var i = 0; i < addCard; i++)
-   {
+   for (var i = 0; i < addCard; i++) {
       var button = addCard[i];
       button.addEventListener("click", addCardClick);
    }
 }
 /* Remove items*/
-function removeCard(event){
+function removeCard(event) {
    var buttonclick = event.target;
    buttonclick.parentElement.remove();
    updateTotal();
 }
 
 /* Quantity Changes */
-function quantityChange(event){
+function quantityChange(event) {
    var input = event.target;
-   if(isNaN(input.value) || input.value <= 0) {
+   if (isNaN(input.value) || input.value <= 0) {
       input.value = 1;
    }
    updateTotal();
 }
 /* Add to Card */
-function addCardClick(event){ 
+function addCardClick(event) {
    var buttonclick = event.target;
    var shopProduct = buttonclick.parentElement.parentElement.parentElement;
    var title = shopProduct.getElementsByClassName("product-title")[0].innerText;
@@ -69,31 +68,31 @@ function addCardClick(event){
    updateTotal(); */
 }
 
-function addProductToCard(title, price, productImg){
+function addProductToCard(title, price, productImg) {
    var cardBox = document.createElement("div");
    /* cardBox.classList.add("card-box"); */
    var cardItems = document.getElementsByClassName("card-content")[0];
    var cardItemsName = cardItems.getElementsByClassName("card-title");
-   for(var i = 0; i < cardItemsName.length; i++){
+   for (var i = 0; i < cardItemsName.length; i++) {
       alert("You have already add this item to card");
    }
 }
 /* Update Total */
-function updateTotal(){
+function updateTotal() {
    var cardContent = document.getElementsByClassName("card-content")[0];
    var cardBox = document.getElementsByClassName("card-box");
    var total = 0;
 
-   for(var i = 0; i < cardBox.length; i++){
+   for (var i = 0; i < cardBox.length; i++) {
       var box = cardBox[i];
       var priceElement = box.getElementsByClassName("card-price")[0];
       var quantityElement = box.getElementsByClassName("card-quantity")[0];
-      var price = parseFloat(priceElement.innerText.replace("$",""));
+      var price = parseFloat(priceElement.innerText.replace("$", ""));
       var quantity = quantityElement.value;
       total = total + (price * quantity);
-      total = Math.round(total*100)/100;
+      total = Math.round(total * 100) / 100;
 
-      document.getElementsByClassName("total-price")[0].innerText ="$" + total;
+      document.getElementsByClassName("total-price")[0].innerText = "$" + total;
    }
 }
 /* let navbar = document.querySelector('.header .navbar');

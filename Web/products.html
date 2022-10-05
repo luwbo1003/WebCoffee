@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <!-- website -->
+    <link rel="icon" href="images/icon_page.png" type="image/gif" />
+    <title>Coffee | SOUL</title>
+
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- products css -->
+    <link rel="stylesheet" href="css/products.css">
+    <!-- index css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- header section starts -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent py-md-4">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#"> <i class="fa-solid fa-mug-saucer"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-cart-shopping shop-btn"></i>
+                            </a>
+                        </li>
+                        <!-- Card -->
+                        <div class="card-shop">
+                            <h2 class="card-title1">Your Cart</h2>
+                            <!-- content -->
+                            <div class="card-content">
+                                <div class="card mb-3" style="max-width: 350px;">
+                                    <div class="row g-0 card-box">
+                                        <div class="col-md-3">
+                                            <img src="images/Our_Espresso.jpg" class="img-fluid rounded-start" alt="..."
+                                                style="width: 72px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body" style="margin-left: 2px; margin-top: -10px;">
+                                                <h4 class="card-title">Espresso</h4>
+                                                <h5 class="card-price">$10.46</h5>
+                                                <input type="number" value="1" class="card-quantity">
+                                            </div>
+                                        </div>
+                                        <!-- Remove Card -->
+                                        <i class="fa-solid fa-trash remove-card"></i>
+                                    </div>
+                                    <!-- Total -->
+                                    <div class="total">
+                                        <div class="total-title">Total</div>
+                                        <div class="total-price">$0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Buy button -->
+                            <button type="button" class="btn btn-primary">Buy Now</button>
+                            <!-- Close -->
+                            <i id="card-close" class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <div class="box second" style="background: url(images/header1.jpg) no-repeat;">
+            <div class="content">
+                <span>Star your day</span>
+                <h3> with a black coffee</h3>
+                <p></p>
+                <a href="#" class="btn">Buy now</a>
+            </div>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- products section starts  -->
+    <section class="main">
+        <div class="container">
+            <div class="inner">
+                <div class="slide">
+                    <div class="col-md-8">
+                        <div class="text-fade title coffee">
+                            <h2>Our Coffee</h2>
+                            <span style="font-weight: 250;">We have carefully selected great tasting coffees from around
+                                the
+                                world.</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card espresso_list">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_PikePlace.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Pike Place</h5>
+                                        <div class="price"> 210.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Colombia.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Colombia</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Espresso.jpg" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Espresso</h5>
+                                        <div class="price"> 210.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Ethiopia.jpg" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Ethiopia</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_FrenchRoast.png" width="800"
+                                            height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">French Roast</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Guatamala.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Guatemala</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_HouseBlend.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">House Blend</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Italian.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Italian</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="slide">
+                    <div class="col-md-8">
+                        <div class="text-fade title coffee">
+                            <h2>Cold Brew</h2>
+                            <span style="font-weight: 250;">How is taste?</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card espresso_list">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_PikePlace.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Pike Place</h5>
+                                        <div class="price"> 210.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Colombia.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Colombia</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Espresso.jpg" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Espresso</h5>
+                                        <div class="price"> 210.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Ethiopia.jpg" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Ethiopia</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_FrenchRoast.png" width="800"
+                                            height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">French Roast</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Guatamala.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Guatemala</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_HouseBlend.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">House Blend</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card" style="width: 29.8rem;">
+                                    <div class="image">
+                                        <img class="img-fluid" src="images/Our_Italian.png" width="800" height="290">
+                                        <div class="icons">
+                                            <a class="fas fa-shopping-cart shop-card"></a>
+                                            <a href="#" class="fas fa-eye"></a>
+                                            <a href="#" class="fas fa-share"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="product-title">Italian</h5>
+                                        <div class="price"> 250.000VNĐ </div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section start -->
+    <footer class="footer" style="background: url(./images/footer-bg.jpg) center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-6">
+
+                    <div class="single-footer-widget">
+                        <h6>About Us</h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Newsletter</h6>
+                        <p>Stay update with our latest</p>
+                        <div class="" id="mc_embed_signup">
+                            <form target="_blank" novalidate="true"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Enter Email"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                                    required="" type="email">
+                                <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right"
+                                        aria-hidden="true"></i></button>
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                        type="text">
+                                </div>
+                                <div class="info pt-20"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- section products ends -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+
+    <!-- js file link -->
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

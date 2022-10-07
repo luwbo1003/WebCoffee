@@ -36,7 +36,7 @@ function ready() {
    }
    /* Add Card */
    var addCard = document.getElementsByClassName("shop-card");
-   for (var i = 0; i < addCard; i++) {
+   for (var i = 0; i < addCard.length; i++) {
       var button = addCard[i];
       button.addEventListener("click", addCardClick);
    }
@@ -60,23 +60,44 @@ function quantityChange(event) {
 function addCardClick(event) {
    var buttonclick = event.target;
    var shopProduct = buttonclick.parentElement.parentElement.parentElement;
-   var title = shopProduct.getElementsByClassName("product-title")[0].innerText;
+   var title = shopProduct.getElementsByClassName("card-title")[0].innerText;
    var price = shopProduct.getElementsByClassName("price")[0].innerText;
-   var productImg = shopProduct.getElementsByClassName("img-fluid")[0].src;
-   console.log(title);
-   /* addProductToCard(title, price, productImg);
-   updateTotal(); */
+   var productImg = shopProduct.getElementsByClassName("card-img-top")[0].src;
+   addProductToCard(title, price, productImg);
+   updateTotal(); 
 }
 
 function addProductToCard(title, price, productImg) {
    var cardBox = document.createElement("div");
-   /* cardBox.classList.add("card-box"); */
+   cardBox.classList.add("card-box");
    var cardItems = document.getElementsByClassName("card-content")[0];
    var cardItemsName = cardItems.getElementsByClassName("card-title");
    for (var i = 0; i < cardItemsName.length; i++) {
-      alert("You have already add this item to card");
+      if(cardItemsName[i].innerText == title){
+         alert("You have already add this item to card");
+         return;
+      }
    }
+   var cardBoxContent = `
+                        <div class="col-md-3">
+                           <img src="${productImg}" class="img-fluid rounded-start" 
+                           alt="..." style="width: 72px;>
+                        </div>
+                        <div class="col-md-8">
+                           <div class="card-body" style="margin-left: 2px; margin-top: -10px;>
+                              <h4 class="card-title">${title}</h4>
+                              <h5 class="card-price">${price}</h5>
+                              <input type="number" value="1" class="card-quantity">
+                           </div>
+                        </div>
+                        <!-- Remove Card -->
+                        <i class="fa-solid fa-trash remove-card"></i> `;
+cardBox.innerHTML = cardBoxContent;
+cardItems.append(cardBox);
+cardBox.getElementsByClassName("remove-card")[0].addEventListener("click", removeCard);
+cardBox.getElementsByClassName("card-quantity")[0].addEventListener("change", quantityChange);
 }
+
 /* Update Total */
 function updateTotal() {
    var cardContent = document.getElementsByClassName("card-content")[0];
@@ -95,34 +116,3 @@ function updateTotal() {
       document.getElementsByClassName("total-price")[0].innerText = "$" + total;
    }
 }
-/* let navbar = document.querySelector('.header .navbar');
-document.querySelector('#nav-close').onclick = () =>{
-    navbar.classList.remove('active');
-}
-let searchForm = document.querySelector('.search-form');
-
-document.querySelector('#search-btn').onclick = () =>{
-searchForm.classList.add('active');
-}
-
-document.querySelector('#close-search').onclick = () =>{
-  searchForm.classList.remove('active');
-}
-
-window.onscroll = () =>{
- nav.classList.remove('active');
-
-if(window.scrollY > 0){
-   document.querySelector('.nav').classList.add('active');
-}else{
-   document.querySelector('.nav').classList.remove('active');
-    }
-};
-
-window.onload = () =>{
-if(window.scrollY > 0){
-   document.querySelector('.header').classList.add('active');
-}else{
-   document.querySelector('.header').classList.remove('active');
-    }
-}; */

@@ -42,13 +42,13 @@
                         <ul
                             class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
                             <li class="nav-item ps-2">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item ps-2">
                                 <a class="nav-link" href="#">About</a>
                             </li>
                             <li class="nav-item ps-2">
-                                <a class="nav-link" href="products.html">Product</a>
+                                <a class="nav-link" href="#">Product</a>
                             </li>
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
@@ -59,26 +59,12 @@
                                 </a>
                             </li>
                             <!-- Card -->
-                            <div id="card-shop" style="right:-360px;">
+                            <div id="card-shop">
                                 <h2 class="card-title1">Your Cart</h2>
                                 <!-- content -->
                                 <div class="card-content">
-                                    <div class="card mb-3" style="max-width: 350px;">
-                                        <div class="row g-0 card-box">
-                                            <div class="col-md-3">
-                                                <img src="images/Sb_EnerChoco.jpg" class="img-fluid rounded-start"
-                                                    alt="..." style="width: 72px;">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body" style="margin-left: 2px; margin-top: -10px;">
-                                                    <h4 class="card-title">Espresso</h4>
-                                                    <h5 class="card-price">$10.46</h5>
-                                                    <input type="number" value="1" class="card-quantity">
-                                                </div>
-                                            </div>
-                                            <!-- Remove Card -->
-                                            <i class="fa-solid fa-trash remove-card"></i>
-                                        </div>
+                                    <div class="card mb-3 product-box" style="max-width: 350px;">
+                                        
                                     </div>
                                 </div>
                                 <!-- Total -->
@@ -113,6 +99,19 @@
             </div>
         </section>
         <!-- home section ends -->
+
+        <!-- Search section starts -->
+        <div class="input-group">
+            <div class="form-outline">
+              <input id="search-focus" type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search"/>
+              <!-- <label class="form-label" for="form1">Search</label> -->
+            </div>
+            <button type="button" class="btn btn-primary" 
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <!-- Search section ends -->
 
         <!-- products section starts  -->
         <section class="main">

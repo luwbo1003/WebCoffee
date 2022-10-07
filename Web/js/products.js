@@ -1,3 +1,32 @@
+/* Search bar */
+const searchFocus = document.getElementById('search-focus');
+const keys = [
+  { keyCode: 'AltLeft', isTriggered: false },
+  { keyCode: 'ControlLeft', isTriggered: false },
+];
+
+window.addEventListener('keydown', (e) => {
+  keys.forEach((obj) => {
+    if (obj.keyCode === e.code) {
+      obj.isTriggered = true;
+    }
+  });
+
+  const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
+
+  if (shortcutTriggered) {
+    searchFocus.focus();
+  }
+});
+
+window.addEventListener('keyup', (e) => {
+  keys.forEach((obj) => {
+    if (obj.keyCode === e.code) {
+      obj.isTriggered = false;
+    }
+  });
+});
+
 /* Card-shop */
 var cardIcon = document.querySelector('.shop-btn');
 var card = document.getElementById('card-shop');
@@ -69,7 +98,7 @@ function addCardClick(event) {
 
 function addProductToCard(title, price, productImg) {
    var cardBox = document.createElement("div");
-   cardBox.classList.add("card-box");
+   cardBox.classList.add("product-box");
    var cardItems = document.getElementsByClassName("card-content")[0];
    var cardItemsName = cardItems.getElementsByClassName("card-title");
    for (var i = 0; i < cardItemsName.length; i++) {
@@ -79,19 +108,21 @@ function addProductToCard(title, price, productImg) {
       }
    }
    var cardBoxContent = `
+                     <div class="row g-0 card-box">
                         <div class="col-md-3">
                            <img src="${productImg}" class="img-fluid rounded-start" 
-                           alt="..." style="width: 72px;>
+                           alt="..." style="width: 72px;">
                         </div>
                         <div class="col-md-8">
-                           <div class="card-body" style="margin-left: 2px; margin-top: -10px;>
+                           <div class="card-body" style="margin-left: 2px; margin-top: -10px;">
                               <h4 class="card-title">${title}</h4>
                               <h5 class="card-price">${price}</h5>
                               <input type="number" value="1" class="card-quantity">
                            </div>
                         </div>
                         <!-- Remove Card -->
-                        <i class="fa-solid fa-trash remove-card"></i> `;
+                        <i class="fa-solid fa-trash remove-card"></i> 
+                     </div> `;
 cardBox.innerHTML = cardBoxContent;
 cardItems.append(cardBox);
 cardBox.getElementsByClassName("remove-card")[0].addEventListener("click", removeCard);

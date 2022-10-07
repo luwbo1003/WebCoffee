@@ -1,17 +1,19 @@
- @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
 
 .main{
     font-family: 'Raleway', sans-serif;
-} 
+}  */
 #card-shop{
     position: fixed;
-    top: 0;
+    top: 0 ; right: 0;
     width: 360px; 
     min-height: 100vh;
     padding: 20px;
     background: #fff;
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
     transition: 0.3s;
+    z-index: 10000; 
+
 }
 
 .card-title1{
@@ -63,19 +65,14 @@
     font-size: 14px;
     margin-left: 5px;
 }
-.btn-primary{
+/* .btn-primary{
     margin-left: 95px;
     padding: 12px 20px;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-}
-#card-close{
-    position: absolute;
-    font-size: 20px;
-    top: 12px;
-    right: 10px;
-}
+} */
+
 
 .title h2{
     font: 70px/1.25 'Playfair Display',arial,serif;
@@ -106,7 +103,12 @@
     overflow: hidden;
     transition: opacity .6s cubic-bezier(0.28, 0, 0.18, 1) .25s,transform .6s cubic-bezier(0.28, 0, 0.18, 1) .25s;
 }
-
+#card-close{
+    position: absolute;
+    font-size: 20px;
+    top: 12px;
+    right: 10px;
+}
 .card .image .icons {
     width: 100%;
     position: absolute;

@@ -15,7 +15,8 @@
         </script>
     <!-- css  -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/details.css">
 </head>
 
 <body>
@@ -42,11 +43,16 @@
                             <li class="nav-item ps-2">
                                 <a class="nav-link" href="#">Product</a>
                             </li>
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                            </li>
+                            <li class="nav-item align-items-center ps-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-cart-shopping shop-btn"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item align-items-center ps-2">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +65,7 @@
         <section style="margin-top: 100px;">
             <div class="container mb-5">
                 <div class="row d-flex flex-row">
-                    <div class="col-md-5 px-5 mt-4">
+                    <div class="col-md-5 px-0 px-lg-5 mt-5">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -85,7 +91,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 pt-3">
+                    <div class="col-md-6 ">
                         <h6 class="text-uppercase text-secondary">Starbuck</h6>
                         <div><a id="bylineInfo" class="a-link-normal" href="#">Visit the Tzus'Coffee </a></div>
 
@@ -95,24 +101,21 @@
 
                         <div class="gap-5 d-flex flex-row align-middle align-self-center ">
                             <p class="align-self-center">Quantity:</p>
-                            <div class="d-inline-block product-quantity border">
-                                <input class="form-control" type="number" value="1" min="0">
+                            <div class="d-inline-block product-quantity" >
+                                <input class="form-control" type="number" value="1" min="0" style="width: 130px">
                             </div>
                         </div>
 
-                        <div class="d-flex mt-1 fs-6">
-                            <button class="btn btn-primary my-5 w-75">
+                        <div class=" fs-6 my-5">
+                            <button class="btn btn-primary" id="btn_addtocart">
                                 <i class="bi bi-cart-plus-fill"></i>
                                 Add to Cart
                             </button>
-
-                        </div>
-
-                        <div class="d-flex mt-1 fs-6">
-                            <button class="btn btn-primary my-5 w-75">
+                            <button class="btn btn-primary ms-5">
                                 <i class="bi bi-cart-plus-fill"></i>
                                 Buy Now
                             </button>
+
                         </div>
 
                         <div>
@@ -196,11 +199,94 @@
             </div>
         </section>
         <!-- Product Detail End -->
+
+        <!-- feature section start -->
+        <section class="container py-5 product_slide">
+            <h2 class="text-center py-4"> YOU MAY ALSO ENJOY</h2>
+            <div class="row gap-3 justify-content-center">
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                    <img src="images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                    <img src="images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                    <img src="images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                    <img src="images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- footer section start -->
+        <footer class="footer section-gap"
+            style="background: url(./images/footer-bg.jpg) center; background-size: cover;">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div>
+                            <h5 class="mb-4">About Us</h5>
+                            <p class="fs-6">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5  col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h5 class="mb-4">Newsletter</h5>
+                            <p class="fs-6">Stay update with our latest</p>
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Enter email"
+                                        aria-label="Enter email" aria-describedby="">
+                                    <button class="btn btn-primary" type="button" id="button-addon2"><i
+                                            class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div>
+                            <h5 class="mb-4">Follow Us</h5>
+                            <p class="fs-6">Let us be social</p>
+                            <div class="footer-social d-flex align-items-center">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
 
     <!-- Script only -->
-    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: .2s linear;
+}
+
+/* landing page */
+.home .box {
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 2rem 9%;
+}
+
+#btn_buy:hover {
+  color: white !important;
+}
+
+.category .img-fluid {
+  height: 200px;
+  width: 200px;
+}
+
+/* footer */
+.footer {
+  color: #fff;
+  padding-top: 220px;
+  background-size: cover
+  ;
+}
+.footer-social a {
+  padding-right: 25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.footer-social a:hover i {
+  color: #b68834;
+}
+
+.footer-social i {
+  color: #cccccc;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.btn_arrow i{
+  color: #fff;
+}
+.section-gap {
+  padding: 120px 0;
+}
+
+/*  */

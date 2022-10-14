@@ -104,26 +104,39 @@
         <!-- home section ends -->
 
         <!-- Search section starts -->
-        <div class="container-wrapper">
-            <form action="search-box.php" method="get">
-                <div class="input-group">
-                    <div class="form-outline">
-                        <input id="search-focus" type="search" name="search" value="" class="form-control"
-                            placeholder="Search products name..." aria-label="Search" />
-                    </div>
-                    <button type="button" class="btn btn-primary btn-search"
-                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
-                        <i class="fas fa-search"></i>
-                    </button>
+        <section class="sort mt-5">
+            <div class="row" style="align-items: center;">
+                <div class="col-lg-6">
+                    <form class="p-5 mx-5" action="search-box.php" method="get">
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input id="search-focus" type="search" name="search" value="" class="form-control"
+                                    placeholder="Search products name..." aria-label="Search" />
+                            </div>
+                            <button type="button" class="btn btn-primary btn-search"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-            <!-- <div class="Buttons">
-                <a class="btn btn-primary" href="#" role="button">All</a>
-                <a class="btn btn-primary" href="#" role="button">Our Coffee</a>
-                <a class="btn btn-primary" href="#" role="button">Cold Brew</a>
+                <div class="col-6 ">
+                    <div class="form-group w-25 mx-xxl-auto" style="margin-right: 40px">
+                        <!-- <label for="exampleSelect1" class="form-label mt-4">Example select</label> -->
+                        <select class="form-select" id="exampleSelect1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                </div>
 
-            </div> -->
-        </div>
+            </div>
+
+        </section>
+
         <!-- Search section ends -->
 
         <!-- products section starts  -->

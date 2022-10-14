@@ -27,6 +27,23 @@ window.addEventListener('keyup', (e) => {
   });
 });
 
+let products = {
+   data:[
+   {
+      productName:"FrapOatChoco",
+      category: "Our Coffee",
+      price: "10.46",
+      image: "images/Sb_FrapOatChoco.jpg"
+   },
+   {
+      productName:"FrapVani",
+      category: "Our Coffee",
+      price: "10.46",
+      image: "images/Sb_FrapVani.jpg"
+      
+   },
+]
+}
 /* Card-shop */
 var cardIcon = document.querySelector('.shop-btn');
 var card = document.getElementById('card-shop');
@@ -69,7 +86,20 @@ function ready() {
       var button = addCard[i];
       button.addEventListener("click", addCardClick);
    }
+   /* Buy Button */
+   document.getElementsByClassName("btn-buy")[0].addEventListener("click", BuyButtonClicked);
+
 }
+/* Buy Button */
+function BuyButtonClicked(){
+   alert("Your Order is placed");
+   var cardContent = document.getElementsByClassName("card-content")[0];
+   while(cardContent.hasChildNodes()){
+      cardContent.removeChild(cardContent.firstChild);
+   }
+   updateTotal();
+}
+
 /* Remove items*/
 function removeCard(event) {
    var buttonclick = event.target;
@@ -100,7 +130,7 @@ function addProductToCard(title, price, productImg) {
    var cardBox = document.createElement("div");
    cardBox.classList.add("product-box");
    var cardItems = document.getElementsByClassName("card-content")[0];
-   var cardItemsName = cardItems.getElementsByClassName("card-title");
+   var cardItemsName = cardItems.getElementsByClassName("product-title");
    for (var i = 0; i < cardItemsName.length; i++) {
       if(cardItemsName[i].innerText == title){
          alert("You have already add this item to card");
@@ -115,8 +145,8 @@ function addProductToCard(title, price, productImg) {
                         </div>
                         <div class="col-md-8">
                            <div class="card-body" style="margin-left: 2px; margin-top: -10px;">
-                              <h4 class="card-title">${title}</h4>
-                              <h5 class="card-price">${price}</h5>
+                              <h4 class="product-title">${title}</h4>
+                              <h6 class="card-price">${price}</h6>
                               <input type="number" value="1" class="card-quantity">
                            </div>
                         </div>
@@ -142,8 +172,10 @@ function updateTotal() {
       var price = parseFloat(priceElement.innerText.replace("$", ""));
       var quantity = quantityElement.value;
       total = total + (price * quantity);
+   }
+      /* Math.Round */
       total = Math.round(total * 100) / 100;
 
       document.getElementsByClassName("total-price")[0].innerText = "$" + total;
-   }
+   
 }

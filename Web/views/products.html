@@ -62,7 +62,7 @@
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                             </li>
-                            <!-- Card -->
+                            <!-- Cart -->
                             <div id="card-shop">
                                 <h2 class="card-title1">Your Cart</h2>
                                 <!-- content -->
@@ -104,10 +104,27 @@
         <!-- home section ends -->
 
         <!-- Search section starts -->
-        <section class="sort mt-5">
+        <!-- <div class="container-wrapper">
+            <form action="search-box.php" method="get">
+                <div class="input-group">
+                    <div class="form-outline">
+                        <input id="search-focus" type="search" name="search" value="" class="form-control"
+                            placeholder="Search products name..." aria-label="Search" />
+                    </div>
+                    <button type="button" class="btn btn-primary btn-search"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+
+        </div> -->
+        <!-- Search section ends -->
+        <!-- <section class="sort" style="margin: 100px 100px 80px 250px;">
             <div class="row" style="align-items: center;">
-                <div class="col-lg-6">
-                    <form class="p-5 mx-5" action="search-box.php" method="get">
+                <div class="col-8">
+                    <form action="search-box.php" method="get">
                         <div class="input-group">
                             <div class="form-outline">
                                 <input id="search-focus" type="search" name="search" value="" class="form-control"
@@ -120,34 +137,54 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-6 ">
-                    <div class="form-group w-25 mx-xxl-auto" style="margin-right: 40px">
-                        <!-- <label for="exampleSelect1" class="form-label mt-4">Example select</label> -->
-                        <select class="form-select" id="exampleSelect1">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                <div class="col-4">
+                    <form action="Sort-box.php" method="get">
+                        <select class="form-select" aria-label="Default select example" style="width: min-content;">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
-                      </div>
+                    </form>
                 </div>
-
             </div>
-
-        </section>
-
-        <!-- Search section ends -->
-
+        </section> -->
         <!-- products section starts  -->
         <section class="main">
             <div class="container">
+                <div class="row justify-content-start" style="align-items: center; margin: 0px 0px 60px 0px;">
+                    <div class="col-4">
+                        <form action="search-box.php" method="get">
+                            <div class="input-group">
+                                <div class="form-outline">
+                                    <input id="search-focus" type="search" name="search" value="" class="form-control"
+                                        placeholder="Search products name..." aria-label="Search" />
+                                </div>
+                                <button type="button" class="btn btn-primary btn-search"
+                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <form action="Sort-box.php" method="get">
+                            <select class="form-select" aria-label="Default select example" style="width: min-content; border: none;">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
                 <div class="inner">
                     <div class="slide">
                         <div class="justify-content-center">
                             <div class="text-fade title text-center coffee" style="padding: 0 135px;">
                                 <h2>Our Coffee</h2>
-                                <span style="font-weight: 250;">We have carefully selected great tasting coffees from
+                                <span style="font-weight: 250;">We have carefully selected great tasting coffees
+                                    from
                                     around
                                     the
                                     world.</span>

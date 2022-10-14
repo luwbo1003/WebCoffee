@@ -1,8 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
 
-.main{
-    font-family: 'Raleway', sans-serif;
-}  */
 #card-shop{
     position: fixed;
     top: 0 ; right: -100%;
@@ -15,7 +11,6 @@
     z-index: 10000; 
 
 }
-
 .card-title1{
     text-align: center;
     font-size: 32px;
@@ -65,19 +60,9 @@
     font-size: 14px;
     margin-left: 5px;
 }
-/* .btn-primary{
-    margin-left: 95px;
-    padding: 12px 20px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-} */
-.container-wrapper{
-    margin-left: 5%;
-}
 #search-focus{
     font-size: 600;
-    width: 460px;
+    width: 300px;
     background-color: transparent;
     border-bottom: 2px solid #0f0f0f;
     border-top: none;
@@ -184,7 +169,7 @@
 }
 
 /* Responsive */
-@media(max-width: 1080px){
+/* @media(max-width: 1080px){
     #nav-id{
         padding: 15px;
     }
@@ -218,3 +203,15 @@
         width: 150px;
     }
 }
+@media (min-width: 1263px) and (max-width: 1439px){
+.container-wrapper, .content_container {
+    width: 1000px;
+}
+.container-wrapper, .content_container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.container-wrapper {
+    margin: 0 auto;
+}
+} */

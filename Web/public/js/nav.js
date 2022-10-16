@@ -1,3 +1,4 @@
+ 
  // navbar
  var nav = document.getElementById("nav-id");
  window.addEventListener("scroll", function () {
@@ -9,6 +10,7 @@
          nav.classList.add("bg-transparent");
      }
  });
+
  window.addEventListener("resize", function () {
      if (window.innerWidth < 992) {
          nav.classList.add("bg-coffee", "shadow");

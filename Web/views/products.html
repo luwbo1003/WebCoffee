@@ -29,10 +29,10 @@
     <div class="container-fluid p-0">
         <!-- header section starts -->
         <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top bg-coffee py-3" id="nav-id">
+            <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3" id="nav-id">
                 <div class="container">
                     <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer"
-                            style="font-size: 25px;"></i>
+                            style="font-size: 30px;"></i>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,35 +53,14 @@
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
                             </li>
-
-                            <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
-                                <a class="nav-link" type="button">
-                                    <i class="fa-solid fa-cart-shopping "></i>
+                            <li class="nav-item align-items-center ps-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-cart-shopping shop-btn"></i>
                                 </a>
                             </li>
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                             </li>
-                            <!-- Cart -->
-                            <div id="card-shop">
-                                <h2 class="card-title1">Your Cart</h2>
-                                <!-- content -->
-                                <div class="card-content" style="margin-top: 30px;">
-                                    <!-- <div class="card mb-3 product-box" style="max-width: 350px;">
-                                    </div> -->
-                                </div>
-                                <!-- Total -->
-                                <div class="total">
-                                    <div class="total-title">Total</div>
-                                    <div class="total-price">$0</div>
-                                </div>
-                                <!-- Buy button -->
-                                <button type="button" class="btn btn-primary btn-buy">Buy Now</button>
-                                <!-- Close -->
-                                <span onclick="closeCart()" type="button">
-                                    <i id="card-close" class="fa-solid fa-xmark fs-4"></i>
-                                </span>
-                            </div>
                         </ul>
                     </div>
                 </div>
@@ -152,8 +131,8 @@
         <!-- products section starts  -->
         <section class="main">
             <div class="container">
-                <div class="row justify-content-start" style="align-items: center; margin: 0px 0px 60px 0px;">
-                    <div class="col-4">
+                <div class="row" style="align-items: center; margin: 0px 0px 60px 0px;">
+                    <div class="col-9 ">
                         <form action="search-box.php" method="get">
                             <div class="input-group">
                                 <div class="form-outline">
@@ -167,7 +146,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         <form action="Sort-box.php" method="get">
                             <select class="form-select" aria-label="Default select example" style="width: min-content; border: none;">
                                 <option selected>Open this select menu</option>

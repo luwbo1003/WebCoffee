@@ -1,0 +1,27 @@
+
+h1{
+    display: block;
+}
+
+.p_td{
+    padding: 24px 0 24px 30px !important;
+}
+
+.three-col{
+    margin-top: 170px; 
+    margin-bottom: 100px; 
+    /* margin-left: 300px; 
+    margin-right: 170px;
+    width: 70%;
+    height: 70%; */
+}
+.cart-table {
+    padding: 0 35px 0 35px;
+}
+
+.product-summary {
+    background-color: #f7f7f7;
+    padding: 50px;
+    color: black;
+}
+

@@ -24,4 +24,10 @@ h1{
     padding: 50px;
     color: black;
 }
+#btn_empty{
+    background: #ffff;
+}
+#btn_empty:hover{
+    color: black;
+}
 

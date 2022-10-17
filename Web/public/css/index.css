@@ -1,6 +1,7 @@
 * {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  -webkit-transition: .2s linear;
   transition: .2s linear;
 }
 

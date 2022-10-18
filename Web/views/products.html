@@ -31,7 +31,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3" id="nav-id">
                 <div class="container">
-                    <a class="navbar-brand fw-bold ps-2" href="#"> 
+                    <a class="navbar-brand fw-bold ps-2" href="#">
                         <img src="../public/images/Header_Logo.png" alt="" style="width: 38px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -108,8 +108,8 @@
         <!-- products section starts  -->
         <section class="main">
             <div class="container">
-                <div class="row" style="align-items: center; margin: 0px 0px 60px 0px;">
-                    <div class="col-9 ">
+                <div class="row g-3 col-products">
+                    <div class="col-12 ">
                         <form action="search-box.php" method="get">
                             <div class="input-group">
                                 <div class="form-outline">
@@ -123,127 +123,239 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                         <form action="Sort-box.php" method="get">
                             <select class="form-select" aria-label="Default select example" style="width: min-content; border: none;">
                                 <option selected>All</option>
                                 <option value="1">Our Coffee</option>
-                                <option value="2">Bevarages</option>
+                                <option value="2">Drinks</option>
                                 <option value="3">Merchandise</option>
                             </select>
                         </form>
+                    </div> -->
+                    <div class="col-md-4">
+                        <div class="col-xs-12 section--collection-sidebar js-fade-right js-sticky js-animate"
+                            data-offset-desktop="200" style="top: 200px; position: sticky;">
+                            <a href="#our-coffee" data-position="our-coffee" class="collection-nav-item">
+                                <h2 class="collection-sidebar__heading">Our Coffee</h2>
+                            </a>
+                            <a href="#drinks" data-position="drinks" class="collection-nav-item ">
+                                <h2 class="collection-sidebar__heading">Drinks</h2>
+                            </a>
+                            <a href="#merchandise" data-position="merchandise" class="collection-nav-item ">
+                                <h2 class="collection-sidebar__heading">Merchandise</h2>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="inner">
-                    <div class="slide">
-                        <div class="justify-content-center">
-                            <div class="text-fade title text-center coffee" style="padding: 0 135px;">
-                                <h2>Our Coffee</h2>
-                                <span style="font-weight: 250;">We have carefully selected great tasting coffees
-                                    from
-                                    around
-                                    the
-                                    world.</span>
+                    <div class="col-md-8">
+                        <!-- tinybind: if current.collection.products -->
+                        <div class="collection-wrap unfiltered-products">
+                            <div id="our-coffee" class="collection-group-marker collection-wrap ">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
+                                    <a href="" class="">
+                                        <div class="row justify-content-center">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                                style="border-radius: 17px;width: 18rem;">
+                                                <div class="image">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
+                                                    <div class="icons">
+                                                        <a class="fas fa-shopping-cart shop-card"></a>
+                                                        <a href="#" class="fas fa-eye"></a>
+                                                        <a href="#" class="fas fa-share"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="price">$10.46</p>
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="drinks" class="collection-group-marker collection-wrap ">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
+                                    <a href="" class="">
+                                        <div class="row justify-content-center">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                                style="border-radius: 17px;width: 18rem;">
+                                                <div class="image">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
+                                                    <div class="icons">
+                                                        <a class="fas fa-shopping-cart shop-card"></a>
+                                                        <a href="#" class="fas fa-eye"></a>
+                                                        <a href="#" class="fas fa-share"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="price">$10.46</p>
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="merchandise" class="collection-group-marker collection-wrap ">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
+                                    <a href="" class="">
+                                        <div class="row justify-content-center">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                                style="border-radius: 17px;width: 18rem;">
+                                                <div class="image">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
+                                                    <div class="icons">
+                                                        <a class="fas fa-shopping-cart shop-card"></a>
+                                                        <a href="#" class="fas fa-eye"></a>
+                                                        <a href="#" class="fas fa-share"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="price">$10.46</p>
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <br>
-                        <div class="card espresso_list">
-                            <div class="row justify-content-center">
-                                <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                    style="border-radius: 17px;width: 18rem;">
-                                    <div class="image">
-                                        <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
-                                        <div class="icons">
-                                            <a class="fas fa-shopping-cart shop-card"></a>
-                                            <a href="#" class="fas fa-eye"></a>
-                                            <a href="#" class="fas fa-share"></a>
+                    </div>
+                    <!-- <div class="inner">
+                        <div class="slide">
+                            <div class="justify-content-center">
+                                <div class="text-fade title text-center coffee" style="padding: 0 135px;">
+                                    <h2>Our Coffee</h2>
+                                    <span style="font-weight: 250;">We have carefully selected great tasting coffees
+                                        from
+                                        around
+                                        the
+                                        world.</span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="card espresso_list">
+                                <div class="row justify-content-center">
+                                    <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                        style="border-radius: 17px;width: 18rem;">
+                                        <div class="image">
+                                            <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                                            <div class="icons">
+                                                <a class="fas fa-shopping-cart shop-card"></a>
+                                                <a href="#" class="fas fa-eye"></a>
+                                                <a href="#" class="fas fa-share"></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="price">$10.46</p>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="price">$10.46</p>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="slide pt-5">
-                        <div class="justify-content-center">
-                            <div class="text-fade title text-center coffee">
-                                <h2>Drinks</h2>
-                                <span style="font-weight: 250;">How is taste?</span>
+                        <div class="slide pt-5">
+                            <div class="justify-content-center">
+                                <div class="text-fade title text-center coffee">
+                                    <h2>Drinks</h2>
+                                    <span style="font-weight: 250;">How is taste?</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card espresso_list">
-                            <div class="row justify-content-center">
-                                <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                    style="border-radius: 17px;width: 18rem;">
-                                    <div class="image">
-                                        <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
-                                        <div class="icons">
-                                            <a class="fas fa-shopping-cart shop-card"></a>
-                                            <a href="#" class="fas fa-eye"></a>
-                                            <a href="#" class="fas fa-share"></a>
+                            <div class="card espresso_list">
+                                <div class="row justify-content-center">
+                                    <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                        style="border-radius: 17px;width: 18rem;">
+                                        <div class="image">
+                                            <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top"
+                                                alt="...">
+                                            <div class="icons">
+                                                <a class="fas fa-shopping-cart shop-card"></a>
+                                                <a href="#" class="fas fa-eye"></a>
+                                                <a href="#" class="fas fa-share"></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="price">$10.46</p>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="price">$10.46</p>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <br>
                         </div>
-                        <br>
-                    </div>
-                    <div class="slide pt-5">
-                        <div class="justify-content-center">
-                            <div class="text-fade title text-center coffee">
-                                <h2>Merchandise</h2>
-                                <span style="font-weight: 250;">For every perfect beverage, there is a perfect cup</span>
+                        <div class="slide pt-5">
+                            <div class="justify-content-center">
+                                <div class="text-fade title text-center coffee">
+                                    <h2>Merchandise</h2>
+                                    <span style="font-weight: 250;">For every perfect beverage, there is a perfect
+                                        cup</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card espresso_list">
-                            <div class="row justify-content-center">
-                                <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                    style="border-radius: 17px;width: 18rem;">
-                                    <div class="image">
-                                        <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
-                                        <div class="icons">
-                                            <a class="fas fa-shopping-cart shop-card"></a>
-                                            <a href="#" class="fas fa-eye"></a>
-                                            <a href="#" class="fas fa-share"></a>
+                            <div class="card espresso_list">
+                                <div class="row justify-content-center">
+                                    <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
+                                        style="border-radius: 17px;width: 18rem;">
+                                        <div class="image">
+                                            <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top"
+                                                alt="...">
+                                            <div class="icons">
+                                                <a class="fas fa-shopping-cart shop-card"></a>
+                                                <a href="#" class="fas fa-eye"></a>
+                                                <a href="#" class="fas fa-share"></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="price">$10.46</p>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="price">$10.46</p>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <br>
                         </div>
-                        <br>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

@@ -1,4 +1,23 @@
 
+.collection-nav-item .collection-sidebar__heading {
+    color: #d3ad7f;
+}
+.section--collection-sidebar a{
+    text-decoration: none;
+}
+.section--collection-sidebar .collection-sidebar__heading {
+    cursor: pointer;
+    padding: 1rem 0;
+    padding-left: 0;
+}
+h2, .h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    font-weight: 400;
+} 
 #card-shop{
     position: fixed;
     top: 0 ; right: -100%;
@@ -11,7 +30,7 @@
     z-index: 10000; 
 
 }
-.card-title1{
+/* .card-title1{
     text-align: center;
     font-size: 32px;
     font-weight: 600;
@@ -20,15 +39,24 @@
 .card-title{
     font-size: 20px;
     margin-top: 0;
-}
+} */
 .mb-3{
     margin-top: 30px;
     border: none;
 }
-.card-box .img{
+.card-hover .img{
     width: 72px;
+    display: block;
+    transition: all .2s ease;
 }
-.card-box .card-body{
+.card-hover .img:hover{
+    transform: scale(1.2);
+}
+.card-hover .image{
+    display: block;
+    overflow: hidden;
+}
+.card-hover .card-body{
     margin-left: 2px; 
     margin-top: -10px;
 }

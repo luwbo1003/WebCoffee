@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/card.css">
 
     <title>Coffee</title>
 </head>
@@ -21,52 +22,52 @@
     <div class="container-fluid p-0">
         <!-- header section starts  -->
         <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3" id="nav-id">
+            <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3 " id="nav-id">
                 <div class="container">
-                    <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer"
-                            style="font-size: 30px;"></i>
+                    <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer" style="font-size: 28px;"></i>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav"  >
                         <ul
-                            class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Home</a>
+                            class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+                            <li class="nav-item ps-2 fs-5" >
+                                <a class="nav-link " href="#">Home</a>
                             </li>
-                            <li class="nav-item ps-2">
+                            <li class="nav-item ps-2 fs-5">
                                 <a class="nav-link" href="#">About</a>
                             </li>
-                            <li class="nav-item ps-2">
+                            <li class="nav-item ps-2 fs-5">
                                 <a class="nav-link" href="#">Product</a>
                             </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                                    <i class="fas fa-search"></i></a>
+                            <li class="nav-item align-items-center ps-2 fs-5">
+                                <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
                             </li>
-                            <li class="nav-item align-items-center ps-2">
+                            <li class="nav-item align-items-center ps-2 fs-5">
                                 <a class="nav-link" href="#">
                                     <i class="fa-solid fa-cart-shopping shop-btn"></i>
                                 </a>
                             </li>
-                            <li class="nav-item align-items-center ps-2">
+                            <li class="nav-item align-items-center ps-2 fs-5">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            
-            <div class="offcanvas offcanvas-top container" style="height: 500px;" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <button type="button" class="btn-close mt-3 ms-auto fs-5" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            <div class="offcanvas offcanvas-top container" style="height: 500px;" tabindex="-1" id="offcanvasTop"
+                aria-labelledby="offcanvasTopLabel">
+                <button type="button" class="btn-close mt-3 ms-auto fs-5" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
                 <div class="container" style="padding: 100px;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasTopLabel">What are you looking for?</h5>
                     </div>
                     <div class="offcanvas-body">
-                        <form class="d-flex" action="<?= URLROOT ?>/Home/search" method="POST">
+                        <form class="d-flex" action="" method="POST">
                             <input class="form-control me-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
                         </form>
@@ -77,7 +78,7 @@
         <!-- home section starts  -->
         <section class="home">
             <div class="box justify-content-start d-flex align-items-center"
-                style="background: url(../public/images/cf-bg1.jpg) no-repeat;">
+                style="background: url(public/images/cf-bg1.jpg) no-repeat;">
                 <div class="content">
                     <span class="text-white fs-2">Star Your Day</span>
                     <h1 class="text-uppercase pt-2" style="color: #c8a27a;"> with a black coffee</h1>
@@ -90,31 +91,31 @@
         <!-- category section starts  -->
         <section class="container py-5 category">
 
-            <h3 class="fw-light text-center pb-4">Idea!</h3>
+            <h3 class="fw-light text-center pb-4 fw-bold">Idea!</h3>
 
             <div class="row text-center">
 
-                <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="../public/images/category-1.jpg" class="img-fluid" alt="">
-                    <h5 class="pt-3 fw-light" style="color: #219150;">Coffee Bean</h5>
+                <div class="col-6 col-lg-3 pt-4 pt-lg-0" >
+                    <img src="public/images/category-1.jpg" class="img-fluid" alt="">
+                    <h5 class="pt-3 fw-light" style="color: #219150;">Our coffee</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
 
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="../public/images/category-2.jpg" class="img-fluid" alt="">
+                    <img src="public/images/category-2.jpg" class="img-fluid" alt="" >
                     <h5 class="pt-3 fw-light" style="color: #219150;">Coffee Bottle</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
 
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="../public/images/category-3.jpg" class="img-fluid" alt="">
+                    <img src="public/images/category-3.jpg" class="img-fluid" alt="" >
                     <h5 class="pt-3 fw-light" style="color: #219150;">Tea</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
 
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="../public/images/category-4.jpg" class="img-fluid" alt="">
-                    <h5 class="pt-3 fw-light" style="color: #219150;">Cold Brew</h5>
+                    <img src="public/images/category-4.jpg" class="img-fluid" alt="" >
+                    <h5 class="pt-3 fw-light" style="color: #219150;">Merchandise</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
             </div>
@@ -124,11 +125,11 @@
         <section style="background-color: #eee;">
 
             <div class="container py-5 ">
-                <h3 class="fw-light text-center pb-4">About!</h3>
+                <h3 class="fw-light text-center pb-4 fw-bold">About!</h3>
 
                 <div class="row">
                     <div class="col-12 col-lg-6 pb-5">
-                        <img src="../public/images/cf.jpg" class="w-100" style="box-shadow: 2rem 2rem #d6d6d6;" alt="">
+                        <img src="public/images/cf.jpg" class="w-100" style="box-shadow: 2rem 2rem #d6d6d6;" alt="">
                     </div>
                     <div
                         class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start justify-content-center ps-0 ps-lg-5">
@@ -143,47 +144,103 @@
         <!-- feature section start -->
         <section class="container py-5 product_slide">
             <div class="row gap-3 justify-content-center">
-                <h3 class="fw-light text-center pb-4">Feature Products</h3>
+                <h3 class="fw-light text-center pb-4 fw-bold">Feature Products!</h3>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+                    <div class="image">
+                        <img src="public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
+                        <div class="icons w-100">
+                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="price">$10.46</p>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+                    <div class="image">
+                        <img src="public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
+                        <div class="icons w-100">
+                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="price">$10.46</p>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+                    <div class="image">
+                        <img src="public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
+                        <div class="icons w-100">
+                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="price">$10.46</p>
+                    </div>
+                </div>
+                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+                    <div class="image">
+                        <img src="public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
+                        <div class="icons w-100">
+                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="price">$10.46</p>
+                    </div>
+                </div>
 
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
-                    <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- </div> -->
+                <!-- <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                        <div class="image">
+                            <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                            <div class="icons">
+                                <a class="fas fa-shopping-cart shop-card"></a>
+                                <a href="#" class="fas fa-eye"></a>
+                                <a href="#" class="fas fa-share"></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
-                    <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                        <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
-                    <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                        <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
-                    <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                    <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
+                        <img src="../public/images/Sb_EnerChoco.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div> -->
             </div>
         </section>
 
 
         <!-- footer section start -->
         <footer class="footer section-gap"
-            style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
+            style="background: url(public/images/footer-bg.jpg) center; background-size: cover;">
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-lg-5 col-md-6 col-sm-6">
@@ -228,9 +285,10 @@
 
 
 </body>
-    <!-- script only  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-        </script>
-    <script src="../public/js/nav.js"></script>
+<!-- script only  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+<script src="public/js/nav.js"></script>
+
 </html>

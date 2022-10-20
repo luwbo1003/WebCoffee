@@ -8,8 +8,8 @@ h1{
 }
 
 .three-col{
-    margin-top: 170px; 
-    margin-bottom: 100px; 
+    margin-top: 95px; 
+    margin-bottom: 70px; 
     /* margin-left: 300px; 
     margin-right: 170px;
     width: 70%;
@@ -20,7 +20,8 @@ h1{
 }
 
 .product-summary {
-    background-color: #f7f7f7;
+    border-radius: 30px;
+    background-color:#f5e4d2;
     padding: 50px;
     color: black;
 }

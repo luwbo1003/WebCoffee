@@ -20,6 +20,7 @@
 .category .img-fluid {
   height: 200px;
   width: 200px;
+  border-radius: 100%;
 }
 
 /* footer */
@@ -55,4 +56,7 @@
   padding: 120px 0;
 }
 
-/*  */
+
+
+
+

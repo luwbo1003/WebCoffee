@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -24,7 +25,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3 " id="nav-id">
                 <div class="container">
-                    <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer" style="font-size: 28px;"></i>
+                    <a class="navbar-brand fw-bold ps-2" href="#"> <span class="material-symbols-outlined"> local_cafe</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,22 +43,48 @@
                             <li class="nav-item ps-2 fs-5">
                                 <a class="nav-link" href="#">Product</a>
                             </li>
-                            <li class="nav-item align-items-center ps-2 fs-5">
-                                <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2 fs-5">
-                                <a class="nav-link" href="#">
-                                    <i class="fa-solid fa-cart-shopping shop-btn"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2 fs-5">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
-                            </li>
                         </ul>
+                        <div class="nav-item">
+                            <ul class="navbar-nav gap-2 flex-row">
+                                <li>
+                                    <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                        <span class="material-symbols-outlined">
+                                            search
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="cart-icon">
+                                    <a id="btn-shop-cart" class="nav-link" href="">
+                                        <span class="material-symbols-outlined">
+                                            shopping_cart
+                                            <span class="badge rounded-pill bg-dark"></span>
+                                    </a>
+                                </li>
+                                    <!-- <li class="dropdown">
+                                        <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                            <span class="material-symbols-outlined">
+                                                account_circle
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center pt-2" data-popper-placement="bottom-start" style="height: 95px; width: 150px;">
+                                            <a class="dropdown-item" type="button" href="">Profile</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" type="button" href="">Log out</a>
+                                        </div>
+                                    </li> -->
+                                    <li>
+                                        <a class="nav-link" href="">
+                                            <span class="material-symbols-outlined">
+                                                account_circle
+                                            </span>
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
-
+            <!-- search -->
             <div class="offcanvas offcanvas-top container" style="height: 500px;" tabindex="-1" id="offcanvasTop"
                 aria-labelledby="offcanvasTopLabel">
                 <button type="button" class="btn-close mt-3 ms-auto fs-5" data-bs-dismiss="offcanvas"
@@ -75,6 +102,7 @@
                 </div>
             </div>
         </header>
+
         <!-- home section starts  -->
         <section class="home">
             <div class="box justify-content-start d-flex align-items-center"
@@ -219,8 +247,9 @@
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Enter email"
                                         aria-label="Enter email" aria-describedby="">
-                                    <button class="btn btn-primary" type="button" id="button-addon2"><i
-                                            class="fa-solid fa-arrow-right"></i></button>
+                                    <button class="btn btn-primary" type="button" id="button-addon2"><span class="material-symbols-outlined">
+                                        arrow_forward
+                                        </span></button>
                                 </div>
                             </div>
                         </div>

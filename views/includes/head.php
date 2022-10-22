@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/card.css">
+    <link rel="stylesheet" href="<?= CSSFILE ?>/bootstrap.css">
+    <link rel="stylesheet" href="<?= CSSFILE ?>/style.css">
+    <link rel="stylesheet" href="<?= CSSFILE ?>/card.css">
 
     <title>Starbuck</title>
 </head>

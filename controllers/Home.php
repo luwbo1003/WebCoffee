@@ -3,13 +3,18 @@ class Home extends Controller
 {
     public function __construct()
     {
-        $this->ProductModel = $this->model('ProductModel');
+        // $this->ProductModel = $this->model('ProductModel');
     }
 
     public function index()
     {
         // goi method getproductlist
         $this->view('index',[]);
+    }
+    public function detail()
+    {
+        // goi method getproductlist
+        $this->view('detail',[]);
     }
 
    // view

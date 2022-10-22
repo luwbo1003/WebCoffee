@@ -3,9 +3,10 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.col-products{
-    border: #0f0f0f;
-    position: relative;
+.collection-group_bar{
+    background: none;
+    height: auto;
+    border-bottom: none;
 }
 .section-bar{
     position: relative;
@@ -13,13 +14,18 @@
     background: none;
     height: auto;
 }
-.collection-nav-item .collection-sidebar__heading {
-   /*  opacity: 1;
+.collection-nav-item .collection-sidebar__heading.active{
+    opacity: 1;
     visibility: visible;
-    position: relative; */
+}
+.collection-nav-item .collection-sidebar__heading {
+    position: relative; 
     top: auto;
     left: auto;
     border-bottom: 1px solid #A9A9A9;
+}
+.section--collection-sidebar .collection-nav-item{
+    display: block;
 }
 .section-bar:before {
     box-sizing: inherit;
@@ -35,9 +41,6 @@
 .section-bar, .section-bar:before, .section-bar:after {
     box-sizing: border-box;
     margin: initial;
-}
-.collection-bar{
-    border-bottom: #10221b;
 }
 .section--collection-sidebar a{
     text-decoration: none;
@@ -55,8 +58,14 @@ h2, .h2 {
     letter-spacing: 3px;
     font-weight: 400;
 } 
-.collection-group-marker{
-    margin-top: 20px;
+.collection-group-marker {
+    width: 100%;
+}
+.collection-group-marker+.collection-group-marker {
+    border-top: 1px solid var(--color-border);
+}
+.collection-product{
+    margin-bottom: 25px;
 }
 #card-shop{
     position: fixed;
@@ -70,7 +79,7 @@ h2, .h2 {
     z-index: 10000; 
 
 }
-/* .card-title1{
+.card-title1{
     text-align: center;
     font-size: 32px;
     font-weight: 600;
@@ -79,7 +88,7 @@ h2, .h2 {
 .card-title{
     font-size: 20px;
     margin-top: 0;
-} */
+} 
 .mb-3{
     margin-top: 30px;
     border: none;
@@ -129,7 +138,7 @@ h2, .h2 {
     margin-left: 5px;
 }
 #search-focus{
-    width: 600px;
+    width: 500px;
     background-color: transparent;
     border-bottom: 1px solid #A9A9A9;
     border-top: none;
@@ -150,21 +159,9 @@ h2, .h2 {
     text-align: center;
 }
 .title h2{
-    font: 70px/1.25 'Playfair Display',arial,serif;
+    font-size: 50px;
     padding: 0 0 20px;
     margin: 0;
-    margin-top: 50px;
-}
-.title span{
-    font-size: 25px;
-    color: #0f0f0f;
-    max-width: 280px;
-    font-family: 'Playfair Display',arial,serif;
-    margin: 0 auto;
-    line-height: 1.33;
-    padding: 0 0 30px;
-    margin-top: 10px;
-    margin-bottom: 40px;
 }
 .espresso_list{
     border: none;

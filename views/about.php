@@ -1,67 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Css only  -->
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <title>Starbork</title>
-</head>
+<?php
+require_once APPROOT . '/views/includes/head.php';
+?>
 
 <body>
     <div class="container-fluid p-0 ">
         <!--HEADER-->
-        <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top bg-coffee py-3" id="nav-id">
-                <div class="container">
-                    <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer"
-                            style="font-size: 25px;"></i>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul
-                            class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Product</a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#">
-                                    <i class="fa-solid fa-cart-shopping shop-btn"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php
+        require_once APPROOT . '/views/includes/nav_all.php';
+        ?>
 
         <!--WELCOME-->
         <section class="about mt-5 p-5">
@@ -77,13 +25,11 @@
                                 <img src="../public/images/2.jpg" class="d-block w-100">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -160,8 +106,7 @@
         </section>
 
         <!--FOOTER-->
-        <footer class="footer section-gap"
-            style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
+        <footer class="footer section-gap" style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-lg-5 col-md-6 col-sm-6">
@@ -179,10 +124,8 @@
                             <p class="fs-6">Stay update with our latest</p>
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Enter email"
-                                        aria-label="Enter email" aria-describedby="">
-                                    <button class="btn btn-primary btn_arrow" type="button" id="btn_arrow"><i
-                                            class="fa-solid fa-arrow-right"></i></button>
+                                    <input type="text" class="form-control" placeholder="Enter email" aria-label="Enter email" aria-describedby="">
+                                    <button class="btn btn-primary btn_arrow" type="button" id="btn_arrow"><i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>

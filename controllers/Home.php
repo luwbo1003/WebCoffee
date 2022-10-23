@@ -16,6 +16,16 @@ class Home extends Controller
         // goi method getproductlist
         $this->view('detail',[]);
     }
+    public function about()
+    {
+        // goi method getproductlist
+        $this->view('about',[]);
+    }
+    public function products()
+    {
+        // goi method getproductlist
+        $this->view('products',[]);
+    }
 
    // view
 

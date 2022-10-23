@@ -1,29 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-    <!-- website -->
-    <link rel="icon" href="images/icon_page.png" type="image/gif" />
-    <title>Coffee | SOUL</title>
+<?php
+require_once APPROOT . '/views/includes/head.php';
+?>
 
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <!--scipt only-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-        </script>
-    <!-- css  -->
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <!-- products css -->
-    <link rel="stylesheet" href="../public/css/products.css">
-    <!-- index css -->
-    <link rel="stylesheet" href="../public/css/style.css">
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-</head>
+<link rel="stylesheet" href="<?= CSSFILE ?>/products.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 <body>
     <div class="container-fluid p-0">
@@ -34,13 +16,11 @@
                     <a class="navbar-brand fw-bold ps-2" href="#">
                         <img src="../public/images/Header_Logo.png" alt="" style="width: 38px;">
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul
-                            class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
                             <li class="nav-item ps-2">
                                 <a class="nav-link" href="#">Home</a>
                             </li>
@@ -94,8 +74,7 @@
 
         <!-- home section starts  -->
         <section class="home">
-            <div class="box justify-content-start d-flex align-items-center"
-                style="background: url(../public/images/cf-bg1.jpg) no-repeat;">
+            <div class="box justify-content-start d-flex align-items-center" style="background: url(../public/images/cf-bg1.jpg) no-repeat;">
                 <div class="content">
                     <span class="text-white fs-2">Star Your Day</span>
                     <h1 class="text-uppercase pt-2" style="color: #c8a27a;"> with a black coffee</h1>
@@ -113,11 +92,9 @@
                         <form action="search-box.php" method="get">
                             <div class="input-group" style="margin: 20px 0px 30px 380px;">
                                 <div class="form-outline">
-                                    <input id="search-focus" type="search" name="search" value="" class="form-control"
-                                        placeholder="Search products name..." aria-label="Search" />
+                                    <input id="search-focus" type="search" name="search" value="" class="form-control" placeholder="Search products name..." aria-label="Search" />
                                 </div>
-                                <button type="button" class="btn btn-primary btn-search"
-                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
+                                <button type="button" class="btn btn-primary btn-search" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .80rem;">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -148,11 +125,9 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
                                     <a href="" class="">
                                         <div class="row justify-content-center">
-                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                                style="border-radius: 17px;width: 18rem;">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
                                                 <div class="image">
-                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top"
-                                                        alt="...">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
                                                     <div class="icons">
                                                         <a class="fas fa-shopping-cart shop-card"></a>
                                                         <a href="#" class="fas fa-eye"></a>
@@ -179,11 +154,9 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
                                     <a href="" class="">
                                         <div class="row justify-content-center">
-                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                                style="border-radius: 17px;width: 18rem;">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
                                                 <div class="image">
-                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top"
-                                                        alt="...">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
                                                     <div class="icons">
                                                         <a class="fas fa-shopping-cart shop-card"></a>
                                                         <a href="#" class="fas fa-eye"></a>
@@ -210,11 +183,9 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xxl-4 collection-product ">
                                     <a href="" class="">
                                         <div class="row justify-content-center">
-                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3"
-                                                style="border-radius: 17px;width: 18rem;">
+                                            <div class="card text-center card-hover col-12 col-md-6 col-lg-3" style="border-radius: 17px;width: 18rem;">
                                                 <div class="image">
-                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top"
-                                                        alt="...">
+                                                    <img src="../public/images/Sb_EnerCoffee5.jpg" class="card-img-top" alt="...">
                                                     <div class="icons">
                                                         <a class="fas fa-shopping-cart shop-card"></a>
                                                         <a href="#" class="fas fa-eye"></a>
@@ -358,8 +329,7 @@
     </div>
     </section>
     <!-- footer section start -->
-    <footer class="footer section-gap"
-        style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
+    <footer class="footer section-gap" style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
         <div class="container">
             <div class="row mt-5">
                 <div class="col-lg-5 col-md-6 col-sm-6">
@@ -377,10 +347,8 @@
                         <p class="fs-6">Stay update with our latest</p>
                         <div class="form-group">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Enter email"
-                                    aria-label="Enter email" aria-describedby="">
-                                <button class="btn btn-primary" type="button" id="button-addon2"><i
-                                        class="fa-solid fa-arrow-right"></i></button>
+                                <input type="text" class="form-control" placeholder="Enter email" aria-label="Enter email" aria-describedby="">
+                                <button class="btn btn-primary" type="button" id="button-addon2"><i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -402,12 +370,11 @@
     </footer>
     </div>
     <!-- section products ends -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
 
     <!-- js file link -->
     <script src="../public/js/products.js"></script>

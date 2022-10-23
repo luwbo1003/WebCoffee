@@ -6,7 +6,7 @@ require_once APPROOT . '/views/includes/head.php';
 <body>
     <div class="container-fluid p-0">
         <?php
-            require_once APPROOT . '/views/includes/navbar.php';
+            require_once APPROOT . '/views/includes/nav_all.php';
         ?>
         <!-- End of Navigation -->
 

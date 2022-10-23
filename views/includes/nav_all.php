@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
-                        <a id="btn-shop-cart" class="nav-link" type="button">
+                        <a id="btn-shop-cart" class="nav-link" type="button" href="<?= URLROOT ?>/Home/cart">
                             <span class="material-symbols-outlined">
                                 shopping_cart
                                 <span class="badge rounded-pill bg-dark"></span>

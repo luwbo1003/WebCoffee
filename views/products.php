@@ -143,7 +143,7 @@ require_once APPROOT . '/views/includes/head.php';
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
+                                                    <h5 class="card-title">thanh thy</h5>
                                                     <p class="price">$10.46</p>
                                                     <div class="stars">
                                                         <i class="fas fa-star"></i>
@@ -172,7 +172,7 @@ require_once APPROOT . '/views/includes/head.php';
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
+                                                    <h5 class="card-title">Care</h5>
                                                     <p class="price">$10.46</p>
                                                     <div class="stars">
                                                         <i class="fas fa-star"></i>

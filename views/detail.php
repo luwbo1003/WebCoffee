@@ -1,5 +1,4 @@
 <html lang="en">
-
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
@@ -19,13 +18,13 @@ require_once APPROOT . '/views/includes/head.php';
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../public/images/Sb_FrapCara.jpg" class="d-block w-100" alt="...">
+                                    <img src="<?= IMAGE ?>/Sb_FrapCara.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../public/images/Sb_FrapAll.jpg" class="d-block w-100" alt="...">
+                                    <img src="<?= IMAGE ?>/Sb_FrapAll.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../public/images/Sb_FrapCara1.jpg" class="d-block w-100" alt="...">
+                                    <img src="<?= IMAGE ?>/Sb_FrapCara1.jpg" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -156,15 +155,12 @@ require_once APPROOT . '/views/includes/head.php';
                     <?php require_once APPROOT . '/views/includes/products_box.php'; ?>
                 </div>
             </div>
-    </section>
-
-
-    <!-- footer section start -->
-    <?php
-    require_once APPROOT . '/views/includes/footer.php';
-    ?>
+        </section>
+        <!-- footer section start -->
+        <?php
+        require_once APPROOT . '/views/includes/footer.php';
+        ?>
     </div>
-
     <style>
         #btn_addtocart {
             background: #fff;

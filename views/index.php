@@ -2,7 +2,7 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
-<link rel="stylesheet" href="<?= CSSFILE ?>/products.css">
+<link rel="stylesheet" href="<?= CSSFILE ?>/cart.css">
 
 <body>
     <div class="container-fluid p-0">
@@ -21,32 +21,25 @@ require_once APPROOT . '/views/includes/head.php';
             </div>
         </section>
 
-
         <!-- category section starts  -->
         <section class="container py-5 category">
-
             <h3 class="fw-light text-center pb-4 fw-bold">Idea!</h3>
-
             <div class="row text-center">
-
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
                     <img src="<?= IMAGE ?>/category-1.jpg" class="img-fluid" alt="">
                     <h5 class="pt-3 fw-light" style="color: #219150;">Our coffee</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
-
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
                     <img src="<?= IMAGE ?>/category-2.jpg" class="img-fluid" alt="">
                     <h5 class="pt-3 fw-light" style="color: #219150;">Coffee Bottle</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
-
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
                     <img src="<?= IMAGE ?>/category-3.jpg" class="img-fluid" alt="">
                     <h5 class="pt-3 fw-light" style="color: #219150;">Tea</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
-
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
                     <img src="<?= IMAGE ?>/category-4.jpg" class="img-fluid" alt="">
                     <h5 class="pt-3 fw-light" style="color: #219150;">Merchandise</h5>
@@ -74,8 +67,8 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
             </div>
         </section>
+
         <!-- feature section start -->
-        <!-- <section class="container py-5 product_slide"> -->
         <section class="mb-5 py-5 product_slide">
             
             <div class="container">
@@ -92,49 +85,10 @@ require_once APPROOT . '/views/includes/head.php';
             </div>
         </section>
 
-
         <!-- footer section start -->
-        <footer class="footer section-gap" style="background: url(<?= IMAGE ?>/footer-bg.jpg) center; background-size: cover;">
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div>
-                            <h5 class="mb-4">About Us</h5>
-                            <p class="fs-6">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5  col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h5 class="mb-4">Newsletter</h5>
-                            <p class="fs-6">Stay update with our latest</p>
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Enter email" aria-label="Enter email" aria-describedby="">
-                                    <button class="btn btn-primary" type="button" id="button-addon2"><span class="material-symbols-outlined">
-                                            arrow_forward
-                                        </span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div>
-                            <h5 class="mb-4">Follow Us</h5>
-                            <p class="fs-6">Let us be social</p>
-                            <div class="footer-social d-flex align-items-center">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#"><i class="fa-brands fa-behance"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php
+        require_once APPROOT . '/views/includes/footer.php';
+        ?>
     </div>
 
 

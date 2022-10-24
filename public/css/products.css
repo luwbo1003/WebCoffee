@@ -67,32 +67,6 @@ h2, .h2 {
 .collection-product{
     margin-bottom: 25px;
 }
-#card-shop{
-    position: fixed;
-    top: 0 ; right: -100%;
-    width: 360px; 
-    min-height: 100vh;
-    padding: 20px;
-    background: #fff;
-    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-    transition: 0.3s;
-    z-index: 10000; 
-
-}
-.card-title1{
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-.card-title{
-    font-size: 20px;
-    margin-top: 0;
-} 
-.mb-3{
-    margin-top: 30px;
-    border: none;
-}
 .card-hover .img{
     width: 72px;
     display: block;
@@ -108,34 +82,6 @@ h2, .h2 {
 .card-hover .card-body{
     margin-left: 2px; 
     margin-top: -10px;
-}
-.remove-card{
-    margin-top: -55px;
-    margin-left: 300px;
-    font-size: 15px;
-    color: #d3ad7f;
-    cursor: pointer;
-}
-.card-quantity{
-    border: 1px solid #0f0f0f;
-    outline-color: #0f0f0f;
-    width: 36px;
-    text-align: center;
-    font-size: small;
-}
-.total{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    border-top: 1px solid #0f0f0f;
-}
-.total-title{
-    font-size: 15px;
-    font-weight: 600;
-}
-.total-price{
-    font-size: 14px;
-    margin-left: 5px;
 }
 #search-focus{
     width: 500px;
@@ -157,14 +103,6 @@ h2, .h2 {
     width: 40px;
     text-align: center;
 }
-.btn-buy{
-    display: flex;
-    margin: 1.5rem auto 0 auto;
-    border: none;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-}
 .title h2{
     font-size: 50px;
     padding: 0 0 20px;
@@ -183,12 +121,6 @@ h2, .h2 {
     position: relative;
     overflow: hidden;
     transition: opacity .6s cubic-bezier(0.28, 0, 0.18, 1) .25s,transform .6s cubic-bezier(0.28, 0, 0.18, 1) .25s;
-}
-#card-close{
-    position: absolute;
-    font-size: 20px;
-    top: 12px;
-    right: 10px;
 }
 .card .image .icons {
     width: 100%;

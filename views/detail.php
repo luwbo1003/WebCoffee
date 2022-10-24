@@ -3,10 +3,11 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
+
 <body>
     <div class="container-fluid p-0">
         <?php
-            require_once APPROOT . '/views/includes/nav_all.php';
+        require_once APPROOT . '/views/includes/nav_all.php';
         ?>
         <!-- End of Navigation -->
 
@@ -27,13 +28,11 @@ require_once APPROOT . '/views/includes/head.php';
                                     <img src="../public/images/Sb_FrapCara1.jpg" class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -71,14 +70,11 @@ require_once APPROOT . '/views/includes/head.php';
                             <div class="accordion accordion-flush" id="accordionExample">
                                 <div class="accordion-item">
                                     <h1 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             <strong>About this item</strong>
                                         </button>
                                     </h1>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <table class="a-normal a-spacing-micro">
                                             <tbody>
                                                 <tr class="a-spacing-small po-brand">
@@ -106,8 +102,7 @@ require_once APPROOT . '/views/includes/head.php';
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <div id="feature-bullets"
-                                            class="a-section a-spacing-medium a-spacing-top-small">
+                                        <div id="feature-bullets" class="a-section a-spacing-medium a-spacing-top-small">
                                             <ul class="a-unordered-list a-vertical a-spacing-mini">
                                                 <li><span class="a-list-item"> Includes 12 (13.7oz) bottles of Starbucks
                                                         Frappuccino, Caramel
@@ -128,14 +123,11 @@ require_once APPROOT . '/views/includes/head.php';
                                 </div>
                                 <div class="accordion-item">
                                     <h1 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             <strong>Ingredients</strong>
                                         </button>
                                     </h1>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <span>See nutrition panel</span>
                                         </div>
@@ -151,78 +143,39 @@ require_once APPROOT . '/views/includes/head.php';
 
         <!-- feature section start -->
         <section class="container py-5 product_slide">
-            
-            <div class="row gap-3 justify-content-center">
-                <h2 class="fw-light text-center pb-4 fw-bold"> YOU MAY ALSO ENJOY</h2>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
-                    <div class="image">
-                        <img src="../public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
-                        <div class="icons w-100">
-                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="price">$10.46</p>
-                    </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
-                    <div class="image">
-                        <img src="../public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
-                        <div class="icons w-100">
-                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="price">$10.46</p>
-                    </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
-                    <div class="image">
-                        <img src="../public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
-                        <div class="icons w-100">
-                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="price">$10.46</p>
-                    </div>
-                </div>
-                <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
-                    <div class="image">
-                        <img src="../public/images/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
-                        <div class="icons w-100">
-                            <button class="btn btn-primary align-content-md-center">Add to cart</button></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="price">$10.46</p>
+
+            <div class="container">
+                <div class="row gap-3 justify-content-center">
+                    <div class="col-12 col-md-6 text-center " style="padding-bottom: 100px;">
+                        <h2 class="fw-light text-center pb-4 fw-bold">YOU MAY ALSO ENJOY</h2>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="container">
+                <div class="row gap-3 text-center align-self-center">
+                    <?php require_once APPROOT . '/views/includes/products_box.php'; ?>
+                </div>
+            </div>
+    </section>
 
 
-        <!-- footer section start -->
-        <?php
-            require_once APPROOT . '/views/includes/footer.php';
-        ?>
+    <!-- footer section start -->
+    <?php
+    require_once APPROOT . '/views/includes/footer.php';
+    ?>
     </div>
 
     <style>
         #btn_addtocart {
             background: #fff;
         }
+
         #btn_addtocart:hover {
             color: #c8a27a;
         }
     </style>
     <!-- Script only -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
     </script>
 </body>
 

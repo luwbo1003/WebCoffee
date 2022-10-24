@@ -1,15 +1,13 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-coffee py-3" id="nav-id">
     <div class="container">
-    <a class="navbar-brand fw-bold ps-2" href="#">
-            <img src="../public/images/Header_Logo.png" alt="" style="width: 35px;">
+        <a class="navbar-brand fw-bold ps-2" href="#">
+        <img src="<?= IMAGE ?>/Header_Logo.png" alt=" " style="width: 35px;">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul
-                class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
                 <li class="nav-item ps-2">
                     <a class="nav-link" href="<?= URLROOT ?>/Home/index">Home</a>
                 </li>
@@ -23,8 +21,7 @@
             <div class="nav-item">
                 <ul class="navbar-nav gap-2 flex-row">
                     <li>
-                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                            aria-controls="offcanvasTop">
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
                             <span class="material-symbols-outlined">
                                 search
                             </span>

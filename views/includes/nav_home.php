@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3 " id="nav-id">
     <div class="container">
         <a class="navbar-brand fw-bold ps-2" href="#">
-            <img src="../public/images/Header_Logo.png" alt="" style="width: 35px;">
+        <img src="<?= IMAGE ?>/Header_Logo.png" alt=" "style="width: 35px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,8 +27,8 @@
                             </span>
                         </a>
                     </li>
-                    <li class="cart-icon">
-                        <a id="btn-shop-cart" class="nav-link" href="">
+                    <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
+                        <a id="btn-shop-cart" class="nav-link" type="button">
                             <span class="material-symbols-outlined">
                                 shopping_cart
                                 <span class="badge rounded-pill bg-dark"></span>
@@ -53,6 +53,7 @@
                             </span>
                         </a>
                     </li>
+                    <?php require_once APPROOT . '/views/includes/cart_header.php'; ?>
                 </ul>
             </div>
         </div>

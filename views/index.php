@@ -2,7 +2,7 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
-
+<link rel="stylesheet" href="<?= CSSFILE ?>/products.css">
 
 <body>
     <div class="container-fluid p-0">
@@ -143,5 +143,6 @@ require_once APPROOT . '/views/includes/head.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
 </script>
 <script src="<?= JSFILE ?>/nav.js"></script>
+<script src="<?= JSFILE ?>/products.js"></script>
 
 </html>

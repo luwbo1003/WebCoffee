@@ -10,8 +10,10 @@ require_once APPROOT . '/views/includes/head.php';
 <body>
     <div class="container-fluid p-0">
         <!-- header section starts -->
-        <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3" id="nav-id">
+        <?php
+        require_once APPROOT . '/views/includes/nav_home.php';
+        ?>
+            <!-- <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3" id="nav-id">
                 <div class="container">
                     <a class="navbar-brand fw-bold ps-2" href="#">
                         <img src="../public/images/Header_Logo.png" alt="" style="width: 38px;">
@@ -40,17 +42,12 @@ require_once APPROOT . '/views/includes/head.php';
                             </li>
                             <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
-                            </li>
+                            </li> -->
                             <!-- Card -->
                             <?php require_once APPROOT . '/views/includes/cart_header.php'; ?>
                             <!-- <li class="nav-item align-items-center ps-2">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
                             </li> -->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
 
         <!-- header section ends -->
 

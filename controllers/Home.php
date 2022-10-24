@@ -26,11 +26,6 @@ class Home extends Controller
         // goi method getproductlist
         $this->view('products',[]);
     }
-    public function checkout()
-    {
-        $this->view('checkout', []);
-    }
-
    // view
 
 }

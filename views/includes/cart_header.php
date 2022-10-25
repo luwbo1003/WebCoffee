@@ -11,7 +11,9 @@
         <div class="total-price">$0</div>
     </div>
     <!-- Buy button -->
-    <button type="button" class="btn btn-primary btn-buy">Go to cart</button>
+
+    <a class="btn btn-primary btn-buy justify-content-center" href="<?= URLROOT ?>/Home/shopping_cart" type="submit">Go to cart</a>
+    <a class="btn btn-primary btn-buy justify-content-center" href="<?= URLROOT ?>/Home/shopping_cart" type="submit">Check Out</a>
     <!-- Close -->
     <span onclick="closeCart()" type="button">
         <i id="card-close" class="fa-solid fa-xmark fs-4"></i>

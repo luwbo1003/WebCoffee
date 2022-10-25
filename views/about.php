@@ -3,6 +3,7 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
+<link rel="stylesheet" href="<?= CSSFILE ?>/cart_header.css">
 
 <body>
     <div class="container-fluid p-0 ">
@@ -149,6 +150,7 @@ require_once APPROOT . '/views/includes/head.php';
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= JSFILE ?>/products.js"></script>
 </body>
 
 </html>

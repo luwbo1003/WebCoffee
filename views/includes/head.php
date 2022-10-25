@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= CSSFILE ?>/bootstrap.css">
     <link rel="stylesheet" href="<?= CSSFILE ?>/style.css">
     <link rel="stylesheet" href="<?= CSSFILE ?>/card.css">
+    <link rel="stylesheet" href="<?= CSSFILE ?>/cart_header.css">   
 
     <title>Starbuck</title>
 </head>

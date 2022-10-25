@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-coffee py-3" id="nav-id">
     <div class="container">
         <a class="navbar-brand fw-bold ps-2" href="#">
-        <img src="<?= IMAGE ?>/Header_Logo.png" alt=" " style="width: 35px;">
+        <img src="<?= IMAGE ?>/Header_Logo.png" alt=" "style="width: 35px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
-                <li class="nav-item ps-2">
-                    <a class="nav-link" href="<?= URLROOT ?>/Home/index">Home</a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+                <li class="nav-item ps-2fs-5">
+                    <a class="nav-link " href="<?= URLROOT ?>/Home/index">Home</a>
                 </li>
-                <li class="nav-item ps-2">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item ps-2 ">
+                    <a class="nav-link" href="<?= URLROOT ?>/Home/about">About</a>
                 </li>
-                <li class="nav-item ps-2">
-                    <a class="nav-link" href="#">Product</a>
+                <li class="nav-item ps-2 ">
+                    <a class="nav-link" href="<?= URLROOT ?>/Home/products">Shop</a>
                 </li>
             </ul>
             <div class="nav-item">
@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
-                        <a id="btn-shop-cart" class="nav-link" type="button" href="<?= URLROOT ?>/Home/cart">
+                        <a id="btn-shop-cart" class="nav-link" type="button">
                             <span class="material-symbols-outlined">
                                 shopping_cart
                                 <span class="badge rounded-pill bg-dark"></span>
@@ -53,6 +53,7 @@
                             </span>
                         </a>
                     </li>
+                    <?php require_once APPROOT . '/views/includes/cart_header.php'; ?>
                 </ul>
             </div>
         </div>

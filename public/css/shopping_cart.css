@@ -29,6 +29,19 @@ h1{
     background: #ffff;
 }
 #btn_empty:hover{
-    color: black;
+    color: #c8a27a;
 }
 
+.cart-delete {
+    padding: 5px 6px;
+    margin-right: 12px;
+    color: #b8b2b1;
+  }
+  
+  .cart-delete:hover {
+    color: #232323;
+    background-color: #f8f4f2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  

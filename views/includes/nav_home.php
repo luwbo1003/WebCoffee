@@ -15,7 +15,7 @@
                     <a class="nav-link" href="<?= URLROOT ?>/Home/about">About</a>
                 </li>
                 <li class="nav-item ps-2 ">
-                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link" href="<?= URLROOT ?>/Home/products">Shop</a>
                 </li>
             </ul>
             <div class="nav-item">

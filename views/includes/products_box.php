@@ -1,12 +1,24 @@
-<div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 5px; width: 18rem;">
-    <div class="image">
-        <img src="<?= IMAGE ?>/Sb_EnerChoco.jpg" class="img-fluid" alt="...">
-        <div class="icons w-100">
-            <a class="shop-card"><button class="btn btn-primary align-content-md-center ">Add to cart</button></a>
+<?php
+if (!empty($data['prod'])) :
+    $i = 0;
+    foreach ($data['prod'] as $prod) : extract($prod); ?>
+    
+        <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+            <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
+                <input type="hidden" name="pro_quantity" value="1">
+            
+                <div class="image">
+                    <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="img-fluid" alt="...">
+                    <div class="icons w-100">
+                        <button type="submit" name="addToCart" class="btn btn-primary align-content-md-center shop-card">Add to cart</button>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <h6 class="card-title" style="font-size: 14px;"><?= $pro_name ?></h6>
+                    <p class="price">$<?= number_format($pro_price, 2, '.', ',') ?></p>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="price">$10.46</p>
-    </div>
-</div>
+<?php $i++;
+    endforeach;
+endif; ?>

@@ -2,7 +2,7 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
-<link rel="stylesheet" href="<?= CSSFILE ?>/cart.css">
+<link rel="stylesheet" href="<?= CSSFILE ?>/card_product.css">
 
 <body>
     <div class="container-fluid p-0">

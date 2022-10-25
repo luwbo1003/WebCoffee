@@ -91,14 +91,14 @@ function ready() {
 
 }
 /* Buy Button */
-function BuyButtonClicked(){
-   alert("Your Order is placed");
-   var cardContent = document.getElementsByClassName("card-content")[0];
-   while(cardContent.hasChildNodes()){
-      cardContent.removeChild(cardContent.firstChild);
-   }
-   updateTotal();
-}
+// function BuyButtonClicked(){
+//    // alert("Your Order is placed");
+//    var cardContent = document.getElementsByClassName("card-content")[0];
+//    while(cardContent.hasChildNodes()){
+//       cardContent.removeChild(cardContent.firstChild);
+//    }
+//    updateTotal();
+// }
 
 /* Remove items*/
 function removeCard(event) {
@@ -131,12 +131,12 @@ function addProductToCard(title, price, productImg) {
    cardBox.classList.add("product-box");
    var cardItems = document.getElementsByClassName("card-content")[0];
    var cardItemsName = cardItems.getElementsByClassName("product-title");
-   for (var i = 0; i < cardItemsName.length; i++) {
-      if(cardItemsName[i].innerText == title){
-         alert("You have already add this item to card");
-         return;
-      }
-   }
+   // for (var i = 0; i < cardItemsName.length; i++) {
+   //    if(cardItemsName[i].innerText == title){
+   //       alert("You have already add this item to card");
+   //       return;
+   //    }
+   // }
    var cardBoxContent = `
                      <div class="row g-0 card-box">
                         <div class="col-md-3">

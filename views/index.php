@@ -70,7 +70,7 @@ require_once APPROOT . '/views/includes/head.php';
 
         <!-- feature section start -->
         <section class="mb-5 py-5 product_slide">
-            
+
             <div class="container">
                 <div class="row gap-3 justify-content-center">
                     <div class="col-12 col-md-6 text-center " style="padding-bottom: 100px;">
@@ -79,8 +79,33 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
             </div>
             <div class="container">
-                <div class="row gap-3 text-center align-self-center">
-                    <?php require_once APPROOT . '/views/includes/products_box.php'; ?>
+                <div class="row gap-3 text-center justify-content-center">
+                    <?php
+                    if (!empty($data['prod'])) :
+                        $i = 0;
+                        foreach ($data['prod'] as $prod) : extract($prod);
+                            if ($i == 4) {
+                                break;
+                            } ?>
+                            <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
+                                <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
+                                    <input type="hidden" name="pro_quantity" value="1">
+
+                                    <div class="image">
+                                        <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="img-fluid" alt="...">
+                                        <div class="icons w-100">
+                                            <button type="submit" name="addToCart" class="btn btn-primary align-content-md-center shop-card">Add to cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body ">
+                                        <h6 class="card-title" style="font-size: 14px;"><?= $pro_name ?></h6>
+                                        <p class="price">$<?= number_format($pro_price, 2, '.', ',') ?></p>
+                                    </div>
+                                </form>
+                            </div>
+                    <?php $i++;
+                        endforeach;
+                    endif; ?>
                 </div>
             </div>
         </section>

@@ -2,11 +2,11 @@
 if (!empty($data['prod'])) :
     $i = 0;
     foreach ($data['prod'] as $prod) : extract($prod); ?>
-    
+
         <div class="card text-center col-12 col-md-6 col-lg-3" style="border-radius: 17px; width: 18rem;">
             <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
                 <input type="hidden" name="pro_quantity" value="1">
-            
+
                 <div class="image">
                     <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="img-fluid" alt="...">
                     <div class="icons w-100">

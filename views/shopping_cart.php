@@ -42,13 +42,13 @@ require_once APPROOT . '/views/includes/head.php';
                                         <?php foreach ($_SESSION['cart'] as $prod) : extract($prod) ?>
                                             <tr>
                                                 <input type="hidden" name="pro_id[]" value="<?= $pro_id ?>">
-                                                <td style=" width:100px;" scope="row" class="">
-                                                    <img src="<?= IMAGE ?>/<?= $pro_img ?>" alt="" style=" width:100px;">
+                                                <td style=" width:100px; display: flex; justify-content: space-around;" scope="row" class="">
+                                                    <img src="<?= IMAGE ?>/<?= $pro_img ?>" alt="" style=" max-width:100px; max-height: 100px">
                                                 </td>
                                                 <td><?= $pro_name ?></td>
-                                                <td><?= $pro_price ?></td>
+                                                <td>$<?= number_format($pro_price, 2, '.', ',') ?></td>
                                                 <td><input type="number" name="pro_quantity_up[]" value="<?= $pro_quantity_cart ?>" style="width: 50px"></td>
-                                                <td> <?= $subtotal ?> </td>
+                                                <td> $<?= number_format($subtotal, 2, '.', ',') ?> </td>
                                                 <td>
                                                     <button type="submit" name="action" value="Delete" style="background: transparent; border: none">
                                                         <span class="material-symbols-outlined cart-delete">close</span>

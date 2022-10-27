@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2022 lúc 11:03 AM
+-- Thời gian đã tạo: Th10 25, 2022 lúc 12:01 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `db_coffee`
 --
+CREATE DATABASE IF NOT EXISTS `db_coffee` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `db_coffee`;
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,7 @@ CREATE TABLE `tbl_product` (
   `pro_price` float NOT NULL,
   `category_id` int(20) NOT NULL,
   `pro_des_id` int(11) NOT NULL,
-  `pro_image__id` varchar(20) DEFAULT NULL,
+  `pro_image_id` varchar(20) DEFAULT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -138,7 +140,7 @@ CREATE TABLE `tbl_product` (
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`pro_id`, `pro_name`, `pro_quantity`, `pro_price`, `category_id`, `pro_des_id`, `pro_image__id`, `status`) VALUES
+INSERT INTO `tbl_product` (`pro_id`, `pro_name`, `pro_quantity`, `pro_price`, `category_id`, `pro_des_id`, `pro_image_id`, `status`) VALUES
 (1, 'Starborks Flavored Ground Coffee', 1000, 46.99, 2, 1, 'img01', 1),
 (2, 'Starborks Frappuccino Coffee Drink (12 pack)', 1000, 58, 1, 2, 'img02', 1),
 (3, 'Starborks Doubleshot Energy Drink Coffee Beverage', 1000, 32.99, 1, 3, 'img03', 1),

@@ -23,6 +23,6 @@ $path .= $_SERVER['HTTP_HOST'] . $selfpath;
 
 define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', $path);
-define('IMAGE', URLROOT . '/public/images');
+define('IMAGE', URLROOT . '/public/image');
 define('JSFILE', URLROOT . '/public/js');
 define('CSSFILE', URLROOT . '/public/css');

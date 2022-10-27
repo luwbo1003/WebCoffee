@@ -113,4 +113,15 @@ class ProductModel
         giaiPhongBoNho($link, $result);
         return $data;
     }
+
+    public function getProductByCategory($category)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_product WHERE STATUS = 1 AND category_id = '$category'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
+
 }

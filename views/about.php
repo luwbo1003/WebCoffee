@@ -20,10 +20,10 @@ require_once APPROOT . '/views/includes/head.php';
                     <div id="carouselExampleControls" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../public/images/1.jpg" class="d-block w-100">
+                                <img src="<?= IMAGE ?>/1.jpg" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="../public/images/2.jpg" class="d-block w-100">
+                                <img src="<?= IMAGE ?>/2.jpg" class="d-block w-100">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -57,13 +57,13 @@ require_once APPROOT . '/views/includes/head.php';
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <img src="../public/images/store.jpg" class="w-75 d-block mx-auto img-fluid">
+                        <img src="<?= IMAGE ?>/store.jpg" class="w-75 d-block mx-auto img-fluid">
                     </div>
                 </div>
                 <div class="row py-5">
 
                     <div class="col-lg-6">
-                        <img src="../public/images/store2.jpg" class="w-75 d-block mx-auto img-fluid">
+                        <img src="<?= IMAGE ?>/store2.jpg" class="w-75 d-block mx-auto img-fluid">
                     </div>
                     <div class="col-lg-6 px-1">
                         <p class="fw-bold" style="margin-left:20px">Từ tháng 8/2021 - tháng 6/2021</p>
@@ -90,24 +90,24 @@ require_once APPROOT . '/views/includes/head.php';
                     lựa và hợp tác với các nhãn hàng và đối tác có uy tín lớn, kỹ càng và cẩn trọng trong tất cả các
                     khâu kiểm duyệt nhằm mang đến cho khách hàng sản phẩm và trải nghiệm tốt nhất.</p>
                 <div class="row px-5 py-5 text-center" style="align-items:center;">
-                    <div class="col"><img src="../public/images/nestle.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/mccafe.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/alibaba.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/highland.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/trungnguyen.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/nestle.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/mccafe.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/alibaba.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/highland.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/trungnguyen.jpg" class="w-50"></div>
                 </div>
                 <div class="row px-5 text-center" style="padding-bottom:3rem; align-items:center">
-                    <div class="col"><img src="../public/images/dunkin.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/gloria.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/lavazza.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/phuclong.jpg" class="w-50"></div>
-                    <div class="col"><img src="../public/images/costa.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/dunkin.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/gloria.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/lavazza.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/phuclong.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/costa.jpg" class="w-50"></div>
                 </div>
             </div>
         </section>
 
         <!--FOOTER-->
-        <footer class="footer section-gap" style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
+        <footer class="footer section-gap" style="background: url(<?= IMAGE ?>/footer-bg.jpg) center; background-size: cover;">
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-lg-5 col-md-6 col-sm-6">

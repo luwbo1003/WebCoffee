@@ -13,8 +13,8 @@ function taoKetNoi(&$link)
 function chayTruyVanTraVeDL($link, $q)
 {
     $result = mysqli_query($link, $q);
-
-    $data = null;
+    return $result;
+    /* $data = null;
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $data[] = $row;
@@ -27,7 +27,7 @@ function chayTruyVanTraVeDL($link, $q)
         }
 
         return $data;
-    } 
+    }  */
 }
 
 function chayTruyVanKhongTraVeDL($link, $q)
@@ -45,7 +45,7 @@ function giaiPhongBoNho($link, $result)
 {
     try {
         mysqli_close($link);
-
+        mysqli_free_result($result);
     } catch (TypeError $e) {
         
     }

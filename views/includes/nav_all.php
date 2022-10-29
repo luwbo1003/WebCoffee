@@ -47,7 +47,7 @@
                                         </div>
                     </li> -->
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="<?= URLROOT ?>/User/login">
                             <span class="material-symbols-outlined">
                                 account_circle
                             </span>

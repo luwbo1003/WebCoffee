@@ -6,6 +6,7 @@ class Home extends Controller
         $this->ProductModel = $this->model('ProductModel');
         $this->ImageModel = $this->model('ImageModel');
         $this->CategoryModel = $this->model('CategoryModel');
+        $this->DescriptionModel = $this->model('DescriptionModel');
     }
 
     public function index() 
@@ -20,12 +21,17 @@ class Home extends Controller
         }
 
         // //goi va show du lieu ra view
-        $this->view('index', ['prod' => $prod, 'image' => $image]);
+        $this->view('index', ['prod' =>  $prod, 'image' => $image]);
     }
-    public function detail()
+    public function detail($id)
     {
-        // goi method getproductlist
-        $this->view('detail',[]);
+        $prod = $this->ProductModel->getProduct($id);
+        $category_name = $this->CategoryModel->getCategory($prod[0]['category_id']);
+        $image = $this->ImageModel->getImage($prod[0]['pro_image_id']);
+        $des = $this->DescriptionModel->getDes($prod[0]['pro_des_id']);
+        
+        // // goi method getproductlist
+        $this->view('detail',['prod' => $prod, 'category' => $category_name, 'image' => $image, 'des' => $des]);
     }
     public function about()
     {

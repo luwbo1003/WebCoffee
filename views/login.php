@@ -66,16 +66,16 @@
         <!-- header section end -->
 
         <!-- Login form -->
-        <fieldset class="mt-5 mx-auto bg-white"
+        <form class="mt-5 mx-auto bg-white "id="login-box" action="<?= URLROOT ?>/User/login" method="POST"
             style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
 
             <legend class="text-center mt-4 mb-3">LOGIN</legend>
             <p style="font-size: 85%; text-align: center;">Don't have an account?
-                <span class="text-link"><a href="#" class="text-black" style="font-size: 90%;">Sign up
+                <span class="text-link"><a id="signup-btn" class="text-black" style="font-size: 90%;">Sign up
                         here</a></span>.
             </p>
 
-            <form class="needs-validation mt-5">
+            <div class="needs-validation mt-5">
                 <div class="form-group mb-4" style="font-size: 16px; ">
                     <input class="form-control" type="email" id="email" placeholder="Email" required>
                 </div>
@@ -94,20 +94,20 @@
                     </span>
                 </div>
 
-            </form>
-        </fieldset>
+            </div>
+        </form>
         <!-- Login form end -->
 
         <!-- register start -->
-        <!-- <fieldset class="mt-5 mx-auto bg-white"
+        <form class="mt-5 mx-auto bg-white d-none" id="signup-box" action="<?= URLROOT ?>/User/register" method="POST"
             style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
             <legend class="text-center mt-4 mb-3"> CREATE ACCOUNT</legend>
             <p style="font-size: 85%; text-align: center;">Already have an account?
-                <span class="text-link"><a href="#" class="text-black" style="font-size: 90%;">Sign in
+                <span class="text-link"><a id="login-btn" class="text-black" style="font-size: 90%;">Sign in
                         here</a></span>.
             </p>
 
-            <form class="needs-validation mt-5">
+            <div class="needs-validation mt-5">
                 <div class="form-group mb-4" style="font-size: 16px; ">
                     <input class="form-control" type="firstname" id="firstname" placeholder="First Name" required>
                 </div>
@@ -126,56 +126,18 @@
                 <div style="text-align: center;">
                     <input class="btn btn-primary w-25" type="submit" value="CREATE">
                 </div>
-            </form>
-        </fieldset> -->
+            </div>
+        </form>
         <!-- register end -->
 
 
         <!-- footer section start -->
-        <footer class="footer section-gap"
-            style="background: url(../public/images/footer-bg.jpg) center; background-size: cover;">
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div>
-                            <h5 class="mb-4">About Us</h5>
-                            <p class="fs-6">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div class="">
-                            <h5 class="mb-4">Newsletter</h5>
-                            <p class="fs-6">Stay update with our latest</p>
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Enter email"
-                                        aria-label="Enter email" aria-describedby="">
-                                    <button class="btn btn-primary btn_arrow" type="button" id="btn_arrow"><i
-                                            class="fa-solid fa-arrow-right"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div>
-                            <h5 class="mb-4">Follow Us</h5>
-                            <p class="fs-6">Let us be social</p>
-                            <div class="footer-social d-flex align-items-center">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#"><i class="fa-brands fa-behance"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php
+        require_once APPROOT . '/views/includes/footer.php';
+        ?>
         <!-- footer section end -->
     </div>
 </body>
+<script src="<?= JSFILE ?>/login-effect.js"></script>
 
 </html>

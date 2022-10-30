@@ -2,7 +2,7 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
-
+<link rel="stylesheet" href="<?= CSSFILE ?>/card_product.css">
 <body>
     <div class="container-fluid p-0">
         <?php
@@ -55,26 +55,26 @@ require_once APPROOT . '/views/includes/head.php';
                                 <h1><?= $pro_name ?></h1>
                                 <h2 class="text-secondary fw-bold">$<?= $pro_price ?></h2>
 
-
-                                <div class="gap-5 d-flex flex-row align-middle align-self-center ">
-                                    <p class="align-self-center">Quantity:</p>
-                                    <div class="d-inline-block product-quantity">
-                                        <input class="form-control" type="number" value="1" min="0" max="<?= $pro_quantity ?>" style="width: 130px">
+                                <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
+                                    <div class="gap-5 d-flex flex-row align-middle align-self-center ">
+                                        <p class="align-self-center">Quantity:</p>
+                                        <div class="d-inline-block product-quantity">
+                                            <input class="form-control" type="number" value="1" min="0" max="<?= $pro_quantity ?>" style="width: 130px">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class=" fs-6 my-5">
-                                    <button class="btn btn-primary" id="btn_addtocart">
-                                        <i class="bi bi-cart-plus-fill"></i>
-                                        Add to Cart
-                                    </button>
-                                    <button class="btn btn-primary ms-5">
-                                        <i class="bi bi-cart-plus-fill"></i>
-                                        Buy Now
-                                    </button>
+                                    <div class=" fs-6 my-5">
+                                        <button type="submit" name="addToCart" class="btn btn-primary" id="btn_addtocart">
+                                            <i class="bi bi-cart-plus-fill"></i>
+                                            Add to Cart
+                                        </button>
+                                        <button type="submit" class="btn btn-primary ms-5">
+                                            <i class="bi bi-cart-plus-fill"></i>
+                                            Buy Now
+                                        </button>
 
-                                </div>
-
+                                    </div>
+                                </form>
                                 <div>
                                     <div class="accordion accordion-flush" id="accordionExample">
                                         <div class="accordion-item">
@@ -89,31 +89,32 @@ require_once APPROOT . '/views/includes/head.php';
                                                     if (!empty($data['des'])) :
                                                         foreach ($data['des'] as $des) : extract($des);
                                                     ?>
-                                                        <tbody>
-                                                            <tr class="a-spacing-small po-brand">
-                                                                <td class="a-span3"> <STRONG>Brand:</STRONG> </td>
-                                                                <td class="a-span9"> <span class="a-size-base"><?=$pro_brand ?></span> </td>
-                                                            </tr>
-                                                            <tr class="a-spacing-small po-item_form">
-                                                                <td class="a-span3"> <strong>Item Form:</strong> </td>
-                                                                <td class="a-span9"> <span class="a-size-base"><?=$pro_form ?></span> </td>
-                                                            </tr>
-                                                            <tr class="a-spacing-small po-flavor">
-                                                                <td class="a-span3"> <strong>Flavor:</strong> </td>
-                                                                <td class="a-span9"> <span class="a-size-base"><?=$pro_flavor ?></span> </td>
-                                                            </tr>
-                                                            <tr class="a-spacing-small po-caffeine_content">
-                                                                <td class="a-span3"> <strong>Caffeine Content: </strong> </td>
-                                                                <td class="a-span9"> <span class="a-size-base"><?=$pro_caffein ?></span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="a-spacing-small po-coffee_roast_level">
-                                                                <td class="a-span3"> <strong>Roast Level: </strong> </td>
-                                                                <td class="a-span9"> <span class="a-size-base"><?=$pro_roast_level ?></span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    <?php endforeach; endif; ?>
+                                                            <tbody>
+                                                                <tr class="a-spacing-small po-brand">
+                                                                    <td class="a-span3"> <STRONG>Brand:</STRONG> </td>
+                                                                    <td class="a-span9"> <span class="a-size-base"><?= $pro_brand ?></span> </td>
+                                                                </tr>
+                                                                <tr class="a-spacing-small po-item_form">
+                                                                    <td class="a-span3"> <strong>Item Form:</strong> </td>
+                                                                    <td class="a-span9"> <span class="a-size-base"><?= $pro_form ?></span> </td>
+                                                                </tr>
+                                                                <tr class="a-spacing-small po-flavor">
+                                                                    <td class="a-span3"> <strong>Flavor:</strong> </td>
+                                                                    <td class="a-span9"> <span class="a-size-base"><?= $pro_flavor ?></span> </td>
+                                                                </tr>
+                                                                <tr class="a-spacing-small po-caffeine_content">
+                                                                    <td class="a-span3"> <strong>Caffeine Content: </strong> </td>
+                                                                    <td class="a-span9"> <span class="a-size-base"><?= $pro_caffein ?></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="a-spacing-small po-coffee_roast_level">
+                                                                    <td class="a-span3"> <strong>Roast Level: </strong> </td>
+                                                                    <td class="a-span9"> <span class="a-size-base"><?= $pro_roast_level ?></span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                    <?php endforeach;
+                                                    endif; ?>
                                                 </table>
                                                 <div id="feature-bullets" class="a-section a-spacing-medium a-spacing-top-small">
                                                     <ul class="a-unordered-list a-vertical a-spacing-mini">

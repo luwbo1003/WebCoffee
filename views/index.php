@@ -26,12 +26,12 @@ require_once APPROOT . '/views/includes/head.php';
             <h3 class="fw-light text-center pb-4 fw-bold">Idea!</h3>
             <div class="row text-center">
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="<?= IMAGE ?>/category-1.jpg" class="img-fluid" alt="">
-                    <h5 class="pt-3 fw-light" style="color: #219150;">Our coffee</h5>
+                    <img src="<?= IMAGE ?>/cate_whole.jpg" class="img-fluid" alt="">
+                    <h5 class="pt-3 fw-light" style="color: #219150;">Coffee Bean</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>
                 <div class="col-6 col-lg-3 pt-4 pt-lg-0">
-                    <img src="<?= IMAGE ?>/category-2.jpg" class="img-fluid" alt="">
+                    <img src="<?= IMAGE ?>/cate_bottle.jpg" class="img-fluid" alt="">
                     <h5 class="pt-3 fw-light" style="color: #219150;">Coffee Bottle</h5>
                     <!-- <a href="#" class="btn btn-primary mt-4">Read More</a> -->
                 </div>

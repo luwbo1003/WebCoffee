@@ -1,68 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- css -->
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <!-- script only  -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-        </script>
-    <title>Login</title>
-</head>
-
+<?php require_once APPROOT . '/views/includes/head.php'; ?>
+<link rel="stylesheet" href="<?= CSSFILE ?>/card_product.css">
 <body>
     <!-- header section start -->
     <div class="container-fluid p-0">
-        <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top bg-coffee py-3" id="nav-id">
-                <div class="container">
-                    <a class="navbar-brand fw-bold ps-2" href="#"> <i class="fa-solid fa-mug-saucer"
-                            style="font-size: 25px;"></i>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul
-                            class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  ">
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item ps-2">
-                                <a class="nav-link" href="#">Product</a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#">
-                                    <i class="fa-solid fa-cart-shopping shop-btn"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item align-items-center ps-2">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    <?php require_once APPROOT . '/views/includes/nav_all.php'; ?>
         <!-- header section end -->
 
         <!-- Login form -->

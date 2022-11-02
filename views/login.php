@@ -9,8 +9,8 @@
     <div class="container-fluid p-0">
         <?php require_once APPROOT . '/views/includes/nav_all.php'; ?>
         <!-- header section end -->
-
-        <fieldset>
+        <div>
+        <fieldset class="mx-auto" style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
             <!-- Message section -->
             <?php if (isset($data['msg'])) : ?>
 
@@ -49,7 +49,7 @@
                 <?php endswitch; ?>
             <?php endif; ?>
             <!-- Login form -->
-            <form class="mt-5 mx-auto bg-white " id="login-box" action="<?= URLROOT ?>/User/login" method="POST" style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
+            <form id="login-box" action="<?= URLROOT ?>/User/login" method="POST">
 
                 <legend class="text-center mt-4 mb-3">LOGIN</legend>
                 <p style="font-size: 85%; text-align: center;">Don't have an account?
@@ -81,7 +81,7 @@
             <!-- Login form end -->
 
             <!-- register start -->
-            <form class="mt-5 mx-auto bg-white d-none" id="signup-box" action="<?= URLROOT ?>/User/register" method="POST" style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
+            <form class="d-none" id="signup-box" action="<?= URLROOT ?>/User/register" method="POST">
                 <legend class="text-center mt-4 mb-3"> CREATE ACCOUNT</legend>
                 <p style="font-size: 85%; text-align: center;">Already have an account?
                     <span class="text-link"><a id="login-btn" class="text-black" style="font-size: 90%;">Sign in
@@ -115,7 +115,7 @@
             </form>
             <!-- register end -->
         </fieldset>
-
+        </div>
         <!-- footer section start -->
         <?php
         require_once APPROOT . '/views/includes/footer.php';

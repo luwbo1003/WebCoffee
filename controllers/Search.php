@@ -23,4 +23,19 @@ class Search extends Controller
             $this->view('products', ['prod' => $prod, 'image' => $image, 'category' => $category_list]);
         }
     }
+
+    public function searchByName()
+    {
+        if (isset($_POST['name'])) {
+            $prod = $this->ProductModel->getProductByName($_POST['name']);
+            $image = array();
+            $category_list = $this->CategoryModel->getCategoryList();
+            foreach ($prod as $value) {
+                $img = $this->ImageModel->getImage($this->ProductModel->getImageId($value['pro_id']))[0];
+                array_push($image, $img);
+            }
+
+            $this->view('products', ['prod' => $prod, 'image' => $image, 'category' => $category_list]);
+        }
+    }
 }

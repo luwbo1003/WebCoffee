@@ -98,9 +98,9 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
                 <div class="row px-5 text-center" style="padding-bottom:3rem; align-items:center">
                     <div class="col"><img src="<?= IMAGE ?>/dunkin.jpg" class="w-50"></div>
-                    <div class="col"><img src="<?= IMAGE ?>/gloria.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/amazon.png" class="w-50"></div>
                     <div class="col"><img src="<?= IMAGE ?>/lavazza.jpg" class="w-50"></div>
-                    <div class="col"><img src="<?= IMAGE ?>/phuclong.jpg" class="w-50"></div>
+                    <div class="col"><img src="<?= IMAGE ?>/phuclong.png" class="w-50"></div>
                     <div class="col"><img src="<?= IMAGE ?>/costa.jpg" class="w-50"></div>
                 </div>
             </div>

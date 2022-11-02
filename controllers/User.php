@@ -3,15 +3,18 @@ class User extends Controller
 {
     public function __construct()
     {
-        // $this->UserModel = $this->model('UserModel');
-        // $this->CustomerModel = $this->model('CustomerModel');
+        $this->UserModel = $this->model('UserModel');
+        $this->CustomerModel = $this->model('CustomerModel');
+        $this->EmployeeModel = $this->model('EmployeeModel');
     }
 
-    public function index()
+    public function index($msg = [])
     {
-
-            $this->view('login', []);
-        
+        if (!empty($_SESSION['user_id'])) {
+            header('location:' . URLROOT . '/User/profile');
+        } else {
+            $this->view('login', ['msg' => $msg]);
+        }
     }
 
     public function profile()
@@ -21,7 +24,7 @@ class User extends Controller
                 header('location:' . URLROOT . '/Admin/product_mgmt');
             } else if ($_SESSION['user_type'] == 1) {
                 $cus = $this->CustomerModel->getCustomerByUserId($_SESSION['user_id']);
-                $this->view('profile', ['cus' => $cus]);
+                $this->view('customer_profile', ['cus' => $cus]);
             }
         }
     }
@@ -42,15 +45,18 @@ class User extends Controller
                 if (!empty($user)) {
                     $_SESSION['user_id'] = $user[0]['user_id'];
                     $_SESSION['user_type'] = $user[0]['user_type'];
-                    $_SESSION['user_email'] = $user[0]['email'];
+                    $_SESSION['user_email'] = $user[0]['email'];  
 
                     if ($_SESSION['user_type'] == 0) {
                         $employee = $this->EmployeeModel->getEmployeeByUserId($_SESSION['user_id']);
                         $_SESSION['user_name'] = $employee[0]['lastname'] . " " . $employee[0]['firstname'];
                         header('location:' . URLROOT . '/Admin/index');
                     } else if ($_SESSION['user_type'] == 1) {
-                        header('location:' . URLROOT . '/User/index');
+                        header('location:' . URLROOT . '/Home/index');
                     }
+                }
+                else {
+                    header('location:' . URLROOT . '/User/index/wrongpass');
                 }
             }
         }
@@ -87,7 +93,7 @@ class User extends Controller
                 $userResult = $this->UserModel->addUser($_POST['emailInput'], md5($_POST['passwordInput1']), 1);
                 if ($userResult) {
                     $user_id = $this->UserModel->getUserId($_POST['emailInput'])[0]['user_id'];
-                    $customerResult = $this->CustomerModel->addCustomer($user_id, $_POST['firstNameInput'], $_POST['lastNameInput'], $_POST['birthdayInput'], $_POST['phoneInput']);
+                    $customerResult = $this->CustomerModel->addCustomer($user_id, $_POST['firstNameInput'], $_POST['lastNameInput']);
                     if ($customerResult) {
                         header('location:' . URLROOT . '/User/index/success');
                     }

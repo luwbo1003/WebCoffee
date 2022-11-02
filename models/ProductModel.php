@@ -124,4 +124,13 @@ class ProductModel
         return $data;
     }
 
+    public function getProductByName($name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_product WHERE STATUS = 1 AND pro_name LIKE '%$name%'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
 }

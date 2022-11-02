@@ -3,6 +3,7 @@
 require_once APPROOT . '/views/includes/head.php';
 ?>
 <link rel="stylesheet" href="<?= CSSFILE ?>/card_product.css">
+
 <body>
     <div class="container-fluid p-0">
         <?php
@@ -57,6 +58,9 @@ require_once APPROOT . '/views/includes/head.php';
 
                                 <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
                                     <div class="gap-5 d-flex flex-row align-middle align-self-center ">
+                                        <p>tags: </p>
+                                    </div>
+                                    <div class="gap-5 d-flex flex-row align-middle align-self-center ">
                                         <p class="align-self-center">Quantity:</p>
                                         <div class="d-inline-block product-quantity">
                                             <input class="form-control" type="number" value="1" min="0" max="<?= $pro_quantity ?>" style="width: 130px">
@@ -83,7 +87,7 @@ require_once APPROOT . '/views/includes/head.php';
                                                     <strong>About this item</strong>
                                                 </button>
                                             </h1>
-                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div id="collapseOne" class="accordion-collapse collapse show mt-3" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                 <table class="a-normal a-spacing-micro">
                                                     <?php
                                                     if (!empty($data['des'])) :
@@ -118,12 +122,12 @@ require_once APPROOT . '/views/includes/head.php';
                                                 </table>
                                                 <div id="feature-bullets" class="a-section a-spacing-medium a-spacing-top-small">
                                                     <ul class="a-unordered-list a-vertical a-spacing-mini">
-                                                        <li><span class="a-list-item"> Includes 12 (13.7oz) bottles of Starbucks
+                                                        <!-- <li><span class="a-list-item"> Includes 12 (13.7oz) bottles of Starbucks
                                                                 Frappuccino, Caramel
                                                                 flavor </span></li>
                                                         <li><span class="a-list-item"> An indulgent blend of buttery caramel
                                                                 flavor and real brewed
-                                                                Strarbucks coffee with creamy milk. </span></li>
+                                                                Strarbucks coffee with creamy milk. </span></li> -->
                                                         <li><span class="a-list-item"> Inspired by a classic enjoyed in our
                                                                 cafes everyday </span></li>
                                                         <li><span class="a-list-item"> Made with the finest arabica coffee

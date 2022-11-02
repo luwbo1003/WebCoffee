@@ -9,6 +9,44 @@
     <?php require_once APPROOT . '/views/includes/nav_all.php'; ?>
         <!-- header section end -->
 
+        <fieldset>
+                <!-- Message section -->
+                <?php if (isset($data['msg'])) : ?>
+
+                    <?php switch ($data['msg']):
+                        case 'success': ?>
+
+                            <div class="alert alert-dismissible alert-success mb-5" style="font-size: 14px;">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                Bạn đã tạo tài khoản thành công!
+                            </div>
+
+                            <?php break; ?>
+
+                        <?php
+
+                        case 'emailexist': ?>
+
+                            <div class="alert alert-dismissible alert-danger mb-5" style="font-size: 14px;">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                Email đã tồn tại vui lòng đăng ký email khác!
+                            </div>
+
+                            <?php break; ?>
+
+                        <?php
+
+                        case 'wrongpass': ?>
+
+                            <div class="alert alert-dismissible alert-danger mb-5" style="font-size: 14px;">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                Password không trùng khớp vui lòng đăng ký lại!
+                            </div>
+
+                            <?php break; ?>
+
+                    <?php endswitch; ?>
+                <?php endif; ?>
         <!-- Login form -->
         <form class="mt-5 mx-auto bg-white "id="login-box" action="<?= URLROOT ?>/User/login" method="POST"
             style="padding: 45px; margin-top: 100px; min-width: 300px;  max-width: 550px;">
@@ -21,17 +59,17 @@
 
             <div class="needs-validation mt-5">
                 <div class="form-group mb-4" style="font-size: 16px; ">
-                    <input class="form-control" type="email" id="email" placeholder="Email" required>
+                    <input class="form-control" type="email" name="emailInput" id="email" placeholder="Email" required>
                 </div>
                 <div class="form-group mb-2" style="font-size: 16px;">
-                    <input class="form-control" type="password" id="password" placeholder="Password" required>
+                    <input type="password" name="passwordInput" class="form-control" id="password" placeholder="Password" required>
 
                     <div class="forgot-password" style="text-align: right; padding: 20px ; width: 100%;">
                         <button type="button" class="text-link small">Forgot your password?</button>
                     </div>
                 </div>
                 <div>
-                    <input class="btn btn-primary w-25" type="submit" value="SIGN IN">
+                    <input name="signin" class="btn btn-primary w-25" type="submit" value="SIGN IN">
                     <span class="text-link">
                         <a href="#" class="text-black" style=" margin-left: 10px; font-size: 85%;">Return to
                             Store</a>
@@ -53,27 +91,31 @@
 
             <div class="needs-validation mt-5">
                 <div class="form-group mb-4" style="font-size: 16px; ">
-                    <input class="form-control" type="firstname" id="firstname" placeholder="First Name" required>
+                    <input name="firstNameInput" class="form-control" type="firstname" id="firstname" placeholder="First Name" required>
                 </div>
                 <div class="form-group mb-4" style="font-size: 16px; ">
-                    <input class="form-control" type="lastname" id="lastname" placeholder="Last Name" required>
+                    <input name="lastNameInput" class="form-control" type="lastname" id="lastname" placeholder="Last Name" required>
                 </div>
 
                 <div class="form-group mb-4" style="font-size: 16px; ">
-                    <input class="form-control" type="email" id="email" placeholder="Email" required>
+                    <input name="emailInput" class="form-control" type="email" id="email" placeholder="Email" required>
                 </div>
 
                 <div class="form-group mb-4" style="font-size: 16px;">
-                    <input class="form-control" type="password" id="password" placeholder="Password" required>
+                    <input name="passwordInput1" class="form-control" type="password" id="password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group mb-4" style="font-size: 16px;">
+                    <input name="passwordInput2" class="form-control" type="password" placeholder="Confirm Password" required>
                 </div>
 
                 <div style="text-align: center;">
-                    <input class="btn btn-primary w-25" type="submit" value="CREATE">
+                    <input name="signup" class="btn btn-primary w-25" type="submit" value="CREATE">
                 </div>
             </div>
         </form>
         <!-- register end -->
-
+        </fieldset>
 
         <!-- footer section start -->
         <?php

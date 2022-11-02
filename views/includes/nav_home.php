@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-transparent bg-d py-3 " id="nav-id">
     <div class="container">
         <a class="navbar-brand fw-bold ps-2" href="#">
-        <img src="<?= IMAGE ?>/Header_Logo.png" alt=" "style="width: 35px;">
+            <img src="<?= IMAGE ?>/Header_Logo.png" alt=" " style="width: 35px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,25 +34,42 @@
                                 <span class="badge rounded-pill bg-dark"></span>
                         </a>
                     </li>
-                    <!-- <li class="dropdown">
-                                        <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                            <span class="material-symbols-outlined">
-                                                account_circle
-                                            </span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center pt-2" data-popper-placement="bottom-start" style="height: 95px; width: 150px;">
-                                            <a class="dropdown-item" type="button" href="">Profile</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" type="button" href="">Log out</a>
-                                        </div>
-                    </li> -->
-                    <li>
-                        <a class="nav-link" href="<?= URLROOT ?>/User/index">
-                            <span class="material-symbols-outlined">
-                                account_circle
-                            </span>
-                        </a>
-                    </li>
+
+                    <?php if (!empty($_SESSION['user_id'])) : ?>
+
+                        <li class="dropdown">
+                            <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center pt-2" data-popper-placement="bottom-start" style="height: 95px; width: 150px;">
+                                <?php if ($_SESSION['user_type'] == 1) : ?>
+
+                                    <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Profile</a>
+
+                                <?php else : ?>
+
+                                    <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Administrator</a>
+
+                                <?php endif; ?>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/logout">Log out</a>
+                            </div>
+                        </li>
+
+                    <?php else : ?>
+
+                        <li>
+                            <a class="nav-link" href="<?= URLROOT ?>/User/index">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                            </a>
+                        </li>
+
+                    <?php endif; ?>
+
                     <?php require_once APPROOT . '/views/includes/cart_header.php'; ?>
                 </ul>
             </div>

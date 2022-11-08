@@ -69,7 +69,7 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select * from tbl_product where pro_id = '$id'");
+        $result = chayTruyVanTraVeDL($link, "SELECT * from tbl_product where pro_id = '$id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
@@ -79,8 +79,8 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select pro_id from tbl_product where pro_image_id is NULL");
-        $data = $result[0]['pro_id']; //**** */
+        $result = chayTruyVanTraVeDL($link, "SELECT pro_id from tbl_product where pro_image_id is NULL OR pro_des_id is NULL");
+        $data = $result[0]['pro_id'];
         giaiPhongBoNho($link, $result);
         return $data;
     }
@@ -89,7 +89,7 @@ class ProductModel
     // {
     //     $link = null;
     //     taoKetNoi($link);
-    //     $result = chayTruyVanTraVeDL($link, "select category_id from tbl_product where pro_id = '$id'");
+    //     $result = chayTruyVanTraVeDL($link, "SELECT category_id from tbl_product where pro_id = '$id'");
     //     $data = $result[0]['category_id'];
     //     giaiPhongBoNho($link, $result);
     //     return $data;
@@ -99,7 +99,7 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select pro_image_id from tbl_product where pro_id = '$id'");
+        $result = chayTruyVanTraVeDL($link, "SELECT pro_image_id from tbl_product where pro_id = '$id'");
         $data = $result[0]['pro_image_id'];
         giaiPhongBoNho($link, $result);
         return $data;
@@ -108,7 +108,7 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select pro_des_id from tbl_product where pro_id = '$id'");
+        $result = chayTruyVanTraVeDL($link, "SELECT pro_des_id from tbl_product where pro_id = '$id'");
         $data = $result[0]['pro_des_id'];
         giaiPhongBoNho($link, $result);
         return $data;
@@ -132,5 +132,62 @@ class ProductModel
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
+    }
+
+    public function addProduct($name, $quantity, $price, $category_id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_product (pro_name, pro_quantity, pro_price, category_id, STATUS) 
+                                                    VALUES ('$name', '$quantity', '$price', '$category_id', '1')");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteProduct($id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET STATUS = b'0' WHERE pro_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function addImageIdProduct($id, $prod_image_id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_image_id = '$prod_image_id' WHERE pro_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function addDesIdProduct($id, $prod_des_id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_des_id = '$prod_des_id' WHERE pro_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

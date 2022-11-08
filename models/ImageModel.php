@@ -36,18 +36,18 @@ class ImageModel
         return $data;
     }
 
-//    public function addImage($id, $linkimg)
-//     {
-//         $link = null;
-//         taoKetNoi($link);
-//         $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_image (pro_image_id, img_link) VALUES ('$id', '$linkimg')");
-//         $data = $result;
-//         giaiPhongBoNho($link, $result);
-//         if ($data) {
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     }
+   public function addImage($id, $linkimg)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_image (pro_image_id, img_link) VALUES ('$id', '$linkimg')");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-class EmployeeModel
+class StaffModel
 {
     public function __contruct()
     {
@@ -9,27 +9,27 @@ class EmployeeModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_employee WHERE STATUS = 1");
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_staff WHERE STATUS = 1");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
     }
 
-    public function getEmployeeByUserId($user_id)
+    public function getStaffByUserId($user_id)
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_employee WHERE user_id = '$user_id' AND status = '1'");
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_staff WHERE user_id = '$user_id' AND status = '1'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
     }
 
-    public function addEmployee($user_id, $firstname, $lastname, $birthday, $phone)
+    public function addStaff($user_id, $firstname, $lastname)
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_employee (user_id, firstname, lastname, birthday, phone, status) VALUES ('$user_id','$firstname','$lastname', '$birthday', '$phone', '1')");
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_staff (user_id, firstname, lastname, status) VALUES ('$user_id','$firstname','$lastname', '1')");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -39,11 +39,11 @@ class EmployeeModel
         }
     }
 
-    public function deleteEmployee($user_id)
+    public function deleteStaff($user_id)
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_employee SET status = b'0' WHERE user_id = '$user_id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_staff SET status = b'0' WHERE user_id = '$user_id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {

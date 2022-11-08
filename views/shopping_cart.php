@@ -13,7 +13,7 @@ require_once APPROOT . '/views/includes/head.php';
         ?>
 
         <section class="three-col">
-            <div class="container pt-2">
+            <div class="container pt-2s">
                 <div class="row">
                     <div class="col ">
                         <p class="fs-1">Shopping Cart</p>

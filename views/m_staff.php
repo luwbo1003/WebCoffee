@@ -22,19 +22,9 @@ require_once APPROOT . '/views/includes/head.php';
                     <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start pb-4 pb-lg-0">
                         <a> <span class="material-symbols-outlined align-middle me-3" id="menu-btn" style="font-size: 40px;"> menu
                             </span> </a>
-                        <span class="fw-semibold fs-3">Product Management</span>
+                        <span class="fw-semibold fs-3">Staff Management</span>
                     </div>
                     <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end">
-                        <!-- select category -->
-                        <form action="<?= URLROOT ?>/Manage/searchByCategory" method="POST" class="me-2 me-xl-3" id="formcate">
-                            <select class="form-select" name="category" aria-label="Default select example">
-                                <option selected value="all">All</option>
-                                <?php foreach ($data['category_list'] as $cate) : extract($cate); ?>
-                                    <option value="<?= $cate_id ?>" onclick="submit()"><?= $cate_name ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </form>
-
                         <!-- button add new -->
                         <div>
                             <button onclick="addProduct()" type="button" class="btn btn-info d-flex align-items-center fs-5">
@@ -65,27 +55,24 @@ require_once APPROOT . '/views/includes/head.php';
                         <table class=" table table-hover align-middle">
                             <thead>
                                 <tr>
-                                    <th scope="col" colspan="2">id</th>
-                                    <th scope="col">product</th>
-                                    <th scope="col" colspan="2">category</th>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Name</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-                                <?php if (!empty($data['prod'])) :
+                                <?php if (!empty($data['emp'])) :
                                     $i = 0;
-                                    foreach ($data['prod'] as $prod) : extract($prod); ?>
+                                    foreach ($data['emp'] as $emp) : extract($emp); ?>
                                         <tr>
-                                            <th scope="row"><?= $pro_id ?></th>
-                                            <td><img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" alt="" class="product-thumbnail"></td>
-                                            <td><?= $pro_name ?></td>
-                                            <td><?= $data['category'][$i][0]['cate_name'] ?></td>
+                                            <th scope="row"><?= $staff_id ?></th>
+                                            <td><?= $lastname ?> <?= $firstname ?></td>
                                             <td class="text-center utility">
                                                 <div class="d-flex justify-content-center">
-                                                    <form action="<?= URLROOT ?>/Manage/showEdit/<?= $pro_id ?>" method="POST">
-                                                        <button name="editProduct" type="submit" class="material-symbols-outlined edit border border-0 bg-white">edit</button>
+                                                    <form action="<?= URLROOT ?>/Manage/showEdit/<?= $user_id ?>" method="POST">
+                                                        <button name="editEmployee" type="submit" class="material-symbols-outlined edit border border-0 bg-white">edit</button>
                                                     </form>
-                                                    <form action="<?= URLROOT ?>/Manage/deleteProduct/<?= $pro_id ?>" method="POST">
-                                                        <button name="deleteProduct" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
+                                                    <form action="<?= URLROOT ?>/Manage/deleteEmployee/<?= $user_id ?>" method="POST">
+                                                        <button name="deleteEmployee" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
                                                     </form>
                                                 </div>
                                             </td>
@@ -99,7 +86,7 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
             </section>
 
-            <!-- page number -->
+            <!-- Page Number -->
             <section class="py-4">
                 <div class="container d-flex justify-content-center">
                     <ul class="pagination">
@@ -130,10 +117,10 @@ require_once APPROOT . '/views/includes/head.php';
         </div>
 
         <!-- Modal add new product -->
-        <form action="<?= URLROOT ?>/Manage/addProduct" method="POST" class="modal-layout add_product" enctype="multipart/form-data">
+        <form action="<?= URLROOT ?>/Manage/addEmployee" method="POST" class="modal-layout add_product" enctype="multipart/form-data">
             <div id="add_product" class="modal-inner">
                 <div class="d-flex align-items-end">
-                    <span class="me-auto ps-4 fw-semibold fs-3">Add new product</span>
+                    <span class="me-auto ps-4 fw-semibold fs-3">Add new staff</span>
                     <span class="material-symbols-outlined modal-close">
                         close
                     </span>
@@ -142,53 +129,36 @@ require_once APPROOT . '/views/includes/head.php';
                 <div class="row py-2 py-md-4 px-3 px-md-4">
                     <div class=" col-12 col-lg-6">
                         <div class="px-3">
-                            <!-- name product -->
-                            <div class="mb-3">
-                                <label for="name_product" class="form-label">Product name</label>
-                                <input type="text" class="form-control" name="pro_name" id="name_product" placeholder="Enter name of product" required>
-                            </div>
-                            <div class="row mb-3">
-                                <!-- Category -->
+                            <!-- Name -->
+                            <div class="row mb-4">
                                 <div class="col">
-                                    <label class="form-label">Category</label>
-                                    <select class="form-select" name="category" aria-label="Default select example" required>
-                                        <?php foreach ($data['category_list'] as $cate) : extract($cate); ?>
-                                            <option value="<?= $cate_id ?>"><?= $cate_name ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" name="firstNameInput" placeholder="First Name" required>
                                 </div>
-                                <!-- Quantity -->
                                 <div class="col">
-                                    <label for="quantity_product" class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" name="prod_quantity" id="quantity_product" value="1" min="1">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" name="lastNameInput" placeholder="Last Name" required>
                                 </div>
-                            </div>
-                            <!-- Description -->
-                            <div class="mb-3 mb-lg-0">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="3" style="resize: none;" required></textarea>
                             </div>
                         </div>
-
                     </div>
-
-                    <div class="col-12 col-lg-6 d-flex flex-column">
+                    <div class=" col-12 col-lg-6">
                         <div class="px-3">
-                            <!--  product  images-->
-                            <div class="mb-3">
-                                <label for="file-upload" class="form-label">Product images</label>
-                                <input type="file" id="fileToUpload" name="fileToUpload[]" class="form-control" multiple required>
+                            <div class="mb-4">
+                                <label class="form-label">Email address</label>
+                                <input type="email" class="form-control" name="emailInput" placeholder="name@example.com" required>
                             </div>
-
-                            <!-- Price product -->
-                            <label class="form-label">Price</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">$</span>
-                                <input type="number" name="prod_price" class="form-control" min="1" aria-label="Amount (to the nearest dollar)" required>
+                            <div class="mb-4">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" name="passwordInput1" placeholder="Password" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" name="passwordInput2" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="mt-auto d-inline-flex btn-group gap-3 align-self-center ">
-                            <button type="submit" name="addProduct" class="btn btn-primary">Add product</button>
+                            <button type="submit" name="addEmployee" class="btn btn-primary">Add Staff</button>
                             <button type="button" class="btn btn-outline-primary btn_close">Cancel</button>
                         </div>
                     </div>
@@ -201,11 +171,6 @@ require_once APPROOT . '/views/includes/head.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="<?= JSFILE ?>/m_bar.js"></script>
 <script src="<?= JSFILE ?>/m_product.js"></script>
-<script>
-    function submit() {
-        let form = document.getElementById("formcate");
-        form.submit();
-    }
-</script>
+<script src="<?= JSFILE ?>/m_staff.js"></script>
 
 </html>

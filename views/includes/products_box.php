@@ -9,8 +9,8 @@ if (!empty($data['prod'])) :
 
                 <div class="image">
                     <a href="<?= URLROOT ?>/Home/detail/<?= $pro_id ?>">
-                        <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="img-fluid" alt="..." style="max-height: 229px;" >
-                    </a>     
+                        <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="img-fluid" alt="..." style="max-height: 229px;">
+                    </a>
                     <div class="icons w-100">
                         <button type="submit" name="addToCart" class="btn btn-primary align-content-md-center shop-card">Add to cart</button>
                     </div>

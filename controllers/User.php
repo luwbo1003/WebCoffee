@@ -5,7 +5,7 @@ class User extends Controller
     {
         $this->UserModel = $this->model('UserModel');
         $this->CustomerModel = $this->model('CustomerModel');
-        $this->EmployeeModel = $this->model('EmployeeModel');
+        $this->StaffModel = $this->model('StaffModel');
     }
 
     public function index($msg = [])
@@ -21,7 +21,7 @@ class User extends Controller
     {
         if (!empty($_SESSION['user_id'])) {
             if ($_SESSION['user_type'] == 0) {
-                header('location:' . URLROOT . '/Admin/product_mgmt');
+                header('location:' . URLROOT . '/Manage/product');
             } else if ($_SESSION['user_type'] == 1) {
                 $cus = $this->CustomerModel->getCustomerByUserId($_SESSION['user_id']);
                 $this->view('customer_profile', ['cus' => $cus]);
@@ -48,9 +48,9 @@ class User extends Controller
                     $_SESSION['user_email'] = $user[0]['email'];  
 
                     if ($_SESSION['user_type'] == 0) {
-                        $employee = $this->EmployeeModel->getEmployeeByUserId($_SESSION['user_id']);
-                        $_SESSION['user_name'] = $employee[0]['lastname'] . " " . $employee[0]['firstname'];
-                        header('location:' . URLROOT . '/Admin/index');
+                        $Staff = $this->StaffModel->getStaffByUserId($_SESSION['user_id']);
+                        $_SESSION['user_name'] = $Staff[0]['lastname'] . " " . $Staff[0]['firstname'];
+                        header('location:' . URLROOT . '/Manage/index');
                     } else if ($_SESSION['user_type'] == 1) {
                         header('location:' . URLROOT . '/Home/index');
                     }

@@ -4,9 +4,11 @@
             </span> </a>
         <div class="dropdown" style="margin-top: 40px; margin-bottom: 70px;">
             <div class="d-flex text-center justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#ac-toggler" aria-controls="ac-toggler" aria-expanded="false" aria-label="Toggle navigation">
-                <img class="ac-icon" style="margin-right: 10px;" src="" alt="">
+                <img class="ac-icon" style="margin-right: 10px;" src="<?= IMAGE ?>/cat.jpg" alt="">
                 <p>
-                    <span class="dropdown-toggle text-white">aaaaaaaaaaaaaa</span>
+                    <?php if (!empty($_SESSION['user_name'])) : ?>
+                        <span class="dropdown-toggle text-white"> <?= $_SESSION['user_name'] ?> </span>
+                    <?php endif; ?>
                     <br>
                     <span class="text-muted" style="font-size: 18px; margin-right: 10px;">
                         Sales Manager
@@ -17,14 +19,14 @@
                 <a class="d-block pb-3 text-white" style="font-size: 18px;">
                     Setting
                 </a>
-                <a class="d-block text-white" style="font-size: 18px;">
+                <a href="<?= URLROOT ?>/User/logout" class="d-block text-white" style="font-size: 18px;">
                     Log out
                 </a>
             </div>
         </div>
         <div>
             <ul class="p-0 m-0">
-                <a class="d-block text-white" href="" style="padding: 18px">
+                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/product" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         grid_view
                     </span>
@@ -32,7 +34,7 @@
                         Product Mangagement
                     </span>
                 </a>
-                <a class="d-block text-white" href="" style="padding: 18px">
+                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/category" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         category
                     </span>
@@ -40,15 +42,15 @@
                         Category Mangagement
                     </span>
                 </a>
-                <!-- <a class="d-block text-white" href="." style="padding: 18px">
+                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/staff" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         person
                     </span>
                     <span class="align-middle sidebar-text">
-                        Employee Mangagement
+                        Staff Mangagement
                     </span>
-                </a> -->
-                <a class="d-block text-white" href="" style="padding: 18px">
+                </a>
+                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/customer" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         group
                     </span>

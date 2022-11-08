@@ -43,42 +43,56 @@ class CategoryModel
         giaiPhongBoNho($link, $result);
         return $data;
     }
-
-    // public function addCategory($name)
-    // {
-    //     $link = null;
-    //     taoKetNoi($link);
-    //     $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_category (cate_name, status) VALUES ('$name','1')");
-    //     $data = $result;
-    //     giaiPhongBoNho($link, $result);
-    //     if ($data) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    // public function deleteCategory($cate_id)
-    // {
-    //     $link = null;
-    //     taoKetNoi($link);
-    //     $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET status = b'0' WHERE cate_id = '$cate_id'");
-    //     $data = $result;
-    //     giaiPhongBoNho($link, $result);
-    //     if ($data) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
     
-    // public function countProdPerCate($cate_id)
-    // {
-    //     $link = null;
-    //     taoKetNoi($link);
-    //     $result = chayTruyVanTraVeDL($link, "SELECT COUNT(cate_id) AS 'count' FROM tbl_product where cate_id = '$cate_id'");
-    //     $data = $result;
-    //     giaiPhongBoNho($link, $result);
-    //     return $data;
-    // }
+    public function addCategory($name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_category (cate_name, status) VALUES ('$name','1')");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function editCategory($id, $cate_name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET cate_name = '$cate_name' WHERE cate_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteCategory($cate_id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET status = b'0' WHERE cate_id = '$cate_id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public function countProdPerCate($cate_id)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT COUNT(category_id) AS 'count' FROM tbl_product WHERE category_id = '$cate_id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
 }
+

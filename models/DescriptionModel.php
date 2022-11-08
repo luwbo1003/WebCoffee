@@ -56,5 +56,21 @@ class DescriptionModel{
         giaiPhongBoNho($link, $result);
         return $data;
     }
+
+    public function addDes($pro_brand, $pro_form, $pro_flavor, $pro_caffein, $pro_roast_level)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_pro_des (pro_brand, pro_form, pro_flavor, pro_caffein, pro_roast_level) 
+                                                    VALUES ('$pro_brand', '$pro_form', '$pro_flavor', '$pro_caffein', '$pro_roast_level')");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 ?>

@@ -1,5 +1,5 @@
 .product-thumbnail {
-    width: 65px;
+    max-height: 65px;
   }
   
   .table th,

@@ -160,13 +160,19 @@ require_once APPROOT . '/views/includes/head.php';
                                 <!-- Quantity -->
                                 <div class="col">
                                     <label for="quantity_product" class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" name="prod_quantity" id="quantity_product" value="1" min="1">
+                                    <input type="number" class="form-control" name="pro_quantity" id="quantity_product" value="1" min="1">
                                 </div>
                             </div>
-                            <!-- Description -->
+                            <!-- Price product -->
+                            <label class="form-label">Price</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" name="pro_price" class="form-control" min="1" aria-label="Amount (to the nearest dollar)" required>
+                            </div>
+                            <!--  product  images-->
                             <div class="mb-3 mb-lg-0">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="3" style="resize: none;" required></textarea>
+                                <label for="file-upload" class="form-label">Product images</label>
+                                <input type="file" id="fileToUpload" name="fileToUpload[]" class="form-control" multiple required>
                             </div>
                         </div>
 
@@ -174,22 +180,22 @@ require_once APPROOT . '/views/includes/head.php';
 
                     <div class="col-12 col-lg-6 d-flex flex-column">
                         <div class="px-3">
-                            <!--  product  images-->
-                            <div class="mb-3">
-                                <label for="file-upload" class="form-label">Product images</label>
-                                <input type="file" id="fileToUpload" name="fileToUpload[]" class="form-control" multiple required>
+                            
+                            <!-- Description -->
+                            <div class="">
+                                <label for="description" class="form-label">Description</label>
+
+                                <textarea class="form-control mb-2" name="brand" rows="1" style="resize: none;" placeholder="Enter contents of Brand" required></textarea>
+                                <textarea class="form-control mb-2" name="item" rows="1" style="resize: none;" placeholder="Enter contents of Item Form" required></textarea>
+                                <textarea class="form-control mb-2" name="flavor" rows="1" style="resize: none;" placeholder="Enter contents of Flavor" required></textarea>
+                                <textarea class="form-control mb-2" name="caffein" rows="1" style="resize: none;" placeholder="Enter contents of Caffeine Content" required></textarea>
+                                <textarea class="form-control mb-2" name="roast" rows="1" style="resize: none;" placeholder="Enter contents of Roast Level" required></textarea>
                             </div>
 
-                            <!-- Price product -->
-                            <label class="form-label">Price</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">$</span>
-                                <input type="number" name="prod_price" class="form-control" min="1" aria-label="Amount (to the nearest dollar)" required>
-                            </div>
                         </div>
                         <div class="mt-auto d-inline-flex btn-group gap-3 align-self-center ">
                             <button type="submit" name="addProduct" class="btn btn-primary">Add product</button>
-                            <button type="button" class="btn btn-outline-primary btn_close">Cancel</button>
+                            <button type="button" class="btn btn-dark btn_close">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -198,7 +204,7 @@ require_once APPROOT . '/views/includes/head.php';
     </div>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="<?= JSFILE ?>/m_bar.js"></script>
 <script src="<?= JSFILE ?>/m_product.js"></script>
 <script>

@@ -29,11 +29,11 @@ require_once APPROOT . '/views/includes/head.php';
                                         for ($i = 0; $i < count($data['image']); $i++) :
                                             if ($i == 0) : ?>
                                                 <div class="carousel-item active">
-                                                    <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="d-block w-100" alt="...">
+                                                    <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="d-block mx-auto img_carousel" alt="..." style="max-height: 400px;">
                                                 </div>
                                             <?php else : ?>
                                                 <div class="carousel-item">
-                                                    <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="d-block w-100" alt="...">
+                                                    <img src="<?= IMAGE ?>/<?= $data['image'][$i]['img_link'] ?>" class="d-block mx-auto img_carousel" alt="..." style="max-height: 400px;">
                                                 </div>
                                         <?php endif;
                                         endfor; ?>
@@ -195,6 +195,7 @@ require_once APPROOT . '/views/includes/head.php';
     <!-- Script only -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
     </script>
+    <script src="<?= JSFILE ?>/detail.js"></script>
 </body>
 
 </html>

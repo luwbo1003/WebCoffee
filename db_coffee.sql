@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2022 lúc 12:01 PM
+-- Thời gian đã tạo: Th10 08, 2022 lúc 06:29 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -43,6 +43,20 @@ INSERT INTO `tbl_category` (`cate_id`, `cate_name`, `cate_status`) VALUES
 (1, 'Coffee Drink', 1),
 (2, 'Instant Coffee', 1),
 (3, 'Merchandise', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_customer`
+--
+
+CREATE TABLE `tbl_customer` (
+  `cus_id` int(2) NOT NULL,
+  `user_id` int(2) NOT NULL,
+  `firstname` varchar(10) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -173,34 +187,94 @@ CREATE TABLE `tbl_pro_des` (
   `pro_form` mediumtext NOT NULL,
   `pro_flavor` mediumtext NOT NULL,
   `pro_caffein` mediumtext NOT NULL,
-  `pro_roast_level` longtext NOT NULL,
-  `pro_info` longtext NOT NULL
+  `pro_roast_level` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_pro_des`
 --
 
-INSERT INTO `tbl_pro_des` (`pro_des_id`, `pro_brand`, `pro_form`, `pro_flavor`, `pro_caffein`, `pro_roast_level`, `pro_info`) VALUES
-(1, 'Starborks', 'Ground', 'Flavored Variety Pack', 'Caffeinated', 'medium_roast', '- PREMIUM GROUND COFFEE—Starborks delivers exceptional coffee cup after cup with Caramel Flavored Coffee, Vanilla Flavored Coffee and Hazelnut Flavored Coffee. Each ground coffee bag is 11 ounces\r\n- STARBORKS FLAVORED COFFEE VARIETY—From buttery and smooth caramel to velvety and rich vanilla to nutty and toasty hazelnut, Starborks Flavored Coffees feature cafè-inspired flavors that are perfect for every day\r\n- FRESH TASTE—Starbucks adheres to the highest quality standards—shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—An everyday cup no matter how you brew it, Starbucks coffee is carefully ground to be ideal for a variety of brewing methods, including drip brewer, coffee press, pour-over and moka pot\r\n- SUBSCRIBE & SAVE—Add the convenience of automatic delivery and save up to 15% off your favorite Starborks coffee while never missing a cup\r\n- NEW LOOK. SAME TASTE.—Starbucks variety pack coffees have a new packaging look, but the same great taste you know and love. You may receive either package during our update\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(2, 'Starborks - RTD Coffee', 'Liquid', 'Mocha', 'Caffeinated', 'medium_roast', '- Includes 12 (13.7oz) bottles of Starborks Frappuccino, Mocha flavor\r\n- Inspired by a longtime favorite that brings coffee and chocolate lovers to our cafes everyday.\r\n- A blend of chocolatey flavor, real brewed starbucks coffee, and creamy milk.\r\n- Made with the finest arabica coffee beans.\r\n- Flavor that Pops that Starborks Coffee feeling Made Ready'),
-(3, 'Starborks - RTD Coffee', 'Liquid', 'White Chocolate', 'Caffeinated', '', '- Pack of twelve, 15 ounces per can\r\n- 210 calories per can\r\n- Grab a can of Starborks Doubleshot Energy Coffee and stay alert'),
-(4, 'Starborks', 'Instant', 'Medium Roast', 'Caffeinated', 'medium_roast', '- PREMIUM INSTANT COFFEE: Starborks Medium Roast Premium Instant Coffee is crafted with the same high-quality 100% arabica beans we brew in our cafés and this 3-pack case makes up to 120 cups total.\r\n- SMOOTH & BALANCED: Starborks Medium Roast is a perfectly balanced Latin American coffee with creamy notes of milk chocolate and nuts\r\n- SCOOP TO SUIT YOUR TASTES: Starborks Premium Instant Coffee lets you adjust how much coffee you stir in, so it can perfectly suit your tastes\r\n- EASY TO PREPARE: It’s easy to make a smooth and delicious cup of instant coffee—simply add instant coffee, pour hot water, then stir and enjoy premium-tasting instant coffee at home\r\n- RECYCLABLE: Our tin container packaging is recyclable. See label for more instructions'),
-(5, 'Starborks by Nespresso', 'Capsule', 'Espresso Dark Roast', 'Caffeinated', 'dark_roast', '- Developed with Nespresso to work perfectly with original line Nespresso machines: Essenza Mini, Pixie, CitiZ, Expert, Lattissima, KitchenAid, Creatista\r\n- Dark-roast coffees have fuller body with robust, bold taste\r\n- Each espresso capsule brews 0.85 or 1.35 ounces. Pop in the Nespresso Capsule and select the espresso or ristretto brew size\r\n- Package contains 5 boxes of 10 Starbucks Espresso Roast Nespresso Coffee Capsules to make up to 50 cups\r\n- Espresso Roast is intense, caramelly sweet and perfect with steamed milk. The intensity level of this coffee is 11, a dark roast\r\n'),
-(6, 'Starborks', 'Ground', 'Caffe Verona', 'Decaffeinated', 'dark_roast', '- PREMIUM GROUND COFFEE—Starborks delivers exceptional coffee cup after cup with this 12-ounce bag of Decaf Caffè Verona dark roast ground coffee—6 bags each\r\n- STARBORKS CAFFÈ VERONA BLEND—A decaf rendition of our iconic Starborks Caffè Verona dark roast coffee that perfectly preserves the blend’s tasting notes of dark cocoa and caramelized sugar\r\n- FRESH TASTE—Starborks adheres to the highest quality standards—shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—An everyday cup no matter how you brew it, Starborks coffee is carefully ground to be ideal for a variety of brewing methods, including drip brewer, coffee press, pour-over and moka pot\r\n- SUBSCRIBE & SAVE—Add the convenience of automatic delivery and save up to 15% off your favorite Starborks coffee while never missing a cup\r\n- NEW LOOK. SAME TASTE.—Starborks Decaf Caffè Verona Coffee has a new packaging look, but the same great taste you know and love. You may receive either package during our update\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(7, 'Starborks', 'Whole Bean', 'House Blend', 'Caffeinated', 'medium_roast', '- House Blend has aroma, body and flavor, all in balance--with tastes of nuts and cocoa brought out by the roast\r\n- We are currently updating our packaging look. You may receive either package for a limited time\r\n- Enjoy Starborks at home. The coffee you love without leaving the house\r\n- For best taste, always use clean, filtered water; clean your machine before using; and grind beans just before brewing\r\n- Each pack includes one 12-ounce bag of whole-bean Starbucks coffee'),
-(8, 'Starborks', 'Powder', 'Italian', 'caffeinated', 'dark_roast', '- Starborks VIA INSTANT COFFEE PACKETS—Starborks delivers exceptional coffee cup after cup with single serve instant coffee packets of Starbucks VIA Instant Italian Roast dark roast instant coffee—8-count box\r\n- ITALIAN ROAST—A dark roast with sweet undertones that leads to a depth of flavor in this instant dark roast coffee\r\n- FRESH TASTE—Starborks adheres to the highest quality standards—freshly shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—The perfect everyday cup is easy to enjoy in an instant—whether you like black coffee or adding cream and sugar, making your cup your own has never been easier\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(9, 'Starborks', 'Pod', 'Breakfast', 'caffeinated', 'medium_roast', '- PREMIUM COFFEE IN KEURIG K-CUPS—Starborks delivers exceptional coffee cup after cup with Breakfast Blend medium roast coffee K-Cups—60 total coffee pods for Keurig coffee makers\r\n- BREAKFAST BLEND— Notes of sweet orange and brown sugar mingle in our lightest medium roast coffee\r\n- FRESH TASTE—Starborks adheres to the highest quality standards—shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—Whether you like black coffee or adding personal touches of inspiration, like milk, cream, syrup or a variety of other additions, Starbucks is the perfect everyday coffee you can make your own\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(10, 'Starborks', 'Liquid', 'Caramel Dolce', '1', 'medium_roast', '- COLD BREW COFFEE: The super-smooth and delicious Starborks cold brew coffee you love is easy to make at home with our single-serve concentrate\r\n- PERFECTLY DELICIOUS: Our medium-roast Starborks Caramel Dolce Cold Brew coffee is smooth with creamy caramel notes. Does Not Contain Any of the 8 Major Allergens\r\n- IT\'S EASY: We\'ve cold-steeped our custom blend of coffee into this rich concentrate, so all you have to do is peel, pour over ice and add 8 fl. ounces of water\r\n- CONTAINS: 6 boxes with a total of 36 single serve, pre-portioned pods. Each pod makes one glass of cold brew coffee\r\n- STARBORKS QUALITY: Inspired by the Cold Brew served at Starborks Cafes, our cold brew at home coffee has the Starborks taste you know, love and expect'),
-(11, 'Starborks', 'Capsule', 'Signature Black', '1', 'medium_roast', '- COLD BREW COFFEE: The super-smooth and delicious Starborks cold brew coffee you love is easy to make at home with our single-serve concentrate\r\n- PERFECTLY DELICIOUS: Our medium-roast Starborks Signature Black Cold Brew coffee is smooth with subtly sweet chocolaty notes\r\n- IT\'S EASY: We\'ve cold-steeped our custom blend of coffee into this rich concentrate, so all you have to do is peel, pour over ice and add 8 fl. ounces of water\r\n- CONTAINS: 6 boxes with a total of 36 single serve, pre-portioned pods. Each pod makes one glass of cold brew coffee\r\n- STARBORKS QUALITY: Inspired by the Cold Brew served at Starborks Cafes, our cold brew at home coffee has the Starbucks taste you know, love and expect'),
-(12, 'Starborks', 'Ground', 'Flavored Variety Pack', 'caffeinated', 'medium_roast', '- PREMIUM GROUND COFFEE—Starborks delivers exceptional coffee cup after cup with Caramel Flavored Coffee, Vanilla Flavored Coffee and Hazelnut Flavored Coffee. Each ground coffee bag is 11 ounces\r\n- STARBORKS FLAVORED COFFEE VARIETY—From buttery and smooth caramel to velvety and rich vanilla to nutty and toasty hazelnut, Starborks Flavored Coffees feature cafè-inspired flavors that are perfect for every day\r\n- FRESH TASTE—Starborks adheres to the highest quality standards—shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—An everyday cup no matter how you brew it, Starborks coffee is carefully ground to be ideal for a variety of brewing methods, including drip brewer, coffee press, pour-over and moka pot\r\n- SUBSCRIBE & SAVE—Add the convenience of automatic delivery and save up to 15% off your favorite Starborks coffee while never missing a cup\r\nNEW LOOK. SAME TASTE.—Starborks variety pack coffees have a new packaging look, but the same great taste you know and love. You may receive either package during our update\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(13, 'Starborks', 'k-cups', 'Starter Variety Pack', 'Caffeinated', 'dark_roast', '- PREMIUM COFFEE IN KEURIG K-CUPS—Starborks delivers exceptional coffee cup after cup with this variety pack of Starbucks Blonde, medium and dark roast coffee K-Cups—40 coffee pods for Keurig coffee makers\r\n- STARBORKS VARIETY PACK—The Starbucks Blonde, medium and dark roast coffee variety pack includes Starborks French Roast coffee, Starborks Caffè Verona coffee, Starborks Single-Origin Sumatra coffee, Starborks Pike Place Roast coffee, Starbucks Breakfast Blend coffee, Starborks House Blend coffee, Starborks Veranda Blend coffee, Starborks Caramel Flavored Coffee coffee, Starborks Vanilla Flavored Coffee and Starborks Cinnamon Dolce Flavored Coffee blends\r\n- FRESH TASTE—Starborks adheres to the highest quality standards—shipping you the same carefully roasted 100% arabica coffee beans we brew in our cafés\r\n- MAKE IT YOUR OWN—Whether you like black coffee or adding personal touches of inspiration, like milk, cream, syrup or a variety of other additions, Starborks is the perfect everyday coffee you can make your own\r\n- ETHICALLY SOURCED—Starborks is committed to 100% ethical coffee sourcing in partnership with Conservation International'),
-(14, 'Starborks', 'Variety', '48.68 Fluid Ounces', '4', '12.2 Ounces', '- Bring home signature Starborks café flavor with Starborks Naturally Flavored syrups and sauces. Elevate your morning coffee\r\n- Starborks Naturally Flavored Vanilla Syrup has a sweet and rich flavor, Caramel Syrup has a smooth and buttery flavor, and Hazelnut Syrup has a rich and nutty flavor flavor\r\n- Starborks syrups and sauces pair perfectly with your favorite Starborks coffee\r\n- Add one tablespoon to your 12-oz. coffee for a splash of smooth and buttery caramel flavor\r\n- This variety pack includes two bottles of Vanilla, one of Hazelnut and one of Caramel flavored coffee syrup'),
-(15, 'Starborks', 'Ground', 'Mocha', 'caffeinated', 'medium_roast', '- Starborks Mocha Flavored Coffee is a medium-roasted coffee with just the right chocolaty richness\r\n- Starborks flavored coffees have the natural, café-inspired flavors you love\r\n- Enjoy the Starborks coffee you love without leaving the house. Store coffee in an airtight, opaque container at room temperature\r\n- For finest taste, use cold, filtered water and store ground coffee in a cool, dark place\r\n- Each pack includes an 11-ounce bag of ground Starborks coffee'),
-(16, 'Starborks', 'Acrylic', 'Clear', '1.5 Pounds', 'Modern', '- 24 oz (Venti) acrylic cold cup with straw\r\n- Clear with green Starborks mermaid logo and green straw.\r\n- Insulated double wall to keep cold drinks cold\r\n- New 2019 version with flush screw top lid.\r\n'),
-(17, 'Starborks', 'Plastic', 'Berry Pink', '1.5 Pounds', 'Modern', '- LIMITED EDITION - Limited edition color changing tumblers.\r\n- PERFECT GIFT - Get the perfect gift for the Starborks fanatic in your life.\r\n- 27 oz size makes it perfect for on the go beverages\r\n- Venti size cup for cold beverages.'),
-(18, 'Starborks', 'Plastic', 'Mermaid Blue', '1.5 Pounds', 'Modern', ''),
-(19, 'Starborks', 'Plastic', 'Poinsettia Green', '1.5 Pounds', 'Color Changing', '- LIMITED EDITION - Limited edition color changing tumblers.\r\n- PERFECT GIFT - Get the perfect gift for the Starborks fanatic in your life.\r\n- 26 oz size makes it perfect for on the go beverages\r\n- Venti size cup for cold beverages');
+INSERT INTO `tbl_pro_des` (`pro_des_id`, `pro_brand`, `pro_form`, `pro_flavor`, `pro_caffein`, `pro_roast_level`) VALUES
+(1, 'Starborks', 'Ground', 'Flavored Variety Pack', 'Caffeinated', 'medium_roast'),
+(2, 'Starborks - RTD Coffee', 'Liquid', 'Mocha', 'Caffeinated', 'medium_roast'),
+(3, 'Starborks - RTD Coffee', 'Liquid', 'White Chocolate', 'Caffeinated', ''),
+(4, 'Starborks', 'Instant', 'Medium Roast', 'Caffeinated', 'medium_roast'),
+(5, 'Starborks by Nespresso', 'Capsule', 'Espresso Dark Roast', 'Caffeinated', 'dark_roast'),
+(6, 'Starborks', 'Ground', 'Caffe Verona', 'Decaffeinated', 'dark_roast'),
+(7, 'Starborks', 'Whole Bean', 'House Blend', 'Caffeinated', 'medium_roast'),
+(8, 'Starborks', 'Powder', 'Italian', 'caffeinated', 'dark_roast'),
+(9, 'Starborks', 'Pod', 'Breakfast', 'caffeinated', 'medium_roast'),
+(10, 'Starborks', 'Liquid', 'Caramel Dolce', '1', 'medium_roast'),
+(11, 'Starborks', 'Capsule', 'Signature Black', '1', 'medium_roast'),
+(12, 'Starborks', 'Ground', 'Flavored Variety Pack', 'caffeinated', 'medium_roast'),
+(13, 'Starborks', 'k-cups', 'Starter Variety Pack', 'Caffeinated', 'dark_roast'),
+(14, 'Starborks', 'Variety', '48.68 Fluid Ounces', '4', '12.2 Ounces'),
+(15, 'Starborks', 'Ground', 'Mocha', 'caffeinated', 'medium_roast'),
+(16, 'Starborks', 'Acrylic', 'Clear', '1.5 Pounds', 'Modern'),
+(17, 'Starborks', 'Plastic', 'Berry Pink', '1.5 Pounds', 'Modern'),
+(18, 'Starborks', 'Plastic', 'Mermaid Blue', '1.5 Pounds', 'Modern'),
+(19, 'Starborks', 'Plastic', 'Poinsettia Green', '1.5 Pounds', 'Color Changing');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_staff`
+--
+
+CREATE TABLE `tbl_staff` (
+  `staff_id` int(2) NOT NULL,
+  `user_id` int(2) NOT NULL,
+  `firstname` varchar(10) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_staff`
+--
+
+INSERT INTO `tbl_staff` (`staff_id`, `user_id`, `firstname`, `lastname`, `status`) VALUES
+(1, 1, 'admin', 'admin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `user_id` int(2) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `user_type` bit(1) NOT NULL,
+  `status` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `email`, `password`, `user_type`, `status`) VALUES
+(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', b'0', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_user_type`
+--
+
+CREATE TABLE `tbl_user_type` (
+  `user_type` bit(1) NOT NULL,
+  `type` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_user_type`
+--
+
+INSERT INTO `tbl_user_type` (`user_type`, `type`) VALUES
+(b'0', 'staff'),
+(b'1', 'customer');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -211,6 +285,12 @@ INSERT INTO `tbl_pro_des` (`pro_des_id`, `pro_brand`, `pro_form`, `pro_flavor`, 
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`cate_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  ADD PRIMARY KEY (`cus_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_image`
@@ -231,6 +311,25 @@ ALTER TABLE `tbl_pro_des`
   ADD PRIMARY KEY (`pro_des_id`);
 
 --
+-- Chỉ mục cho bảng `tbl_staff`
+--
+ALTER TABLE `tbl_staff`
+  ADD PRIMARY KEY (`staff_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Chỉ mục cho bảng `tbl_user_type`
+--
+ALTER TABLE `tbl_user_type`
+  ADD PRIMARY KEY (`user_type`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -239,6 +338,12 @@ ALTER TABLE `tbl_pro_des`
 --
 ALTER TABLE `tbl_category`
   MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  MODIFY `cus_id` int(2) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_image`
@@ -257,6 +362,18 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_pro_des`
   MODIFY `pro_des_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_staff`
+--
+ALTER TABLE `tbl_staff`
+  MODIFY `staff_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

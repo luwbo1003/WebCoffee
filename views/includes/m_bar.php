@@ -1,16 +1,16 @@
 <div>
-    <div class="fixed-top prevent-select bg-dark" id="sidebar" style="min-height: 100vh; width: 340px;">
+    <div class="fixed-top prevent-select bg-coffee" id="sidebar" style="min-height: 100vh; width: 340px;">
         <a> <span class="material-symbols-outlined align-middle ms-4 mt-4 text-white invisible" id="sidebar-menu-btn" style="font-size: 40px;"> menu
             </span> </a>
         <div class="dropdown" style="margin-top: 40px; margin-bottom: 70px;">
             <div class="d-flex text-center justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#ac-toggler" aria-controls="ac-toggler" aria-expanded="false" aria-label="Toggle navigation">
-                <img class="ac-icon" style="margin-right: 10px;" src="<?= IMAGE ?>/cat.jpg" alt="">
+                <img class="ac-icon" style="margin-right: 10px;" src="<?= IMAGE ?>/linda.jpg" alt="">
                 <p>
                     <?php if (!empty($_SESSION['user_name'])) : ?>
                         <span class="dropdown-toggle text-white"> <?= $_SESSION['user_name'] ?> </span>
                     <?php endif; ?>
                     <br>
-                    <span class="text-muted" style="font-size: 18px; margin-right: 10px;">
+                    <span class="text-black" style="font-size: 15px; margin-right: 10px;">
                         Sales Manager
                     </span>
                 </p>
@@ -26,15 +26,15 @@
         </div>
         <div>
             <ul class="p-0 m-0">
-                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/product" style="padding: 18px">
-                    <span class="material-symbols-outlined align-middle ms-2 me-2">
+                <a class="d-block text-white text-decoration-none" href="<?= URLROOT ?>/Manage/product" style="padding: 18px">
+                    <span class="material-symbols-outlined align-middle ms-2 me-2 ">
                         grid_view
                     </span>
-                    <span class="align-middle sidebar-text">
+                    <span class="align-middle sidebar-text ">
                         Product Mangagement
                     </span>
                 </a>
-                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/category" style="padding: 18px">
+                <a class="d-block text-white text-decoration-none" href="<?= URLROOT ?>/Manage/category" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         category
                     </span>
@@ -42,7 +42,7 @@
                         Category Mangagement
                     </span>
                 </a>
-                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/staff" style="padding: 18px">
+                <a class="d-block text-white text-decoration-none" href="<?= URLROOT ?>/Manage/staff" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         person
                     </span>
@@ -50,7 +50,7 @@
                         Staff Mangagement
                     </span>
                 </a>
-                <a class="d-block text-white" href="<?= URLROOT ?>/Manage/customer" style="padding: 18px">
+                <a class="d-block text-white text-decoration-none" href="<?= URLROOT ?>/Manage/customer" style="padding: 18px">
                     <span class="material-symbols-outlined align-middle ms-2 me-2">
                         group
                     </span>

@@ -61,11 +61,17 @@ class Manage extends Controller
                 $pro_name = $_POST['pro_name'];
                 $pro_price = $_POST['pro_price'];
                 $pro_quantity = $_POST['pro_quantity'];
-                $description = $_POST['description'];
                 $category_id = $_POST['category'];
 
-                $prodResult = $this->ProductModel->addProduct($pro_name, $pro_quantity, $pro_price, $category_id, $description);
+                $brand = $_POST['brand'];
+                $item = $_POST['item'];
+                $flavor = $_POST['flavor'];
+                $caffein = $_POST['caffein'];
+                $roast = $_POST['roast'];
+
+                $prodResult = $this->ProductModel->addProduct($pro_name, $pro_quantity, $pro_price, $category_id);
                 if ($prodResult) {
+                    $this->DescriptionModel->addDes($brand,$item,$flavor,$caffein,$roast);
                     $pro_id = $this->ProductModel->getProductId();
                     if ($pro_id < 10) {
                         $pro_img_id = "img0" . $pro_id;
@@ -73,7 +79,7 @@ class Manage extends Controller
                         $pro_img_id = "img" . $pro_id;
                     }
                     $this->ProductModel->addImageIdProduct($pro_id, $pro_img_id);
-                    // $this->DescriptionModel->addDes()
+                    $this->ProductModel->addDesIdProduct($pro_id,$pro_id);
                     $this->uploadPicture($pro_img_id);
                     header('location:' . URLROOT . '/Manage/product');
                 }
@@ -104,7 +110,7 @@ class Manage extends Controller
         }
     }
 
-    public function uploadPicture($prod_img_id)
+    public function uploadPicture($pro_img_id)
     {
         if ($_SESSION['user_type'] == 0) {
             if (isset($_POST['addProduct'])) {
@@ -113,8 +119,8 @@ class Manage extends Controller
                 for ($i = 0; $i < $countfiles; $i++) {
                     $filename = $_FILES['fileToUpload']['name'][$i];
                     $s = explode(".", $filename);
-                    $this->ImageModel->addImage($prod_img_id, $prod_img_id . "-" . ($i + 1) . "." . $s[1]);
-                    move_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i], APPROOT . "/public/img/" . $prod_img_id . "-" . ($i + 1) . "." . $s[1]);
+                    $this->ImageModel->addImage($pro_img_id, $pro_img_id . "-" . ($i + 1) . "." . $s[1]);
+                    move_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i], APPROOT . "/public/image/" . $pro_img_id . "-" . ($i + 1) . "." . $s[1]);
                 }
             }
         }

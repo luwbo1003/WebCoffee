@@ -163,11 +163,11 @@ class ProductModel
         }
     }
 
-    public function addImageIdProduct($id, $prod_image_id)
+    public function addImageIdProduct($id, $pro_image_id)
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_image_id = '$prod_image_id' WHERE pro_id = '$id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_image_id = '$pro_image_id' WHERE pro_id = '$id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -177,11 +177,11 @@ class ProductModel
         }
     }
 
-    public function addDesIdProduct($id, $prod_des_id)
+    public function addDesIdProduct($id, $pro_des_id)
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_des_id = '$prod_des_id' WHERE pro_id = '$id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_des_id = '$pro_des_id' WHERE pro_id = '$id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {

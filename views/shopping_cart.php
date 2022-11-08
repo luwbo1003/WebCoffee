@@ -76,18 +76,38 @@ require_once APPROOT . '/views/includes/head.php';
                             </div>
                             <table class="table align-middle" style="font-size: 15px;">
                                 <tbody>
+                                <?php if (isset($_SESSION['total'])) : ?>
 
                                     <tr>
                                         <td scope="row" class="text-black fw-semibold ps-0">Subtotal</td>
-                                        <td class="text-end text-xl-start pe-0 p_td"></td>
+                                        <td class="text-end text-xl-start pe-0 p_td">$<?= number_format($_SESSION['total'], 2, '.', ',') ?></td>
                                     </tr>
+                                    <?php endif; ?>
+
+                                         <tr>
+                                        <td scope="row" class="text-black fw-semibold ps-0 ">Shipping</td>
+                                        <td class="pe-0">
+                                            <div class="float-end float-xl-start">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="shipping" id="free" checked>
+                                                    <label class="form-check-label" for="free">Free shipping</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="shipping" id="local">
+                                                    <label class="form-check-label" for="local">Local pickup</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php if (isset($_SESSION['total'])) : ?>
                                     <tr>
                                         <td scope="row" class="text-black fw-semibold  ps-0">Total</td>
                                         <td class="text-end  text-xl-start  pe-0 p_td">
-                                            <p class="fw-semibold fs-4 text-black">$</p>
-                                            <span class="fs-6">(Includes $ tax)</span>
+                                            <p class="fw-semibold fs-4 text-black">$<?= number_format($_SESSION['total'] * 1.1, 2, '.', ',') ?></p>
+                                            <span class="fs-6">(Includes $ <?= number_format($_SESSION['total'] * 0.1, 2, '.', ',') ?> tax)</span>
                                         </td>
                                     </tr>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                             <div class="d-flex flex-column justify-content-center mt-2 mt-xl-5">

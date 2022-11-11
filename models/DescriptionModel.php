@@ -72,5 +72,19 @@ class DescriptionModel{
             return false;
         }
     }
+    public function editDescription($id, $pro_brand, $pro_form, $pro_flavor, $pro_caffein, $pro_roast_level)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_pro_des SET pro_brand = '$pro_brand', pro_form = '$pro_form', pro_flavor = '$pro_flavor',
+                                                                        pro_caffein = '$pro_caffein', pro_roast_level = '$pro_roast_level' WHERE pro_des_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 ?>

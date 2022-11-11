@@ -150,9 +150,6 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
             </div>
         </form>
-
-
-
         <form action="<?= URLROOT ?>/" method="POST" class="modal-layout merchandise">
             <div id="merchandise" class="modal-inner">
                 <div class="d-flex align-items-end">

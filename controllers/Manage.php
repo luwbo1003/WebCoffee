@@ -21,14 +21,23 @@ class Manage extends Controller
 
     public function showEdit($id)
     {
-        if ($_SESSION['user_type'] == 0) {
-            if (isset($_POST['editStaff'])) {
-                $emp = $this->StaffModel->getStaffByUserId($id);
-                $user = $this->UserModel->getUserById($id);
-                $this->view('editpage', ['emp' => $emp, 'user' => $user]);
-            } else if (isset($_POST['editProduct'])) {
-                $prod = $this->ProductModel->getProduct($id);
-                $this->view('editpage', ['prod' => $prod]);
+        {
+            if ($_SESSION['user_type'] == 0) {
+                if (isset($_POST['editEmployee'])) {
+                    $emp = $this->StaffModel->getStaffByUserId($id);
+                    $this->view('m_editpage', ['emp' => $emp]);
+                } else if (isset($_POST['editProduct'])) {
+                    $prod = $this->ProductModel->getProduct($id);
+                    $des = $this->DescriptionModel->getDes($id);
+                    $category_list = $this->CategoryModel->getCategoryList();
+                    $this->view('m_editpage', ['prod' => $prod, 'category_list' => $category_list, 'des' => $des]);
+                } else if (isset($_POST['editCategory'])) {
+                    $cate = $this->CategoryModel->getCategory($id);
+                    $this->view('m_editpage', ['cate' => $cate]);
+                } else if (isset($_POST['editCustomer'])) {
+                    $cus = $this->CustomerModel->getCustomerByUserId($id);
+                    $this->view('m_editpage', ['cus' => $cus]);
+                }
             }
         }
     }
@@ -87,14 +96,24 @@ class Manage extends Controller
         }
     }
 
-    public function editProduct($id)
+    public function editProduct()
     {
-        if (isset($_POST['editProfile'])) {
-            $userResult = $this->UserModel->changeEmail($id, $_POST['emailInput']);
-            if ($userResult) {
-                $customerResult = $this->CustomerModel->editCustomer($_SESSION['user_id'], $_POST['firstNameInput'], $_POST['lastNameInput']);
-                if ($customerResult) {
-                    header('location:' . URLROOT . '/User/profile');
+        if ($_SESSION['user_type'] == 0) {
+            if (isset($_POST['editProduct'])) {
+
+                switch ($_POST['editProduct']) {
+                    case 'edit':
+                        $this->ProductModel->editProduct($_POST['pro_id'], $_POST['pro_name'], $_POST['pro_quantity'], $_POST['category'], $_POST['pro_price']);
+                        $this->DescriptionModel->editDescription($_POST['pro_id'], $_POST['brand'], $_POST['form'], $_POST['flavor'], $_POST['caffein'], $_POST['roast']);
+                        header('location:' . URLROOT . '/Manage/product');
+                        break;
+
+                    case 'cancel':
+                        header('location:' . URLROOT . '/Manage/product');
+                        break;
+
+                    default:
+                        break;
                 }
             }
         }
@@ -148,9 +167,35 @@ class Manage extends Controller
         if ($_SESSION['user_type'] == 0) {
             if (isset($_POST['addCategory'])) {
                 $name = $_POST['category'];
+                $check = $this->CategoryModel->duplicateCategory($name);
+                if ($name == $check) {
+                    $this->CategoryModel->editStatusCategory($name);
+                    header('location:' . URLROOT . '/Manage/category');
+                } else {
+                    $this->CategoryModel->addCategory($name);
+                    header('location:' . URLROOT . '/Manage/category');
+                }
+            }
+        }
+    }
+    
+    public function editCategory()
+    {
+        if ($_SESSION['user_type'] == 0) {
+            if (isset($_POST['editCategory'])) {
+                switch ($_POST['editCategory']) {
+                    case 'edit':
+                        $this->CategoryModel->editCategory($_POST['cate_id'], $_POST['cate_name']);
+                        header('location:' . URLROOT . '/Manage/category');
+                        break;
 
-                $this->CategoryModel->addCategory($name);
-                header('location:' . URLROOT . '/Manage/category');
+                    case 'cancel':
+                        header('location:' . URLROOT . '/Manage/category');
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -170,15 +215,14 @@ class Manage extends Controller
         if ($_SESSION['user_type'] == 0) {
             if (isset($_POST['category'])) {
                 if ($_POST['category'] == "all") {
-                    header('location:' . URLROOT . '/Manage/product');
                 } else {
                     $prod = $this->ProductModel->getProductByCategory($_POST['category']);
                     $cate_name = array();
                     $image = array();
                     $category_list = $this->CategoryModel->getCategoryList();
                     foreach ($prod as $value) {
-                        $cate = $this->CategoryModel->getCategory($this->ProductModel->getCategoryId($value['pro_id']));
-                        $img = $this->ImageModel->getImage($this->ProductModel->getImageId($value['pro_id']))[0];
+                        $cate = $this->CategoryModel->getCategory($value['category_id']);
+                        $img = $this->ImageModel->getImage($value['pro_image_id'])[0];
                         array_push($image, $img);
                         array_push($cate_name, $cate);
                     }
@@ -188,6 +232,7 @@ class Manage extends Controller
             }
         }
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Staff Management
 
@@ -238,29 +283,52 @@ class Manage extends Controller
         }
     }
 
-    public function editProfile($id)
+    public function editProfile()
     {
-        if (isset($_POST['editProfile'])) {
-            $userResult = $this->UserModel->changeEmail($id, $_POST['emailInput']);
-            if ($userResult) {
-                $customerResult = $this->CustomerModel->editCustomer($_SESSION['user_id'], $_POST['firstNameInput'], $_POST['lastNameInput'], $_POST['birthdayInput'], $_POST['phoneInput']);
-                if ($customerResult) {
-                    header('location:' . URLROOT . '/User/profile');
+        if ($_SESSION['user_type'] == 0) {
+            if (isset($_POST['editProfile'])) {
+                switch ($_POST['editProfile']) {
+                    case 'edit':
+                        $this->UserModel->changeEmail($_POST['user_id'], $_POST['emailInput']);
+                        $this->StaffModel->editStaff($_POST['user_id'], $_POST['firstNameInput'], $_POST['lastNameInput']);
+                        header('location:' . URLROOT . '/Manage/Staff');
+                        break;
+
+                    case 'cancel':
+                        header('location:' . URLROOT . '/Manage/Staff');
+                        break;
+
+                    default:
+                        break;
                 }
             }
         }
     }
 
-    public function editAccount($id)
+    public function editAccount()
     {
-        if (isset($_POST['editAccount'])) {
-            $userResult = $this->UserModel->changePassword($_SESSION['user_id'], md5($_POST['passwordInput1']));
-            if ($userResult) {
-                header('location:' . URLROOT . '/User/profile');
+        if ($_SESSION['user_type'] == 0) {
+            if (isset($_POST['editAccount'])) {
+                switch ($_POST['editAccount']) {
+                    case 'edit':
+                        if ($this->validatePassword()) {
+                            echo "unmatch password";
+                        } else {
+                            $this->UserModel->changePassword($_POST['user_id'], md5($_POST['passwordInput1']));
+                            header('location:' . URLROOT . '/Manage/Staff');
+                        }
+                        break;
+
+                    case 'cancel':
+                        header('location:' . URLROOT . '/Manage/Staff');
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
     }
-
     public function deleteStaff($id)
     {
         if ($_SESSION['user_type'] == 0) {
@@ -278,6 +346,27 @@ class Manage extends Controller
         if ($_SESSION['user_type'] == 0) {
             $cus = $this->CustomerModel->getCustomerList();
             $this->view("m_customer", ['cus' => $cus]);
+        }
+    }
+    public function editCustomer()
+    {
+        if ($_SESSION['user_type'] == 0) {
+            if (isset($_POST['editCustomer'])) {
+                switch ($_POST['editCustomer']) {
+                    case 'edit':
+                        $this->CustomerModel->editCustomer($_POST['user_id'], $_POST['firstNameInput'], $_POST['lastNameInput']);
+                        $this->UserModel->changeEmail($_POST['user_id'], $_POST['emailInput']);
+                        header('location:' . URLROOT . '/Manage/customer');
+                        break;
+
+                    case 'cancel':
+                        header('location:' . URLROOT . '/Manage/customer');
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
     }
 

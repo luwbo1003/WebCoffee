@@ -19,7 +19,7 @@ class StaffModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_staff WHERE user_id = '$user_id' AND status = '1'");
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_staff JOIN tbl_user ON tbl_staff.user_id = tbl_user.user_id WHERE tbl_staff.user_id = '$user_id' AND tbl_staff.status = 1");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
@@ -38,7 +38,19 @@ class StaffModel
             return false;
         }
     }
-
+    public function editStaff($user_id, $firstname, $lastname)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_staff SET firstname = '$firstname', lastname = '$lastname' WHERE user_id = '$user_id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function deleteStaff($user_id)
     {
         $link = null;

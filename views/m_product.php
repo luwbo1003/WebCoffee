@@ -27,10 +27,10 @@ require_once APPROOT . '/views/includes/head.php';
                     <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end">
                         <!-- select category -->
                         <form action="<?= URLROOT ?>/Manage/searchByCategory" method="POST" class="me-2 me-xl-3" id="formcate">
-                            <select class="form-select" name="category" aria-label="Default select example">
+                            <select class="form-select" name="category" aria-label="Default select example" onchange="submit()">
                                 <option selected value="all">All</option>
                                 <?php foreach ($data['category_list'] as $cate) : extract($cate); ?>
-                                    <option value="<?= $cate_id ?>" onclick="submit()"><?= $cate_name ?></option>
+                                    <option value="<?= $cate_id ?>"><?= $cate_name ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </form>

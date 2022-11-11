@@ -38,7 +38,7 @@ class CategoryModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "select cate_name from tbl_category where cate_id = '$id'");
+        $result = chayTruyVanTraVeDL($link, "select * from tbl_category where cate_id = '$id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
@@ -48,7 +48,7 @@ class CategoryModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_category (cate_name, status) VALUES ('$name','1')");
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_category (cate_name, cate_status) VALUES ('$name','1')");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -75,7 +75,7 @@ class CategoryModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET status = b'0' WHERE cate_id = '$cate_id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET cate_status = b'0' WHERE cate_id = '$cate_id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -93,6 +93,29 @@ class CategoryModel
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
+    }
+    public function duplicateCategory($cate_name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT cate_name FROM tbl_category WHERE cate_name like '$cate_name'");
+        $data = $result[0]['cate_name'];
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
+
+    public function editStatusCategory($cate_name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_category SET cate_status = b'1' WHERE cate_name like '$cate_name'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

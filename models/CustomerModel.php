@@ -72,6 +72,7 @@ class CustomerModel
         }
     }
 
+    
     public function editCustomer($user_id, $firstname, $lastname)
     {
         $link = null;

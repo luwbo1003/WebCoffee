@@ -59,7 +59,7 @@ class ProductModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanTraVeDL($link, "SELECT * from tbl_product where status = '1'");
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_product join tbl_category WHERE tbl_product.category_id = tbl_category.cate_id and tbl_product.status = 1 AND tbl_category.cate_status = 1");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
@@ -190,4 +190,19 @@ class ProductModel
             return false;
         }
     }
+    public function editProduct($id, $pro_name, $pro_quantity, $category_id, $pro_price)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_product SET pro_name = '$pro_name', pro_quantity = '$pro_quantity', category_id = '$category_id',
+                                                                        pro_price = '$pro_price' WHERE pro_id = '$id'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

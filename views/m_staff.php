@@ -117,7 +117,7 @@ require_once APPROOT . '/views/includes/head.php';
         </div>
 
         <!-- Modal add new product -->
-        <form action="<?= URLROOT ?>/Manage/addEmployee" method="POST" class="modal-layout add_product" enctype="multipart/form-data">
+        <form action="<?= URLROOT ?>/Manage/addStaff" method="POST" class="modal-layout add_product" enctype="multipart/form-data">
             <div id="add_product" class="modal-inner">
                 <div class="d-flex align-items-end">
                     <span class="me-auto ps-4 fw-semibold fs-3">Add new staff</span>
@@ -158,7 +158,7 @@ require_once APPROOT . '/views/includes/head.php';
                             </div>
                         </div>
                         <div class="mt-auto d-inline-flex btn-group gap-3 align-self-center ">
-                            <button type="submit" name="addEmployee" class="btn btn-primary">Add Staff</button>
+                            <button type="submit" name="addStaff" class="btn btn-primary">Add Staff</button>
                             <button type="button" class="btn btn-outline-primary btn_close">Cancel</button>
                         </div>
                     </div>

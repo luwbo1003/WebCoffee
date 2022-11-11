@@ -110,7 +110,7 @@ class UserModel
     {
         $link = null;
         taoKetNoi($link);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_user SET email = '$email', password = '$password' WHERE user_id = '$user_id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_user SET email = '$email', user_password = '$password' WHERE user_id = '$user_id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {

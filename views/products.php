@@ -19,18 +19,13 @@ require_once APPROOT . '/views/includes/head.php';
 
         <!-- home section starts  -->
         <section class="home">
-            <div class="box justify-content-start d-flex align-items-center" style="background: url(<?= IMAGE ?>/cf-bg1.jpg) no-repeat;">
-                <div class="content">
-                    <span class="text-white fs-2">Star Your Day</span>
-                    <h1 class="text-uppercase pt-2" style="color: #c8a27a;"> with a black coffee</h1>
-                    <!-- <a href="#" class="btn btn-primary mt-5 fs-6" id="btn_buy">Buy Now</a> -->
-                </div>
+            <div class="box justify-content-start d-flex align-items-center" style="background: url(<?= IMAGE ?>/cf-bg2.jpg) no-repeat;">
             </div>
         </section>
         <!-- home section ends -->
 
         <!-- products section starts  -->
-        <section class="main mb-5">
+        <section class="main mb-5 mt-5">
             <div class="collection container">
                 <div class="row g-3 col-products">
                     <div class="col-12 d-flex justify-content-center">

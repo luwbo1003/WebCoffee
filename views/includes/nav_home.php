@@ -30,8 +30,12 @@
                     <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
                         <a id="btn-shop-cart" class="nav-link" type="button">
                             <span class="material-symbols-outlined">
-                                shopping_cart
-                                <span class="badge rounded-pill bg-dark"></span>
+                                shopping_cart</span>
+                                <?php if (isset($_SESSION['cart'])) : ?>
+                            <span class="badge rounded-pill bg-dark">
+                                <?= sizeof($_SESSION['cart']) ?>
+                            </span>
+                            <?php endif; ?>
                         </a>
                     </li>
 

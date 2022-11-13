@@ -130,8 +130,8 @@
 }
 
 .modal-inner {
-  width: 1050px;
-  height: 500px;
+  width: 1200px;
+  height: 600px;
   background-color: white;
   animation: pullDown linear 0.2s;
   margin: 0 40px;

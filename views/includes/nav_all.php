@@ -30,45 +30,47 @@
                     <li onclick="openCart()" class="nav-item align-items-center ps-2 shop-btn">
                         <a id="btn-shop-cart" class="nav-link" type="button">
                             <span class="material-symbols-outlined">
-                                shopping_cart
-                                <span class="badge rounded-pill bg-dark"></span>
+                                shopping_cart</span>
+                                <?php if (isset($_SESSION['cart'])) : ?>
+                            <span class="badge rounded-pill bg-dark"><?= sizeof($_SESSION['cart']) ?></span>
+                            <?php endif; ?>
                         </a>
                     </li>
 
                     <?php if (!empty($_SESSION['user_id'])) : ?>
 
-<li class="dropdown">
-    <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-        <span class="material-symbols-outlined">
-            account_circle
-        </span>
-    </a>
-    <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center pt-2" data-popper-placement="bottom-start" style="height: 95px; width: 150px;">
-        <?php if ($_SESSION['user_type'] == 1) : ?>
+                        <li class="dropdown">
+                            <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center pt-2" data-popper-placement="bottom-start" style="height: 95px; width: 150px;">
+                                <?php if ($_SESSION['user_type'] == 1) : ?>
 
-            <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Profile</a>
+                                    <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Profile</a>
 
-        <?php else : ?>
+                                <?php else : ?>
 
-            <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Administrator</a>
+                                    <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/profile">Administrator</a>
 
-        <?php endif; ?>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/logout">Log out</a>
-    </div>
-</li>
+                                <?php endif; ?>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" type="button" href="<?= URLROOT ?>/User/logout">Log out</a>
+                            </div>
+                        </li>
 
-<?php else : ?>
+                    <?php else : ?>
 
-<li>
-    <a class="nav-link" href="<?= URLROOT ?>/User/index">
-        <span class="material-symbols-outlined">
-            account_circle
-        </span>
-    </a>
-</li>
+                        <li>
+                            <a class="nav-link" href="<?= URLROOT ?>/User/index">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                            </a>
+                        </li>
 
-<?php endif; ?>
+                    <?php endif; ?>
                     <?php require_once APPROOT . '/views/includes/cart_header.php'; ?>
                 </ul>
             </div>

@@ -15,13 +15,11 @@ class Manage extends Controller
     public function index()
     {
         if ($_SESSION['user_type'] == 0) {
-            header('location:' . URLROOT . '/Manage/product');
         }
     }
 
     public function showEdit($id)
-    {
-        {
+    { {
             if ($_SESSION['user_type'] == 0) {
                 if (isset($_POST['editEmployee'])) {
                     $emp = $this->StaffModel->getStaffByUserId($id);
@@ -41,25 +39,52 @@ class Manage extends Controller
             }
         }
     }
-    
+
 
     // Product Management
 
     public function product()
     {
         if ($_SESSION['user_type'] == 0) {
-            $prod = $this->ProductModel->getProductList();
-            $category_name = array();
-            $image = array();
             $category_list = $this->CategoryModel->getCategoryList();
-            foreach ($prod as $value) {
+            $number = 1;
+            $this->view('m_product', ['category_list' => $category_list, 'number' => $number]);
+        }
+    }
+
+    public function search($number)
+    {
+        $keyword = '';
+        if (isset($_POST['keyword'])) {
+            $keyword = $_POST['keyword'];
+        }
+
+        $cateArray = array();
+
+        $cateList = array();
+        if ($_POST['category'] == 'all') {
+            $cateList = $this->CategoryModel->getCategoryIdList();
+        } else {
+            $cateArray['cate_id'] = $_POST['category'];
+            array_push($cateList, $cateArray);
+        }
+
+        $from = ($number - 1) * 6;
+        $page = $this->ProductModel->countPageProductAdmin($keyword, $cateList);
+
+        $category_name = array();
+        $prodList = $this->ProductModel->searchProductAdmin($keyword, $cateList, $from);
+        $image = array();
+        if (isset($prodList)) {
+            foreach ($prodList as $value) {
                 $cate = $this->CategoryModel->getCategory($value['category_id']);
-                $img = $this->ImageModel->getImage($value['pro_image_id'])[0];
-                array_push($image, $img);
                 array_push($category_name, $cate);
             }
-
-            $this->view('m_product', ['prod' => $prod, 'category' => $category_name, 'image' => $image, 'category_list' => $category_list]);
+            foreach ($prodList as $value) {
+                $img = $this->ImageModel->getImage($value['pro_image_id'])[0];
+                array_push($image, $img);
+            }
+            $this->view('m_product_sub', ['prod' => $prodList, 'page' => $page, 'image' => $image, 'category' => $category_name, 'number' => $number]);
         }
     }
 
@@ -80,7 +105,7 @@ class Manage extends Controller
 
                 $prodResult = $this->ProductModel->addProduct($pro_name, $pro_quantity, $pro_price, $category_id);
                 if ($prodResult) {
-                    $this->DescriptionModel->addDes($brand,$item,$flavor,$caffein,$roast);
+                    $this->DescriptionModel->addDes($brand, $item, $flavor, $caffein, $roast);
                     $pro_id = $this->ProductModel->getProductId();
                     if ($pro_id < 10) {
                         $pro_img_id = "img0" . $pro_id;
@@ -88,7 +113,7 @@ class Manage extends Controller
                         $pro_img_id = "img" . $pro_id;
                     }
                     $this->ProductModel->addImageIdProduct($pro_id, $pro_img_id);
-                    $this->ProductModel->addDesIdProduct($pro_id,$pro_id);
+                    $this->ProductModel->addDesIdProduct($pro_id, $pro_id);
                     $this->uploadPicture($pro_img_id);
                     header('location:' . URLROOT . '/Manage/product');
                 }
@@ -150,15 +175,31 @@ class Manage extends Controller
     public function category()
     {
         if ($_SESSION['user_type'] == 0) {
-            $category_list = $this->CategoryModel->getCategoryList();
-            $count_prod = array();
+            $number=1;
+            $this->view('m_category', ['number' => $number]);
+        }
+    }
+
+    public function searchCategory($number)
+    {
+        $keyword = '';
+        if (isset($_POST['keyword'])) {
+            $keyword = $_POST['keyword'];
+        }
+
+        $from = ($number - 1) * 6;
+        $page = $this->CategoryModel->countPageCategoryAdmin($keyword);
+
+        $category_list = $this->CategoryModel->searchCategoryAdmin($keyword, $from);
+        $count_prod = array();
+        if (isset($category_list)) {
             foreach ($category_list as $value) {
                 $id = $value['cate_id'];
                 $count = $this->CategoryModel->countProdPerCate($id);
                 array_push($count_prod, $count);
             }
-            // echo var_dump($count_prod[0][0]['COUNT(category_id)']);
-            $this->view('m_category', ['category_list' => $category_list, 'count_prod' => $count_prod]);
+
+            $this->view('m_category_sub', ['count_prod' => $count_prod, 'category_list' => $category_list, 'number' => $number, 'page' => $page]);
         }
     }
 
@@ -178,7 +219,7 @@ class Manage extends Controller
             }
         }
     }
-    
+
     public function editCategory()
     {
         if ($_SESSION['user_type'] == 0) {
@@ -232,17 +273,34 @@ class Manage extends Controller
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Staff Management
 
     public function Staff()
     {
         if ($_SESSION['user_type'] == 0) {
-            $emp = $this->StaffModel->getEmpList();
-            $this->view("m_staff", ['emp' => $emp]);
+            $number =1;
+            $this->view("m_staff", ['number' => $number]);
         }
     }
+
+    public function searchStaff($number)
+    {
+        $keyword = '';
+        if (isset($_POST['keyword'])) {
+            $keyword = $_POST['keyword'];
+        }
+
+        $from = ($number - 1) * 6;
+        $page = $this->StaffModel->countPageStaffAdmin($keyword);
+
+        $emp = $this->StaffModel->searchStaffAdmin($keyword, $from);
+        if (isset($emp)) {
+            $this->view('m_staff_sub', ['emp' => $emp, 'number' => $number, 'page' => $page]);
+        }
+    }
+
 
     public function validateEmail()
     {
@@ -344,10 +402,27 @@ class Manage extends Controller
     public function customer()
     {
         if ($_SESSION['user_type'] == 0) {
-            $cus = $this->CustomerModel->getCustomerList();
-            $this->view("m_customer", ['cus' => $cus]);
+            $number=1;
+            $this->view("m_customer", ['number' => $number]);
         }
     }
+
+    public function searchCustomer($number)
+    {
+        $keyword = '';
+        if (isset($_POST['keyword'])) {
+            $keyword = $_POST['keyword'];
+        }
+
+        $from = ($number - 1) * 6;
+        $page = $this->CustomerModel->countPageCustomerAdmin($keyword);
+
+        $cus = $this->CustomerModel->searchCustomerAdmin($keyword, $from);
+        if (isset($cus)) {
+            $this->view('m_customer_sub', ['cus' => $cus, 'number' => $number, 'page' => $page]);
+        }
+    }
+
     public function editCustomer()
     {
         if ($_SESSION['user_type'] == 0) {

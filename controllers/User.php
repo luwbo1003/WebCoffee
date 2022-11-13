@@ -50,7 +50,7 @@ class User extends Controller
                     if ($_SESSION['user_type'] == 0) {
                         $Staff = $this->StaffModel->getStaffByUserId($_SESSION['user_id']);
                         $_SESSION['user_name'] = $Staff[0]['lastname'] . " " . $Staff[0]['firstname'];
-                        header('location:' . URLROOT . '/Manage/index');
+                        header('location:' . URLROOT . '/Manage/product');
                     } else if ($_SESSION['user_type'] == 1) {
                         header('location:' . URLROOT . '/Home/index');
                     }

@@ -63,7 +63,7 @@ require_once APPROOT . '/views/includes/head.php';
                                     <div class="gap-5 d-flex flex-row align-middle align-self-center ">
                                         <p class="align-self-center">Quantity:</p>
                                         <div class="d-inline-block product-quantity">
-                                            <input class="form-control" type="number" value="1" min="0" max="<?= $pro_quantity ?>" style="width: 130px">
+                                            <input class="form-control" type="number" name="pro_quantity" value="1" min="0" max="<?= $pro_quantity ?>" style="width: 130px">
                                         </div>
                                     </div>
 
@@ -72,7 +72,7 @@ require_once APPROOT . '/views/includes/head.php';
                                             <i class="bi bi-cart-plus-fill"></i>
                                             Add to Cart
                                         </button>
-                                        <button type="submit" class="btn btn-primary ms-5">
+                                        <button type="submit" name="addToCart" class="btn btn-primary ms-5">
                                             <i class="bi bi-cart-plus-fill"></i>
                                             Buy Now
                                         </button>
@@ -173,8 +173,35 @@ require_once APPROOT . '/views/includes/head.php';
                 </div>
             </div>
             <div class="container">
-                <div class="row gap-3 text-center align-self-center">
-                    <?php require_once APPROOT . '/views/includes/products_box.php'; ?>
+                <div class="row gap-3 text-center justify-content-center align-self-center">
+                    <?php
+                    if (!empty($data['prodByCate'])) :
+                        $i = 0;
+                        foreach ($data['prodByCate'] as $prodByCate) : extract($prodByCate);
+                            if ($i == 4) {
+                                break;
+                            } ?>
+                            <div class="card text-center justify-content-center col-12 col-md-6 col-lg-4" style="border-radius: 17px; width: 18rem;">
+                                <form action="<?= URLROOT ?>/Cart/addProductToCart/<?= $pro_id ?>" method="POST">
+                                    <input type="hidden" name="pro_quantity" value="1">
+
+                                    <div class="image">
+                                        <a href="<?= URLROOT ?>/Home/detail/<?= $pro_id ?>">
+                                            <img src="<?= IMAGE ?>/<?= $data['imageByCate'][$i]['img_link'] ?>" class="img-fluid" alt="..." style="max-height: 229px;">
+                                        </a>
+                                        <div class="icons w-100">
+                                            <button type="submit" name="addToCart" class="btn btn-primary align-content-md-center shop-card">Add to cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body ">
+                                        <h6 class="card-title" style="font-size: 14px;"><?= $pro_name ?></h6>
+                                        <p class="price">$<?= number_format($pro_price, 2, '.', ',') ?></p>
+                                    </div>
+                                </form>
+                            </div>
+                    <?php $i++;
+                        endforeach;
+                    endif; ?>
                 </div>
             </div>
         </section>

@@ -33,6 +33,16 @@ class CategoryModel
         giaiPhongBoNho($link, $result);
         return $data;
     }
+
+    public function getCategoryIdList()
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT cate_id FROM tbl_category WHERE cate_status = '1'");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
     
     public function getCategory($id)
     {
@@ -116,6 +126,26 @@ class CategoryModel
         } else {
             return false;
         }
+    }
+
+    public function searchCategoryAdmin($name, $from)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_category WHERE cate_status = 1 AND cate_name LIKE '%$name%' limit $from, 6");
+        $data = $result;
+        giaiPhongBoNho($link, $result);
+        return $data;
+    }
+    
+    public function countPageCategoryAdmin($name)
+    {
+        $link = null;
+        taoKetNoi($link);
+        $result = chayTruyVanTraVeDL($link, "SELECT count(*) FROM tbl_category WHERE cate_status = 1 AND cate_name LIKE '%$name%'");
+        $total = ceil($result[0]['count(*)'] / 6);
+        giaiPhongBoNho($link, $result);
+        return $total;
     }
 }
 

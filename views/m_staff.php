@@ -43,75 +43,15 @@ require_once APPROOT . '/views/includes/head.php';
                 <div class="container">
                     <div class="input-group">
                         <span class="input-group-text material-symbols-outlined">search</span>
-                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" name="keyword" id="keyword">
                     </div>
                 </div>
             </section>
 
             <!-- product -->
             <section class="py-4">
-                <div class="container ">
-                    <div class="table-responsive">
-                        <table class=" table table-hover align-middle">
-                            <thead>
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Name</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider">
-                                <?php if (!empty($data['emp'])) :
-                                    $i = 0;
-                                    foreach ($data['emp'] as $emp) : extract($emp); ?>
-                                        <tr>
-                                            <th scope="row"><?= $staff_id ?></th>
-                                            <td><?= $lastname ?> <?= $firstname ?></td>
-                                            <td class="text-center utility">
-                                                <div class="d-flex justify-content-center">
-                                                    <form action="<?= URLROOT ?>/Manage/showEdit/<?= $user_id ?>" method="POST">
-                                                        <button name="editEmployee" type="submit" class="material-symbols-outlined edit border border-0 bg-white">edit</button>
-                                                    </form>
-                                                    <form action="<?= URLROOT ?>/Manage/deleteEmployee/<?= $user_id ?>" method="POST">
-                                                        <button name="deleteEmployee" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                <?php $i++;
-                                    endforeach;
-                                endif; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Page Number -->
-            <section class="py-4">
-                <div class="container d-flex justify-content-center">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">&laquo;</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">&raquo;</a>
-                        </li>
-                    </ul>
+                <div class="container" id="output">
+                    
                 </div>
             </section>
         </div>
@@ -172,5 +112,29 @@ require_once APPROOT . '/views/includes/head.php';
 <script src="<?= JSFILE ?>/m_bar.js"></script>
 <script src="<?= JSFILE ?>/m_product.js"></script>
 <script src="<?= JSFILE ?>/m_staff.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        handleAjax(<?= $data['number'] ?>);
+        $("#keyword").keyup(function() {
+            handleAjax(<?= $data['number'] ?>);
+        });
+    });
 
+    var url = window.location.pathname.split('/');
+
+    function handleAjax(number) {
+        var keyword = $("#keyword").val();
+        $.ajax({
+            url: window.location.protocol + "//" +
+                window.location.hostname + "/" + url[1] + "/Manage/searchStaff/" + number,
+            method: "POST",
+            data: {
+                keyword: keyword
+            },
+            success: function(data) {
+                $("#output").html(data);
+            }
+        });
+    }
+</script>
 </html>

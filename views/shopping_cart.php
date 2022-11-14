@@ -3,7 +3,8 @@
 <?php
 require_once APPROOT . '/views/includes/head.php';
 ?>
-<link rel="stylesheet" href="../public/css/shopping_cart.css">
+<link rel="stylesheet" href="<?= CSSFILE ?>/shopping_cart.css">
+
 
 
 <body>
@@ -111,7 +112,7 @@ require_once APPROOT . '/views/includes/head.php';
                                 </tbody>
                             </table>
                             <div class="d-flex flex-column justify-content-center mt-2 mt-xl-5">
-                                <a href="<?= URLROOT ?>/Home/checkout" class="btn btn-primary text-decoration-none">
+                                <a href="<?= URLROOT ?>/Home/empty" class="btn btn-primary text-decoration-none">
                                     Proceed to checkout
                                 </a>
                             </div>
@@ -132,6 +133,6 @@ require_once APPROOT . '/views/includes/head.php';
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
 </script>
-<script src="../public/js/cart.js"></script>
+<script src="<?= JSFILE ?>/cart.js"></script>
 
 </html>

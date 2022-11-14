@@ -78,8 +78,8 @@ require_once APPROOT . '/views/includes/head.php';
     </script>
 
     <!-- js file link -->
-    <script src="../public/js/products.js"></script>
-    <script src="../public/js/nav.js"></script>
+    <script src="<?= JSFILE ?>/product.js"></script>
+    <script src="<?= JSFILE ?>/nav.js"></script>
 </body>
 
 </html>

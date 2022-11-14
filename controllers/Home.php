@@ -62,4 +62,10 @@ class Home extends Controller
        // goi method getproductlist
        $this->view('shopping_cart',[]);
    }
+   public function empty()
+   {
+       // goi method getproductlist
+       $this->view('empty',[]);
+   }
+   
 }

@@ -29,8 +29,10 @@
         </form>
         <!-- Total -->
         <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">$0</div>
+            <?php if (isset($_SESSION['total'])) : ?>
+                <div class="total-title">Total</div>
+                <div class="total-price">$<?= number_format($_SESSION['total'], 2, '.', ',') ?></div>
+            <?php endif; ?>
         </div>
         <!-- Buy button -->
 
@@ -42,8 +44,8 @@
         </span>
 
     </div>
-    <?php else: ?>
-        <div id="card-shop">
+<?php else : ?>
+    <div id="card-shop">
         <h2 class="card-title1">no product</h2>
         <a class="btn btn-primary btn-buy justify-content-center" href="<?= URLROOT ?>/Home/shopping_cart" type="submit">Go to cart</a>
         <a class="btn btn-primary btn-buy justify-content-center" href="<?= URLROOT ?>/Home/shopping_cart" type="submit">Check Out</a>
@@ -51,5 +53,5 @@
         <span onclick="closeCart()" type="button">
             <i id="card-close" class="fa-solid fa-xmark fs-4"></i>
         </span>
-        </div>
+    </div>
 <?php endif; ?>

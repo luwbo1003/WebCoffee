@@ -16,9 +16,6 @@
                 </p>
             </div>
             <div class="text-center collapse" id="ac-toggler" style="margin-top: 20px;">
-                <a class="d-block pb-3 text-white" style="font-size: 18px;">
-                    Setting
-                </a>
                 <a href="<?= URLROOT ?>/User/logout" class="d-block text-white" style="font-size: 18px;">
                     Log out
                 </a>

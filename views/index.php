@@ -39,7 +39,7 @@ require_once APPROOT . '/views/includes/head.php';
                 <div class="col-6 col-lg-4 pt-4 pt-lg-0">
                     <button onclick="merchandise()" class="border-0 bg-white btn-cate">
                         <img src="<?= IMAGE ?>/cate_mer.jpg" class="img-fluid img-cate" alt="">
-                        <h5 class="pt-3 fw-light" style="color: #219150;">Merchandise</h5>
+                        <h5 class="pt-3 fw-light" style="color: #219150;">GOOD!</h5>
                     </button>
                 </div>
             </div>
@@ -112,20 +112,17 @@ require_once APPROOT . '/views/includes/head.php';
         <form action="<?= URLROOT ?>/" method="POST" class="modal-layout whole_bean">
             <div id="whole_bean" class="modal-inner">
                 <div class="d-flex justify-content-end align-items-center">
-                <span class="me-auto ps-4 fw-semibold fs-3"> ORIGIN STORY</span>
+                    <span class="me-auto ps-4 fw-semibold fs-3"></span>
                     <span class="material-symbols-outlined modal-close">
                         close
                     </span>
                 </div>
-                <br style="clear: both;">
-
                 <div class="row py-2 py-md-4 px-3 px-md-4">
                     <div class=" col-12 col-lg-6">
                         <div class="px-3">
                             <img src="<?= IMAGE ?>/colombia_natural.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
-
                     <div class="col-12 col-lg-6 d-flex flex-column">
                         <div class="px-3">
                             <h4>MULTIPLE PRODUCERS (SUMATRA, KENYA) LAS ROSAS WOMEN'S GROUP (COLOMBIA) CAPRICORNIO COFFEES (BRAZIL)</h4>
@@ -159,23 +156,52 @@ require_once APPROOT . '/views/includes/head.php';
                         close
                     </span>
                 </div>
-                <br style="clear: both;">
                 <div class="row py-2 py-md-4 px-3 px-md-4">
-
+                    <div class=" col-12 col-lg-6">
+                        <div class="px-3">
+                            <img src="<?= IMAGE ?>/cate_bottle.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column">
+                        <div class="px-3">
+                            <h4>WHY WE LOVE THIS COFFEE</h4>
+                            <p> Our namesake blend features coffees from some of the world’s best known growing regions, and together these coffees create a smooth and complex blend. 
+                               Starborks is roasted in a way that makes it versatile – dark and robust enough to stand up to the addition of milk, 
+                                yet sweet enough to drink black. We love it so much that we feature it on batch brew at all of our cafes!
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
         <form action="<?= URLROOT ?>/" method="POST" class="modal-layout merchandise">
             <div id="merchandise" class="modal-inner">
                 <div class="d-flex align-items-end">
-                    <span class="me-auto ps-4 fw-semibold fs-3 align-content-center">MERCHANDISE</span>
+                    <span class="me-auto ps-4 fw-semibold fs-3 align-content-center"></span>
                     <span class="material-symbols-outlined modal-close">
                         close
                     </span>
                 </div>
-                <br style="clear: both;">
                 <div class="row py-2 py-md-4 px-3 px-md-4">
-                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                    <div class=" col-12 col-lg-6">
+                        <div class="px-3">
+                            <img src="<?= IMAGE ?>/cate_mer.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column">
+                        <div class="px-3">
+                            <h4>GOOD COFFEE, BETTER PLANET</h4>
+                            <p> We treasure our relationships in the global coffee community and invest in projects at origin to support our partners in their commitment to environmental 
+                                sustainability and social welfare. We also invest in reducing our day-to-day impact, 
+                                through initiatives like energy-efficient Loring Smart Roasters to reduce carbon emissions per batch by 80%.
+                            </p>
+                            <p>
+                            As a certified B Corporation, we are a leader in sustainable practices that impact people and the planet. 
+                            This third-party certification requires us to demonstrate transparency and accountability throughout our supply chain and quantify the impact our business creates for our employees, the community,
+                             and the environment. We are proud to be part of this community working together toward one unifying goal: using business as a force for good.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

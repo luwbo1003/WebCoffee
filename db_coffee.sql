@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2022 lúc 05:08 PM
+-- Thời gian đã tạo: Th10 08, 2022 lúc 06:29 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -155,7 +155,7 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`pro_id`, `pro_name`, `pro_quantity`, `pro_price`, `category_id`, `pro_des_id`, `pro_image_id`, `status`) VALUES
-(1, 'Starborks Flavored Ground Coffee', 1000, 46.99, 2, 1, 'img01', 0),
+(1, 'Starborks Flavored Ground Coffee', 1000, 46.99, 2, 1, 'img01', 1),
 (2, 'Starborks Frappuccino Coffee Drink (12 pack)', 1000, 58, 1, 2, 'img02', 1),
 (3, 'Starborks Doubleshot Energy Drink Coffee Beverage', 1000, 32.99, 1, 3, 'img03', 1),
 (4, 'Starborks Premium Instant Coffee', 1000, 50, 2, 4, 'img04', 1),
@@ -343,7 +343,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `cus_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cus_id` int(2) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_image`
@@ -373,7 +373,7 @@ ALTER TABLE `tbl_staff`
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

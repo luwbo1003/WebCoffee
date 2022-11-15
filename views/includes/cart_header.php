@@ -9,7 +9,7 @@
                 <div class="card-content" style="margin-top: 30px;">
                     <div class="row g-0 card-box">
                         <div class="col-md-3">
-                            <img src="<?= IMAGE ?>/<?= $pro_img ?>" class="img-fluid rounded-start" alt="..." style="width: 72px;">
+                            <img src="<?= IMAGE ?>/<?= $pro_img ?>" class="img-fluid rounded-start" alt="..." style="max-height: 80px">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body" style="margin-left: 2px; margin-top: -10px;">

@@ -33,8 +33,7 @@ require_once APPROOT . '/views/includes/head.php';
                                 </span>
                                 Add new
                             </button>
-                            <form class="dropdown-menu dropdown-menu-end p-3" style="width:200px;" data-popper-placement="bottom-start" action="<?= URLROOT ?>/Manage
-                            /addCategory" method="POST">
+                            <form class="dropdown-menu dropdown-menu-end p-3" style="width:200px;" data-popper-placement="bottom-start" action="<?= URLROOT ?>/Manage/addCategory" method="POST">
                                 <div class="mb-3">
                                     <label for="name_product" class="form-label">Category name</label>
                                     <input type="text" class="form-control p-2" name="category" placeholder="Enter category ...">

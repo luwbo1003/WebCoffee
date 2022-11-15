@@ -19,8 +19,8 @@
                                 <form action="<?= URLROOT ?>/Manage/showEdit/<?= $user_id ?>" method="POST">
                                     <button name="editEmployee" type="submit" class="material-symbols-outlined edit border border-0 bg-white">edit</button>
                                 </form>
-                                <form action="<?= URLROOT ?>/Manage/deleteEmployee/<?= $user_id ?>" method="POST">
-                                    <button name="deleteEmployee" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
+                                <form action="<?= URLROOT ?>/Manage/deleteStaff/<?= $user_id ?>" method="POST">
+                                    <button name="deleteStaff" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
                                 </form>
                             </div>
                         </td>

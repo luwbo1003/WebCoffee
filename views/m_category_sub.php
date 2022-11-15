@@ -17,12 +17,10 @@
                     <td><?= $data['count_prod'][$i][0]['count'] ?></td>
                     <td class="text-center utility">
                         <div class="d-flex justify-content-center">
-                            <form action="<?= URLROOT ?>/Manage
-                                                /showEdit/<?= $cate_id ?>" method="POST">
+                            <form action="<?= URLROOT ?>/Manage/showEdit/<?= $cate_id ?>" method="POST">
                                 <button name="editCategory" type="submit" class="material-symbols-outlined edit border border-0 bg-white">edit</button>
                             </form>
-                            <form action="<?= URLROOT ?>/Manage
-                                                /deleteCategory/<?= $cate_id ?>" method="POST">
+                            <form action="<?= URLROOT ?>/Manage/deleteCategory/<?= $cate_id ?>" method="POST">
                                 <button name="deleteCategory" type="submit" class="material-symbols-outlined delete border border-0 bg-white">delete</button>
                             </form>
                         </div>

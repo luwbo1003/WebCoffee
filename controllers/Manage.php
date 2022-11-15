@@ -175,7 +175,7 @@ class Manage extends Controller
     public function category()
     {
         if ($_SESSION['user_type'] == 0) {
-            $number=1;
+            $number = 1;
             $this->view('m_category', ['number' => $number]);
         }
     }
@@ -280,7 +280,7 @@ class Manage extends Controller
     public function Staff()
     {
         if ($_SESSION['user_type'] == 0) {
-            $number =1;
+            $number = 1;
             $this->view("m_staff", ['number' => $number]);
         }
     }
@@ -326,7 +326,9 @@ class Manage extends Controller
         if ($_SESSION['user_type'] == 0) {
             if (isset($_POST['addStaff'])) {
                 if ($this->validateEmail()) {
+                    echo "fail email";
                 } else if ($this->validatePassword()) {
+                    echo "fail password";
                 } else {
                     $userResult = $this->UserModel->addUser($_POST['emailInput'], md5($_POST['passwordInput1']), 0);
                     if ($userResult) {
@@ -335,6 +337,12 @@ class Manage extends Controller
                         if ($StaffResult) {
                             header('location:' . URLROOT . '/Manage/Staff');
                         }
+                        else
+                        {
+                            echo "fail add staff";
+                        }
+                    } else {
+                        echo "fail add user";
                     }
                 }
             }
@@ -402,7 +410,7 @@ class Manage extends Controller
     public function customer()
     {
         if ($_SESSION['user_type'] == 0) {
-            $number=1;
+            $number = 1;
             $this->view("m_customer", ['number' => $number]);
         }
     }
@@ -449,8 +457,8 @@ class Manage extends Controller
     {
         if ($_SESSION['user_type'] == 0) {
             if (isset($_POST['deleteCustomer'])) {
-                $this->CustomerModel->deleteCustomer($id);
-                $this->UserModel->deleteUser($id);
+                $cus = $this->CustomerModel->deleteCustomer($id);
+                $user = $this->UserModel->deleteUser($id);
                 header('location:' . URLROOT . '/Manage/customer');
             }
         }

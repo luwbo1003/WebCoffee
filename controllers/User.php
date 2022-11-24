@@ -41,7 +41,7 @@ class User extends Controller
             header('location:' . URLROOT . '/Home/index');
         } else {
             if (isset($_POST['signin'])) {
-                $user = $this->UserModel->getUser($_POST['emailInput'], md5($_POST['passwordInput']));
+                $user = $this->UserModel->getUser($_POST['emailInput'], ($_POST['passwordInput']));
                 if (!empty($user)) {
                     $_SESSION['user_id'] = $user[0]['user_id'];
                     $_SESSION['user_type'] = $user[0]['user_type'];
@@ -90,7 +90,7 @@ class User extends Controller
             } else if ($this->validatePassword()) {
                 header('location:' . URLROOT . '/User/index/wrongpass');
             } else {
-                $userResult = $this->UserModel->addUser($_POST['emailInput'], md5($_POST['passwordInput1']), 1);
+                $userResult = $this->UserModel->addUser($_POST['emailInput'], ($_POST['passwordInput1']), 1);
                 if ($userResult) {
                     $user_id = $this->UserModel->getUserId($_POST['emailInput'])[0]['user_id'];
                     $customerResult = $this->CustomerModel->addCustomer($user_id, $_POST['firstNameInput'], $_POST['lastNameInput']);
@@ -118,12 +118,12 @@ class User extends Controller
     public function editAccount()
     {
         if (isset($_POST['editAccount'])) {
-            $user = $this->UserModel->getUser($_SESSION['user_email'], md5($_POST['oldPasswordInput']));
+            $user = $this->UserModel->getUser($_SESSION['user_email'], ($_POST['oldPasswordInput']));
             if (!empty($user)) {
                 if ($this->validatePassword()) {
                     echo "unmatch password";
                 } else {
-                    $userResult = $this->UserModel->changePassword($_SESSION['user_id'], md5($_POST['passwordInput1']));
+                    $userResult = $this->UserModel->changePassword($_SESSION['user_id'], ($_POST['passwordInput1']));
                     if ($userResult) {
                         header('location:' . URLROOT . '/User/profile');
                     } else {

@@ -72,10 +72,8 @@ class UserModel
     {
         $link = null;
         taoKetNoi($link);
-        $salt = "95f9c917496e3a9f66dc9e559ad7d692";//Dùng salt để tăng cường mật khẩu
-        $password = MD($salt.strrev($password));//Đảo ngược mật khẩu và nối chuỗi sau đó áp dụng mã hóa MD5
-        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_user 
-        WHERE email = '$email' AND password = '$password' AND status = '1'");
+        $password = MD($password);
+        $result = chayTruyVanTraVeDL($link, "SELECT * FROM tbl_user WHERE email = '$email' AND password = '$password' AND status = '1'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         return $data;
@@ -85,10 +83,8 @@ class UserModel
     {
         $link = null;
         taoKetNoi($link);
-        $salt = "95f9c917496e3a9f66dc9e559ad7d692";//Dùng salt để tăng cường mật khẩu
-        $password = MD($salt.strrev($password));//Đảo ngược mật khẩu và nối chuỗi sau đó áp dụng mã hóa MD5
-        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_user (email, 
-            password, user_type, status) VALUES ('$email', '$password', b'$user_type', '1')");
+        $password = MD($password);
+        $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_user (email, password, user_type, status) VALUES ('$email', '$password', b'$user_type', '1')");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -117,8 +113,7 @@ class UserModel
         $link = null;
         taoKetNoi($link);
         $password = MD($password);
-        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_user SET email = '$email'
-            , user_password = '$password' WHERE user_id = '$user_id'");
+        $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_user SET email = '$email', user_password = '$password' WHERE user_id = '$user_id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
         if ($data) {
@@ -146,8 +141,7 @@ class UserModel
     {
         $link = null;
         taoKetNoi($link);
-        $salt = "95f9c917496e3a9f66dc9e559ad7d692";//Dùng salt để tăng cường mật khẩu
-        $password = MD($salt.strrev($password));//Đảo ngược mật khẩu và nối chuỗi sau đó áp dụng mã hóa MD5
+        $password = MD($password);
         $result = chayTruyVanKhongTraVeDL($link, "UPDATE tbl_user SET password = '$password' WHERE user_id = '$user_id'");
         $data = $result;
         giaiPhongBoNho($link, $result);
@@ -158,8 +152,6 @@ class UserModel
         }
     }
 }
-
-
 function MD($string){
 $a = "67452301";
 $b = "EFCDAB89";
@@ -259,7 +251,6 @@ for($i = 0; $i <= count($words)/16-1; $i++){
 
 /* General functions */
 
-// Chuyển từ dạng hex sang dạng bin
 function hexbin($str){
         $hexbinmap = array("0" => "0000"
                                                 , "1" => "0001"
@@ -285,13 +276,15 @@ function hexbin($str){
                                                 , "f" => "1111");
 
         $bin = "";
-    for ($i = 0; $i < strlen($str); $i++){
+    for ($i = 0; $i < strlen($str); $i++)
+    {
         $bin .= $hexbinmap[$str[$i]];
     }
     $bin = ltrim($bin, '0'); 
+        // echo "Original: ".$str."  New: ".$bin."<br />";
     return $bin;
 }
-// Chuyển chuỗi ASCII thành dạng hex
+
 function strhex($str){
     $hex = "";
     for ($i = 0; $i < strlen($str); $i++)
